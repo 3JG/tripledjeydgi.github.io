@@ -1,250 +1,149 @@
-<!doctype html>
-	<!--
-	Material Design Lite
-	Copyright 2015 Google Inc. All rights reserved.
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="keywords" content="ufc, papercraft, face maker">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="author" content="UFC - SMD - Projeto Integrado 2 - 2020.2">
+  <meta name="description" content="Craft Maker - Criador de Papercraft personalizado">
+  <title>Craft Maker</title>
 
-	Licensed under the Apache License, Version 2.0 (the "License");
-	you may not use this file except in compliance with the License.
-	You may obtain a copy of the License at
+  <meta itemprop="name" content="Craft Maker">
+  <meta itemprop="description" content="Craft Maker - Criador de Papercraft personalizado - UFC - SMD - Projeto Integrado 2 - 2020.2">
+  <meta itemprop="image" content="img/favicon.png">
 
-	https://www.apache.org/licenses/LICENSE-2.0
 
-	Unless required by applicable law or agreed to in writing, software
-	distributed under the License is distributed on an "AS IS" BASIS,
-	WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-	See the License for the specific language governing permissions and
-	limitations under the License
-	-->
-<html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		
-		<title>Google Material Design</title>
+  <link rel="apple-touch-icon" sizes="72x72" href="img/favicon.png">
+  <link rel="apple-touch-icon" sizes="128x128" href="img/favicon.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="img/favicon.png">
+  <link rel="apple-touch-icon" sizes="192x192" href="img/favicon.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="img/favicon.png">
+  <link rel="icon" type="image/x-icon" sizes="16x16" href="img/favicon.png">
 
-		<!-- Add to homescreen for Chrome on Android -->
-		<meta name="mobile-web-app-capable" content="yes">
-		<link rel="icon" sizes="192x192" href="img/android-desktop.png">
+  <!-- theme-color -->
+  <meta name="theme-color" content="#bbba48" />
+  <!-- end-theme-color -->
+  
+  <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
-		<!-- Add to homescreen for Safari on iOS -->
-		<meta name="apple-mobile-web-app-capable" content="yes">
-		<meta name="apple-mobile-web-app-status-bar-style" content="black">
-		<meta name="apple-mobile-web-app-title" content="Material Design Lite">
-		<link rel="apple-touch-icon-precomposed" href="img/ios-desktop.png">
+  <style type="text/css">
+    .display-block{
+      display: block;
+    }
+    .display-none{
+      display: none;
+    }
+  </style>
+  <script type="text/javascript">
+    function hideAll( item ){
+      anterior = document.querySelector(".display-block");
+      anterior.classList.add("display-none");
+      anterior.classList.remove("display-block");
+      
+      classItem = ".boca";
 
-		<!-- Tile icon for Win8 (144x144 + tile color) -->
+      if ( item == 1 ){
+        classItem = ".olho";
+      }else if ( item == 2 ) {
+        classItem = ".nariz";
+      }
 
-		<meta name="msapplication-TileColor" content="#3372DF">
+      atual = document.querySelector(classItem);
+      atual.classList.add("display-block");
+      atual.classList.remove("display-none");
+    }
+  </script>
+</head>
+  
+<body>
+  <div class="container">
+    <div class="row">
+      <section class="col-lg-6 col-sm-12">
+        <output width="100%">
+          <canvas id="canva_craft"></canvas>
+        </output>
+      </section>
+      <section class="col-lg-6 col-sm-12">
+        <div class="container">
+          <section class="row">
+            <div class="col-3" onclick="hideAll(1)">OLHO</div>
+            <div class="col-3" onclick="hideAll(2)">NARIZ</div>
+            <div class="col-3" onclick="hideAll(3)">BOCA</div>
+          </section>
+          <div class="olho display-block">
+            <section class="row">
+              <div class="col-3" onclick="olho.src = 'img/olho01.png';"><img src="img/olho01.png" width="100%" /></div>
+              <div class="col-3" onclick="olho.src = 'img/olho02.png';"><img src="img/olho02.png" width="100%" /></div>
+              <div class="col-3" onclick="olho.src = 'img/olho03.png';"><img src="img/olho03.png" width="100%" /></div>
+              <div class="col-3" onclick="olho.src = 'img/olho04.png';"><img src="img/olho04.png" width="100%" /></div>
+            </section>
+          </div>
+          <div class="nariz display-none">
+            <section class="row">
+              <div class="col-3" onclick="nariz.src = 'img/nariz01.png';"><img src="img/nariz01.png" width="100%" /></div>
+              <div class="col-3" onclick="nariz.src = 'img/nariz02.png';"><img src="img/nariz02.png" width="100%" /></div>
+              <div class="col-3" onclick="nariz.src = 'img/nariz03.png';"><img src="img/nariz03.png" width="100%" /></div>
+              <div class="col-3" onclick="nariz.src = 'img/nariz04.png';"><img src="img/nariz04.png" width="100%" /></div>
+            </section>
+          </div>
+          <div class="boca display-none">
+            <section class="row">
+              <div class="col-3" onclick="boca.src = 'img/boca01.png';"><img src="img/boca01.png" width="100%" /></div>
+              <div class="col-3" onclick="boca.src = 'img/boca02.png';"><img src="img/boca02.png" width="100%" /></div>
+              <div class="col-3" onclick="boca.src = 'img/boca03.png';"><img src="img/boca03.png" width="100%" /></div>
+              <div class="col-3" onclick="boca.src = 'img/boca04.png';"><img src="img/boca04.png" width="100%" /></div>
+            </section>
+          </div>
+        </div>
+      </section>
+      <section class="col-lg-6 col-sm-12">
+        <a class="btn btn-primary btn-lg btn-block" id="download" download="myCraft.jpg" onclick="download_img(this);">Download</a>
+      </section>
+    </div>
+  </div>
+<script type="text/javascript">
+const canva_craft = document.getElementById("canva_craft");
+canva_craft.height = 500;
 
-		<link rel="shortcut icon" href="img/favicon.png">
+const context = canva_craft.getContext('2d');
 
-		<!-- SEO: If your mobile URL is different from the desktop URL, add a canonical link to the desktop page https://developers.google.com/webmasters/smartphone-sites/feature-phones -->
-		<!--
-		<link rel="canonical" href="http://www.example.com/">
-		-->
+const olho = document.createElement("img");
 
-		<link rel="stylesheet" href="css/fonts.googleapis.css">
-		<link rel="stylesheet" href="css/MaterialIcons.css">
-		<link rel="stylesheet" href="css/material.grey-orange.min.css">
-		<link rel="stylesheet" href="css/styles.css">
-		<style>
-			#view-source {
-			position: fixed;
-			display: block;
-			right: 0;
-			bottom: 0;
-			margin-right: 40px;
-			margin-bottom: 40px;
-			z-index: 900;
-			}
-		</style>
-	</head>
-	
-	<body>
-		<div class="demo-blog mdl-layout mdl-js-layout has-drawer is-upgraded">
-			<main class="mdl-layout__content">
-				<div class="demo-blog__posts mdl-grid">
-					<div class="mdl-card coffee-pic mdl-cell mdl-cell--8-col">
-						<div class="mdl-card__media mdl-color-text--grey-50">
-							<h3>Google Design</h3>
-						</div>
-						<div class="mdl-card__supporting-text meta mdl-color-text--grey-600">
-							<div>
-								<strong id="minilogoTexto">A união do design com um programador fez resultados incríveis.</strong>
-							</div>
-						</div>
-					</div>
-					<div class="mdl-card something-else mdl-cell mdl-cell--8-col mdl-cell--4-col-desktop">
-						<button class="mdl-button mdl-js-ripple-effect mdl-js-button mdl-button--fab mdl-color--accent">
-							<img src="img/logo-estacio-horizontal.png">
-						</button>
-						
-						<div class="mdl-card__media mdl-color--white mdl-color-text--grey-600">
-							<span id="nomesEquipe">
-								Josué dos Santos<br><br>
-								Ederson Ripardo<br><br>
-								Lucas Farias<br><br>
-								Karen Luana <br><br>
-								Mirla Lopes<br><br>
-								Robson Diogenes<br><br>
-								Jhonathan William
-							</span>
-						</div>
+const nariz = document.createElement("img");
 
-					</div>
-					<div class="mdl-card on-the-road-again mdl-cell mdl-cell--12-col">
-						<div class="mdl-card__media mdl-color-text--grey-50">
+const boca = document.createElement("img");
 
-						</div>
-						
-						<div class="mdl-color-text--grey-600 mdl-card__supporting-text">
-							<div class="texto01">
-								<center>
-									<span class="aspa">&ldquo;</span>
-									<em>Um padrão visual definido para todas os aparelhos diminuindo a necessidade de reaprender.</em>
-									<span class="aspa">&rdquo;</span>
-								</center>
-								<br>
+olho.addEventListener("load", function(){
+  context.clearRect(0, 0, olho.width, olho.height);
 
-								<p>Surgiu com a missão de unificar os aspectos visuais e funcionais do desenvolvimento, criando uma linguagem visual para os usuários que sintetiza os princípios clássicos de um bom design.</p>
-								<p>O Material Design estabelece padrões de ícones, cores, animações, tipografia e hierarquias, por exemplo. Olhando bem, dá para perceber que não se trata de nada exatamente novo: as diretrizes lembram o design das ferramentas do Google+, por exemplo.</p>
-								
-								<center>
-									<img src="img/gmail_material_design.jpg" width="500" height="400">
-									<strong id="legendaImagemGmail"><br>O antes e depois do app do YouTube com o Material Design</strong>
-								</center>
-							</div>
-						</div>
+  context.drawImage(
+    olho, 0, 0, olho.width, olho.height, 0, 0, olho.width, olho.height
+  );
+});
 
-					</div>
-					
-					<div class="mdl-card amazing mdl-cell mdl-cell--12-col">
-						<div class="mdl-card__title mdl-color-text--grey-50">
-							<h3 class="quote">Uma nova forma de interação muito mais simples, de fácil entendimento.</h3>
-						</div>
-						
-						<div class="mdl-color-text--grey-600 mdl-card__supporting-text">
-							<div class="texto01">
-								<p>Os diferenciais começam a aparecer no comportamento: a tipografia faz com que o conteúdo possa ser lido confortavelmente em qualquer dispositivo, independente de tamanho; as animações tornam as funcionalidades mais intuitivas, não sendo criadas apenas para impressionar; o conteúdo se ajusta automaticamente ao tamanho da tela de forma a aproveitá-la de maneira inteligente.</p>
-								<p>Desenvolveram um único sistema que permite uma experiência unificada em todas as plataformas e tamanhos de dispositivos.</p>
+nariz.addEventListener("load", function(){
+  context.clearRect(0, olho.height, nariz.width, nariz.height);
 
-								<center>
-									<img src="img/google-design-responviso.jpg" width="500" height="280">
-								</center>
-								<br>
+  context.drawImage(
+    nariz, 0, 0, nariz.width, nariz.height, 0, olho.height, nariz.width, nariz.height
+  );
+});
 
-								<p>O uso da palavra “material” não é casual: o novo padrão tenta criar experiências próximas das interações que temos com objetos “reais”. Deste modo, o Material Design aplica efeitos de sombra, animações e respostas ao toque da maneira mais racional possível.</p>
-								<p>Baseado na realidade tátil, inspirado no estudo do papel e tinta, mas tecnologicamente avançado. Os fundamentos da luz, superfície, movimento, elementos fundamentais do design fazem muito mais do que agradar aos olhos. Eles criam hierarquia com significado e foco.</p>
-								<p>Todos os elementos possuem 3 dimensões (x, y, z), com a manipulação das cores e o domínio de luz e sombra temos efeitos espetaculares.</p>
+boca.addEventListener("load", function(){
+  context.clearRect(0, ( nariz.height + olho.height ), boca.width, boca.height);
 
-								<center>
-									<img src="img/whatismaterial_environment_3d.png" width="300" height="200">
-								</center><br>
+  context.drawImage(
+    boca, 0, 0, boca.width, boca.height, 0, ( nariz.height + olho.height ), boca.width, boca.height
+  );
+});
 
-								<p>Objetos de Material Design possuem qualidades semelhantes aos objetos do mundo físico. No mundo físico, os objetos podem ser empilhados ou fixado um ao outro, mas não pode passar através do outro. Objetos possuem sombras e refletem a luz.</p>
-								<p>Estas qualidades formar um modelo espacial que é familiar aos usuários e podem ser aplicadas de forma consistente em aplicativos. Subjacente a este modelo espacial são os conceitos de elevação e sombra.</p>
-
-								<center>
-									<img src="img/whatismaterial_3d_elevation3.png" width="800" height="350">
-								</center>
-								<br>
-
-								<p>O visual é composto por cores chapadas e vibrantes, novas fontes, ícones completamente repaginados (como o Gmail e o Google Calendar) e sensação de profundidade entre os aplicativos com as diferentes camadas que eles trazem, além de possuir animações em praticamente todas as ações realizadas. As alterações seguem o conceito de “espaços racionalizados e sistemas em movimento”, criado pela Google. Veja o vídeo oficial de introdução do Material Design:</p>
-
-								<center>
-
-									<video controls width="800" height="350">
-										<source src="video/movie.webm" type='video/webm; codecs="vp8, vorbis"' />
-										<source src="video/movie.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
-									</video>
-
-									<br>
-									<a target="_blank" href="https://www.youtube.com/watch?v=Q8TXgCzxEnw">Link do video</a>
-
-								</center>
-								<br>
-
-								<p>No vídeo podemos perceber várias propriedades do Google Material Design como:</p>
-								
-								<ul>
-									<li>Luz</li>
-									<li>Sombra</li>
-									<li>Animação de surgimento</li>
-									<li>Giro</li>
-									<li>Divisão</li>
-									<li>União</li>
-									<li>Elevar</li>
-									<li>Diferença de altura</li>
-									<li>Ícones mudam suavemente e com movimento</li>
-									<li>Efeitos de transição</li>
-									<li>Reposicionamento</li>
-									<li>Realce de clique</li>
-								</ul>
-
-							</div>
-						</div>
-
-					</div>
-
-					<nav class="demo-nav mdl-cell mdl-cell--12-col">
-						<div class="section-spacer"></div>
-						
-						<a href="entry.html" class="demo-nav__button" title="show more">
-							MDL
-							<button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-								<i class="material-icons" role="presentation">arrow_forward</i>
-							</button>
-						</a>
-					</nav>
-				</div>
-				
-				<footer class="mdl-mini-footer">
-					<div class="mdl-mini-footer--left-section">
-						<button class="mdl-mini-footer--social-btn social-btn social-btn__twitter">
-							<span class="visuallyhidden">Twitter</span>
-						</button>
-						
-						<button class="mdl-mini-footer--social-btn social-btn social-btn__blogger">
-							<span class="visuallyhidden">Facebook</span>
-						</button>
-						
-						<button class="mdl-mini-footer--social-btn social-btn social-btn__gplus">
-							<span class="visuallyhidden">Google Plus</span>
-						</button>
-					</div>
-					
-					<div class="mdl-mini-footer--right-section">
-						<button class="mdl-mini-footer--social-btn social-btn__share">
-							<i class="material-icons" role="presentation">share</i>
-							<span class="visuallyhidden">share</span>
-						</button>
-					</div>
-				</footer>
-			</main>
-			
-			<div class="mdl-layout__obfuscator"></div>
-		</div>
-		
-		<a href="entry.html" id="view-source" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--accent mdl-color-text--white">Internet Rica</a>
-		
-		<script src="js/material.min.js"></script>
-	</body>
-	
-	<script>
-		Array.prototype.forEach.call(document.querySelectorAll('.mdl-card__media'), function(el) {
-			var link = el.querySelector('a');
-			if(!link) {
-				return;
-			}
-			var target = link.getAttribute('href');
-			if(!target) {
-				return;
-			}
-			el.addEventListener('click', function() {
-				location.href = target;
-			});
-		});
-	</script>
+download_img = function(el) {
+  var image = canva_craft.toDataURL("image/jpg");
+  el.href = image;
+};
+</script>
+</body>
 </html>
