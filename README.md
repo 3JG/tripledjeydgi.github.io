@@ -1,4 +1,8 @@
-# tripledjeydgi.github.io
-BlogSMD-UFC
+# CraftMaker
+Projeto Integrado 2
 
-J. Vitor / Johny / Josué / Graciano
+UFC - SDM
+- GRACIANO BARBOSA LIMA JUNIOR
+- JOSUÉ DOS SANTOS MARQUES
+- JOEL FERREIRA MELO
+- JOÃO PAULO LIMA
