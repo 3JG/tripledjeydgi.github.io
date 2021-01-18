@@ -23,7 +23,7 @@
   <link rel="icon" type="image/x-icon" sizes="16x16" href="img/favicon.png">
 
   <!-- theme-color -->
-  <meta name="theme-color" content="#bbba48" />
+  <meta name="theme-color" content="#cacaca50" />
   <!-- end-theme-color -->
 
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -36,98 +36,163 @@
 <body>
 <!-- Wide card with share menu button -->
 <style>
-html, body {
-  margin: auto;
-  max-width: 960px;
-}
-.mdl-layout__content {
-  background-color: #cacaca50;
-}
-.card-wide > .mdl-card__title {
-  color: #000;
-}
+  html, body {
+    margin: auto;
+    max-width: 960px;
+  }
+  .mdl-layout__content {
+    background-color: #cacaca50;
+  }
+  .card-wide > .mdl-card__title {
+    color: #000;
+  }
 </style>
-<div class="mdl-layout__content">
-<div class="mdl-grid">
-  <div class="mdl-cell mdl-cell--6-col card-wide mdl-card mdl-shadow--2dp">
-    <div class="mdl-card__title">
-      <a class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect" id="download" download="myCraft.jpg" onclick="download_img(this);">
-        <i class="material-icons">vertical_align_bottom</i>
-      </a>
+<div class="mdl-layout__content" id="main-drop">
+  <div class="mdl-grid">
+    <div class="mdl-cell mdl-cell--6-col card-wide mdl-card mdl-shadow--2dp">
+      <div class="mdl-card__title">
+        <a class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect" id="download" download="myCraft.jpg" onclick="download_img(this);">
+          <i class="material-icons">vertical_align_bottom</i>
+        </a>
+      </div>
+      <div class="mdl-grid" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <img id="cabecaAtual" src="img/cabeca.png" height="0%" width="0%" />
+        <div class="mdl-cell--4-col"></div>
+        <div class="mdl-cell--4-col"><img id="sobrancelhaAtual" src="img/sobrancelha01.png" height="100%" width="100%" /></div>
+        <div class="mdl-cell--4-col"></div>
+        <div class="mdl-cell--4-col"></div>
+        <div class="mdl-cell--4-col"><img id="olhosAtual" src="img/olho01.png" height="100%" width="100%" /></div>
+        <div class="mdl-cell--4-col"></div>
+        <div class="mdl-cell--4-col"></div>
+        <div class="mdl-cell--4-col"><img id="narizAtual" src="img/nariz02.png" height="100%" width="100%" /></div>
+        <div class="mdl-cell--4-col"></div>
+        <div class="mdl-cell--4-col"></div>
+        <div class="mdl-cell--4-col"><img id="bocaAtual" src="img/boca04.png" height="100%" width="100%" /></div>
+        <div class="mdl-cell--4-col"></div>
+      </div>
     </div>
-    <canvas id="canva_craft"></canvas>
-  </div>
 
-  <div class="mdl-cell mdl-cell--6-col menu">
-    <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
-      <div class="mdl-tabs__tab-bar">
-        <a href="#starks-panel" class="mdl-tabs__tab is-active">Olho</a>
-        <a href="#lannisters-panel" class="mdl-tabs__tab">Nariz</a>
-        <a href="#targaryens-panel" class="mdl-tabs__tab">Boca</a>
-      </div>
-      <div class="mdl-tabs__panel is-active" id="starks-panel">
-        <div class="mdl-grid">
-          <div class="mdl-cell mdl-cell--2-col" onclick="olho.src = 'img/olho01.png';"><img src="img/olho01.png" width="100%" /></div>
-          <div class="mdl-cell mdl-cell--2-col" onclick="olho.src = 'img/olho02.png';"><img src="img/olho02.png" width="100%" /></div>
-          <div class="mdl-cell mdl-cell--2-col" onclick="olho.src = 'img/olho03.png';"><img src="img/olho03.png" width="100%" /></div>
-          <div class="mdl-cell mdl-cell--2-col" onclick="olho.src = 'img/olho04.png';"><img src="img/olho04.png" width="100%" /></div>
+    <div class="mdl-cell mdl-cell--6-col menu">
+      <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
+        <div class="mdl-tabs__tab-bar">
+          <a href="#sobrancelha-panel" class="mdl-tabs__tab"><img alt="Sobrancelha" src="img/ico-sobrancelha.png" /></a>
+          <a href="#olho-panel" class="mdl-tabs__tab is-active"><img alt="Olho" src="img/ico-olho.png" /></a>
+          <a href="#nariz-panel" class="mdl-tabs__tab"><img alt="Nariz" src="img/ico-nariz.png" /></a>
+          <a href="#boca-panel" class="mdl-tabs__tab"><img alt="Boca" src="img/ico-boca.png" /></a>
         </div>
-      </div>
-      <div class="mdl-tabs__panel" id="lannisters-panel">
-        <div class="mdl-grid">
-          <div class="mdl-cell mdl-cell--2-col" onclick="nariz.src = 'img/nariz01.png';"><img src="img/nariz01.png" width="100%" /></div>
-          <div class="mdl-cell mdl-cell--2-col" onclick="nariz.src = 'img/nariz02.png';"><img src="img/nariz02.png" width="100%" /></div>
-          <div class="mdl-cell mdl-cell--2-col" onclick="nariz.src = 'img/nariz03.png';"><img src="img/nariz03.png" width="100%" /></div>
-          <div class="mdl-cell mdl-cell--2-col" onclick="nariz.src = 'img/nariz04.png';"><img src="img/nariz04.png" width="100%" /></div>
+        <div class="mdl-tabs__panel" id="sobrancelha-panel">
+          <div class="mdl-grid">
+            <div class="mdl-cell mdl-cell--2-col" onclick="sobrancelha.src = 'img/sobrancelha01.png';"><img id="sobrancelha1" draggable="true" ondragstart="drag(event)" src="img/sobrancelha01.png" width="100%" /></div>
+            <div class="mdl-cell mdl-cell--2-col" onclick="sobrancelha.src = 'img/sobrancelha02.png';"><img id="sobrancelha2" draggable="true" ondragstart="drag(event)" src="img/sobrancelha02.png" width="100%" /></div>
+            <div class="mdl-cell mdl-cell--2-col" onclick="sobrancelha.src = 'img/sobrancelha03.png';"><img id="sobrancelha3" draggable="true" ondragstart="drag(event)" src="img/sobrancelha03.png" width="100%" /></div>
+          </div>
         </div>
-      </div>
-      <div class="mdl-tabs__panel" id="targaryens-panel">
-        <div class="mdl-grid">
-          <div class="mdl-cell mdl-cell--2-col" onclick="boca.src = 'img/boca01.png';"><img src="img/boca01.png" width="100%" /></div>
-          <div class="mdl-cell mdl-cell--2-col" onclick="boca.src = 'img/boca02.png';"><img src="img/boca02.png" width="100%" /></div>
-          <div class="mdl-cell mdl-cell--2-col" onclick="boca.src = 'img/boca03.png';"><img src="img/boca03.png" width="100%" /></div>
-          <div class="mdl-cell mdl-cell--2-col" onclick="boca.src = 'img/boca04.png';"><img src="img/boca04.png" width="100%" /></div>
+        <div class="mdl-tabs__panel is-active" id="olho-panel">
+          <div class="mdl-grid">
+            <div class="mdl-cell mdl-cell--2-col" onclick="olho.src = 'img/olho01.png';"><img id="olhos1" draggable="true" ondragstart="drag(event)" src="img/olho01.png" width="100%" /></div>
+            <div class="mdl-cell mdl-cell--2-col" onclick="olho.src = 'img/olho02.png';"><img id="olhos2"draggable="true" ondragstart="drag(event)" src="img/olho02.png" width="100%" /></div>
+            <div class="mdl-cell mdl-cell--2-col" onclick="olho.src = 'img/olho03.png';"><img id="olhos3"draggable="true" ondragstart="drag(event)" src="img/olho03.png" width="100%" /></div>
+          </div>
+        </div>
+        <div class="mdl-tabs__panel" id="nariz-panel">
+          <div class="mdl-grid">
+            <div class="mdl-cell mdl-cell--2-col" onclick="nariz.src = 'img/nariz01.png';"><img id="nariz1" draggable="true" ondragstart="drag(event)" src="img/nariz01.png" width="100%" /></div>
+            <div class="mdl-cell mdl-cell--2-col" onclick="nariz.src = 'img/nariz02.png';"><img id="nariz2" draggable="true" ondragstart="drag(event)" src="img/nariz02.png" width="100%" /></div>
+            <div class="mdl-cell mdl-cell--2-col" onclick="nariz.src = 'img/nariz03.png';"><img id="nariz3" draggable="true" ondragstart="drag(event)" src="img/nariz03.png" width="100%" /></div>
+          </div>
+        </div>
+        <div class="mdl-tabs__panel" id="boca-panel">
+          <div class="mdl-grid">
+            <div class="mdl-cell mdl-cell--2-col" onclick="boca.src = 'img/boca01.png';"><img id="boca1" draggable="true" ondragstart="drag(event)" src="img/boca01.png" width="100%" /></div>
+            <div class="mdl-cell mdl-cell--2-col" onclick="boca.src = 'img/boca02.png';"><img id="boca2" draggable="true" ondragstart="drag(event)" src="img/boca02.png" width="100%" /></div>
+            <div class="mdl-cell mdl-cell--2-col" onclick="boca.src = 'img/boca03.png';"><img id="boca3" draggable="true" ondragstart="drag(event)" src="img/boca03.png" width="100%" /></div>
+            <div class="mdl-cell mdl-cell--2-col" onclick="boca.src = 'img/boca04.png';"><img id="boca4" draggable="true" ondragstart="drag(event)" src="img/boca04.png" width="100%" /></div>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </div>
-</div>
+
+<canvas id="canva_craft"></canvas>
 
 <script type="text/javascript">
-const canva_craft = document.getElementById("canva_craft");
-canva_craft.height = 250;
-const context = canva_craft.getContext('2d');
+const sobrancelha = document.getElementById("sobrancelhaAtual");
+const olho = document.getElementById("olhosAtual");
+const nariz = document.getElementById("narizAtual");
+const boca = document.getElementById("bocaAtual");
 
-const olho = document.createElement("img");
-const nariz = document.createElement("img");
-const boca = document.createElement("img");
+function allowDrop(ev) {
+  ev.preventDefault();
+}
 
-olho.addEventListener("load", function(){
-  context.clearRect(0, 0, olho.width, olho.height);
+function drag(ev) {
+  ev.dataTransfer.setData("text", ev.target.id);
+}
 
-  context.drawImage(
-    olho, 0, 0, olho.width, olho.height, 0, 0, olho.width, olho.height
-  );
-});
+function drop(ev) {
+  ev.preventDefault();
+  var data = ev.dataTransfer.getData("text");
+  var nodeCopy = document.getElementById(data).cloneNode(true);
+  var src = nodeCopy.src;
+  switch (nodeCopy.id.substring(0,4)) {
+    case "sobr":
+      sobrancelha.src = src;
+      break;
+    case "olho":
+      olho.src = src;
+      break;
+    case "nari":
+      nariz.src = src;
+      break;
+    case "boca":
+      boca.src = src;
+      break;
+    default:
 
-nariz.addEventListener("load", function(){
-  context.clearRect(0, olho.height, nariz.width, nariz.height);
-
-  context.drawImage(
-    nariz, 0, 0, nariz.width, nariz.height, 0, olho.height, nariz.width, nariz.height
-  );
-});
-
-boca.addEventListener("load", function(){
-  context.clearRect(0, ( nariz.height + olho.height ), boca.width, boca.height);
-
-  context.drawImage(
-    boca, 0, 0, boca.width, boca.height, 0, ( nariz.height + olho.height ), boca.width, boca.height
-  );
-});
+  }
+}
 
 download_img = function(el) {
+  const canva_craft = document.createElement("canvas");
+  // const canva_craft = document.getElementById("canva_craft");
+  // canva_craft.width = 800;//document.getElementById("main-drop").offsetHeight;
+  // canva_craft.height = 1100;//document.getElementById("main-drop").offsetHeight;
+  const context = canva_craft.getContext('2d');
+  context.clearRect(0, 0, canva_craft.width, canva_craft.height);
+
+  const cabeca = document.getElementById("cabecaAtual");
+
+  var imgRosto = new Image();
+  imgRosto.src =  cabeca.src;
+  imgRosto.width = 800;
+  imgRosto.height = 1100;
+
+  var imgSobrancelha = new Image();
+  imgSobrancelha.src = sobrancelha.src;
+
+  var imgOlho = new Image();
+  imgOlho.src = olho.src;
+
+  var imgNariz = new Image();
+  imgNariz.src = nariz.src;
+  imgNariz.width = 420;
+  imgNariz.height = 215;
+
+  var imgBoca = new Image();
+  imgBoca.src = boca.src;
+  imgBoca.width = 300;
+  imgBoca.height = 150;
+
+  drawCanv = function() {
+    context.drawImage(imgRosto, 0, 0, imgRosto.width, imgRosto.height);
+    context.drawImage(imgSobrancelha, 115, 310, imgSobrancelha.width, imgSobrancelha.height);
+    context.drawImage(imgOlho, 95, 380, imgOlho.width, imgOlho.height);
+    context.drawImage(imgNariz, 200, 430, imgNariz.width, imgNariz.height);
+    context.drawImage(imgBoca, 250, 650, imgBoca.width, imgBoca.height);
+  }
+  drawCanv();
+
   var image = canva_craft.toDataURL("image/jpg");
   el.href = image;
 };
