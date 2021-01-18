@@ -111,10 +111,16 @@
         </div>
       </div>
     </div>
+
+    <div class="mdl-cell mdl-cell--12-col">
+      <h4 id="result"></h4>
+    </div>
+    <div class="mdl-cell mdl-cell--12-col">
+      <canvas id="canva_craft"></canvas>
+    </div>
   </div>
 </div>
 
-<canvas id="canva_craft"></canvas>
 
 <script type="text/javascript">
 const sobrancelha = document.getElementById("sobrancelhaAtual");
@@ -154,10 +160,9 @@ function drop(ev) {
 }
 
 download_img = function(el) {
-  const canva_craft = document.createElement("canvas");
-  // const canva_craft = document.getElementById("canva_craft");
-  // canva_craft.width = 800;//document.getElementById("main-drop").offsetHeight;
-  // canva_craft.height = 1100;//document.getElementById("main-drop").offsetHeight;
+  const canva_craft = document.getElementById("canva_craft");
+  canva_craft.width = 800;
+  canva_craft.height = 1100;
   const context = canva_craft.getContext('2d');
   context.clearRect(0, 0, canva_craft.width, canva_craft.height);
 
@@ -192,6 +197,8 @@ download_img = function(el) {
     context.drawImage(imgBoca, 250, 650, imgBoca.width, imgBoca.height);
   }
   drawCanv();
+
+  document.getElementById("result").innerHTML = "Modelo Criado";
 
   var image = canva_craft.toDataURL("image/jpg");
   el.href = image;
