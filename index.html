@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -50,13 +49,13 @@
 </style>
 <div class="mdl-layout__content">
   <div class="mdl-grid">
-    <div class="mdl-cell mdl-cell--6-col card-wide mdl-card mdl-shadow--2dp">
+    <div class="mdl-cell mdl-cell--6-col card-wide mdl-card mdl-shadow--2dp" ondrop="drop(event)" ondragover="allowDrop(event)">
       <div class="mdl-card__title">
         <a class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect" id="download" download="myCraft.jpg" onclick="download_img(this);">
           <i class="material-icons">vertical_align_bottom</i>
         </a>
       </div>
-      <div class="mdl-grid" ondrop="drop(event)" ondragover="allowDrop(event)" id="main-drop">
+      <div class="mdl-grid">
         <img id="result-img"/>
         <!-- <canvas id="canva_craft" width="0%" height="0%"></canvas> -->
       </div>
