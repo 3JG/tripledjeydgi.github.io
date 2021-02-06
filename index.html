@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -32,9 +33,7 @@
   
   <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
 </head>
-  
-<body onload="init()">
-<!-- Wide card with share menu button -->
+<body>
 <style>
   html, body {
     margin: auto;
@@ -48,163 +47,175 @@
   }
 </style>
 <div class="mdl-layout__content">
-  <div class="mdl-grid">
-    <div class="mdl-cell mdl-cell--6-col card-wide mdl-card mdl-shadow--2dp" ondrop="drop(event)" ondragover="allowDrop(event)">
-      <div class="mdl-card__title">
-        <a class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect" id="download" download="myCraft.jpg" onclick="download_img(this);">
-          <i class="material-icons">vertical_align_bottom</i>
-        </a>
-      </div>
-      <div class="mdl-grid">
-        <img id="result-img"/>
-        <!-- <canvas id="canva_craft" width="0%" height="0%"></canvas> -->
-      </div>
-    </div>
-
-    <div class="mdl-cell mdl-cell--6-col menu">
-      <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
-        <div class="mdl-tabs__tab-bar">
-          <!-- <a href="#cabeca-panel" class="mdl-tabs__tab">Rosto</a> -->
-          <a href="#sobrancelha-panel" class="mdl-tabs__tab"><img alt="Sobrancelha" src="img/ico-sobrancelha.png" /></a>
-          <a href="#olho-panel" class="mdl-tabs__tab is-active"><img alt="Olho" src="img/ico-olho.png" /></a>
-          <a href="#nariz-panel" class="mdl-tabs__tab"><img alt="Nariz" src="img/ico-nariz.png" /></a>
-          <a href="#boca-panel" class="mdl-tabs__tab"><img alt="Boca" src="img/ico-boca.png" /></a>
-        </div>
-        <div class="mdl-tabs__panel" id="cabeca-panel">
-          <div class="mdl-grid">
-            <div class="mdl-cell mdl-cell--2-col"><img src="img/cabeca.png" width="100%" /></div>
-          </div>
-        </div>
-        <div class="mdl-tabs__panel" id="sobrancelha-panel">
-          <div class="mdl-grid">
-            <div class="mdl-cell mdl-cell--2-col" onclick="sobrancelha.src = 'img/sobrancelha01.png';drawCanva();"><img id="sobrancelha1" draggable="true" ondragstart="drag(event)" src="img/sobrancelha01.png" width="100%" /></div>
-            <div class="mdl-cell mdl-cell--2-col" onclick="sobrancelha.src = 'img/sobrancelha02.png';drawCanva();"><img id="sobrancelha2" draggable="true" ondragstart="drag(event)" src="img/sobrancelha02.png" width="100%" /></div>
-            <div class="mdl-cell mdl-cell--2-col" onclick="sobrancelha.src = 'img/sobrancelha03.png';drawCanva();"><img id="sobrancelha3" draggable="true" ondragstart="drag(event)" src="img/sobrancelha03.png" width="100%" /></div>
-          </div>
-        </div>
-        <div class="mdl-tabs__panel is-active" id="olho-panel">
-          <div class="mdl-grid">
-            <div class="mdl-cell mdl-cell--2-col" onclick="olho.src = 'img/olho01.png';drawCanva();"><img id="olhos1" draggable="true" ondragstart="drag(event)" src="img/olho01.png" width="100%" /></div>
-            <div class="mdl-cell mdl-cell--2-col" onclick="olho.src = 'img/olho02.png';drawCanva();"><img id="olhos2"draggable="true" ondragstart="drag(event)" src="img/olho02.png" width="100%" /></div>
-            <div class="mdl-cell mdl-cell--2-col" onclick="olho.src = 'img/olho03.png';drawCanva();"><img id="olhos3"draggable="true" ondragstart="drag(event)" src="img/olho03.png" width="100%" /></div>
-          </div>
-        </div>
-        <div class="mdl-tabs__panel" id="nariz-panel">
-          <div class="mdl-grid">
-            <div class="mdl-cell mdl-cell--2-col" onclick="nariz.src = 'img/nariz01.png';drawCanva();"><img id="nariz1" draggable="true" ondragstart="drag(event)" src="img/nariz01.png" width="100%" /></div>
-            <div class="mdl-cell mdl-cell--2-col" onclick="nariz.src = 'img/nariz02.png';drawCanva();"><img id="nariz2" draggable="true" ondragstart="drag(event)" src="img/nariz02.png" width="100%" /></div>
-            <div class="mdl-cell mdl-cell--2-col" onclick="nariz.src = 'img/nariz03.png';drawCanva();"><img id="nariz3" draggable="true" ondragstart="drag(event)" src="img/nariz03.png" width="100%" /></div>
-          </div>
-        </div>
-        <div class="mdl-tabs__panel" id="boca-panel">
-          <div class="mdl-grid">
-            <div class="mdl-cell mdl-cell--2-col" onclick="boca.src = 'img/boca01.png';drawCanva();"><img id="boca1" draggable="true" ondragstart="drag(event)" src="img/boca01.png" width="100%" /></div>
-            <div class="mdl-cell mdl-cell--2-col" onclick="boca.src = 'img/boca02.png';drawCanva();"><img id="boca2" draggable="true" ondragstart="drag(event)" src="img/boca02.png" width="100%" /></div>
-            <div class="mdl-cell mdl-cell--2-col" onclick="boca.src = 'img/boca03.png';drawCanva();"><img id="boca3" draggable="true" ondragstart="drag(event)" src="img/boca03.png" width="100%" /></div>
-            <div class="mdl-cell mdl-cell--2-col" onclick="boca.src = 'img/boca04.png';drawCanva();"><img id="boca4" draggable="true" ondragstart="drag(event)" src="img/boca04.png" width="100%" /></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+	<div class="mdl-cell mdl-cell--12-col">
+		<div class="mdl-grid">
+			<div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+				<div class="mdl-color-text--grey-700 mdl-card__supporting-text">
+					<div class="mdl-cell--12-col">
+						<h3 style="text-align:center"><u>Craft Maker</u></h3>
+						<h5 style="text-align:center">SMD - UFC 2020.2</h5>
+						
+						<hr/>
+						
+						<h4>
+							<em>Protótipos de Menu</em>
+						</h4>
+						<p>
+							João Paulo, como designer, encontra-se em dúvida sobre qual menu deve utilizar na tela de personalização do personagem, este menu indicará as opções de características físicas como boca, olhos, nariz, etc.
+						</p>
+						<div class="mdl-grid">
+							<div class="mdl-cell--6-col">
+								<div class="mdl-card">
+	  								<h2 class="mdl-card__title-text">Protótipo 01 - Iconográfico</h2>
+									<div class="mdl-card__supporting-text">
+										Este menu possui ícones minimalistas para identificar de maneira prática as características sem a necessidade de utilizar textos.
+									</div>
+									<div class="mdl-card__actions mdl-card--border">
+										<a class="mdl-chip mdl-chip--contact" href="https://marvelapp.com/prototype/5j52cbe/screen/76112032" target="_blank">
+											<span class="mdl-chip__contact mdl-color--teal mdl-color-text--white">01</span>
+											<span class="mdl-chip__text">Link Protótipo</span>
+										</a>
+									</div>
+								</div>
+							</div>
+							<div class="mdl-cell--6-col">
+								<div class="mdl-card">
+									<h2 class="mdl-card__title-text">Protótipo 02 - Com Imagens</h2>
+									<div class="mdl-card__supporting-text">
+										Este menu possui pequenas imagens ilustrativas para identificar de maneira prática as características exemplificando a sua utilização.
+									</div>
+									<div class="mdl-card__actions mdl-card--border">
+										<a class="mdl-chip mdl-chip--contact" href="https://marvelapp.com/prototype/bii2603/screen/76119312" target="_blank">
+											<span class="mdl-chip__contact mdl-color--teal mdl-color-text--white">02</span>
+											<span class="mdl-chip__text">Link Protótipo</span>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+						<hr/>
+						
+						<h4>
+							<em>Protótipos de Mecânica</em>
+						</h4>
+						<p>
+							O Josué, como programador, possui duas opções de mecânica de seleção de componentes, apenas implementando-as poderá decidir qual é a mais indicada para a aplicação.
+						</p>
+						<div class="mdl-grid">
+							<div class="mdl-cell--6-col">
+								<div class="mdl-card">
+	  								<h2 class="mdl-card__title-text">Protótipo 03 - Drag & Drop</h2>
+									<div class="mdl-card__supporting-text">
+										Será utilizado a mecânica de Drag-Drop para a escolha dos elementos de personalização. Com o arrastar dos elementos para uma determinada área, dando a sensação aos usuários de uma criação propriamente sua, uma sensação de construção bem mais realista.
+									</div>
+									<div class="mdl-card__actions mdl-card--border">
+										<a class="mdl-chip mdl-chip--contact" href="pDD/index.html" target="_blank">
+											<span class="mdl-chip__contact mdl-color--teal mdl-color-text--white">03</span>
+											<span class="mdl-chip__text">Link Protótipo</span>
+										</a>
+									</div>
+								</div>
+							</div>
+							<div class="mdl-cell--6-col">
+								<div class="mdl-card">
+									<h2 class="mdl-card__title-text">Protótipo 04 - Clique</h2>
+									<div class="mdl-card__supporting-text">
+										Utilizando a mecânica de clique para a escolha do elemento, será mais intuitivo ao usuário acostumado com essa mecânica utilizada normalmente em outras aplicações em geral.
+									</div>
+									<div class="mdl-card__actions mdl-card--border">
+										<a class="mdl-chip mdl-chip--contact" href="pClique/index.html" target="_blank">
+											<span class="mdl-chip__contact mdl-color--teal mdl-color-text--white">04</span>
+											<span class="mdl-chip__text">Link Protótipo</span>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+						<hr/>
+						
+						<h4>
+							<em>Protótipos de Estilo</em>
+						</h4>
+						<p>
+							O Graciano, como programador, está em dúvida sobre qual framework css deve utilizar na aplicação.
+						</p>
+						<div class="mdl-grid">
+							<div class="mdl-cell--6-col">
+								<div class="mdl-card">
+	  								<h2 class="mdl-card__title-text">Protótipo 05 - Bootstrap</h2>
+									<div class="mdl-card__supporting-text">
+										Um framework amplamente utilizado por toda a comunidade e com grande facilidade de encontrar material de apoio.
+									</div>
+									<div class="mdl-card__actions mdl-card--border">
+										<a class="mdl-chip mdl-chip--contact" href="pBootstrap/index.html" target="_blank">
+											<span class="mdl-chip__contact mdl-color--teal mdl-color-text--white">05</span>
+											<span class="mdl-chip__text">Link Protótipo</span>
+										</a>
+									</div>
+								</div>
+							</div>
+							<div class="mdl-cell--6-col">
+								<div class="mdl-card">
+									<h2 class="mdl-card__title-text">Protótipo 06 - Material Design Lite / MDL</h2>
+									<div class="mdl-card__supporting-text">
+										É a nova linha de design da Google para o Android, baseada em uma hierarquia simplificada. Os elementos visuais tendem a se assemelhar a componentes de celulares Android.
+									</div>
+									<div class="mdl-card__actions mdl-card--border">
+										<a class="mdl-chip mdl-chip--contact" href="pMDL/index.html" target="_blank">
+											<span class="mdl-chip__contact mdl-color--teal mdl-color-text--white">06</span>
+											<span class="mdl-chip__text">Link Protótipo</span>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+						<hr/>
+						
+						<h4>
+							<em>Protótipos de Hospedagem de Imagens</em>
+						</h4>
+						<p>
+							O Joel, como programador, está em dúvida sobre qual servidor de imagens deve utilizar na aplicação.
+						</p>
+						<div class="mdl-grid">
+							<div class="mdl-cell--6-col">
+								<div class="mdl-card">
+	  								<h2 class="mdl-card__title-text">Protótipo 07 - Imgur</h2>
+									<div class="mdl-card__supporting-text">
+										Imgur é um servidor de hospedagem de imagens bastante famoso e que tem uma abordagem mais social.
+									</div>
+									<div class="mdl-card__actions mdl-card--border">
+										<a class="mdl-chip mdl-chip--contact" href="https://imgur.com/" target="_blank">
+											<span class="mdl-chip__contact mdl-color--teal mdl-color-text--white">07</span>
+											<span class="mdl-chip__text">Link Protótipo</span>
+										</a>
+									</div>
+								</div>
+							</div>
+							<div class="mdl-cell--6-col">
+								<div class="mdl-card">
+									<h2 class="mdl-card__title-text">Protótipo 08 - Cloudinary</h2>
+									<div class="mdl-card__supporting-text">
+										É uma empresa de SaaS(Software as a Service) que tem uma abordagem mais ligada ao serviço de gerenciamento de imagens.
+									</div>
+									<div class="mdl-card__actions mdl-card--border">
+										<a class="mdl-chip mdl-chip--contact" href="https://cloudinary.com/" target="_blank">
+											<span class="mdl-chip__contact mdl-color--teal mdl-color-text--white">08</span>
+											<span class="mdl-chip__text">Link Protótipo</span>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
-
-
-<script type="text/javascript">
-// const canva_craft2 = document.getElementById("canva_craft");
-const canva_craft = document.createElement("canvas");
-canva_craft.width = 800;
-canva_craft.height = 1100;
-const context = canva_craft.getContext('2d');
-
-const cabeca = document.createElement("img");
-const sobrancelha = document.createElement("img");
-const olho = document.createElement("img");
-const nariz = document.createElement("img");
-const boca = document.createElement("img");
-
-init = function(el) {
-  sobrancelha.src = "img/sobrancelha01.png";
-  olho.src = "img/olho01.png";
-  nariz.src = "img/nariz02.png";
-  boca.src = "img/boca04.png";
-  cabeca.src = "img/cabeca.png";
-
-  drawCanva();
-}
-
-drawCanva = function(el) {
-  context.clearRect(0, 0, canva_craft.width, canva_craft.height);
-
-  var imgRosto = new Image();
-  imgRosto.src =  cabeca.src;
-  imgRosto.width = 800;
-  imgRosto.height = 1100;
-
-  var imgSobrancelha = new Image();
-  imgSobrancelha.src = sobrancelha.src;
-
-  var imgOlho = new Image();
-  imgOlho.src = olho.src;
-
-  var imgNariz = new Image();
-  imgNariz.src = nariz.src;
-  imgNariz.width = 420;
-  imgNariz.height = 215;
-
-  var imgBoca = new Image();
-  imgBoca.src = boca.src;
-  imgBoca.width = 300;
-  imgBoca.height = 150;
-
-  context.drawImage(imgRosto, 0, 0, imgRosto.width, imgRosto.height);
-  context.drawImage(imgSobrancelha, 115, 310, imgSobrancelha.width, imgSobrancelha.height);
-  context.drawImage(imgOlho, 95, 380, imgOlho.width, imgOlho.height);
-  context.drawImage(imgNariz, 200, 430, imgNariz.width, imgNariz.height);
-  context.drawImage(imgBoca, 250, 650, imgBoca.width, imgBoca.height);
-
-  imgCanva = document.getElementById("result-img");
-  imgCanva.src = canva_craft.toDataURL("image/jpg");
-  imgCanva.height = screen.height * 0.3;
-}
-
-function allowDrop(ev) {
-  ev.preventDefault();
-}
-
-function drag(ev) {
-  ev.dataTransfer.setData("text", ev.target.id);
-}
-
-function drop(ev) {
-  ev.preventDefault();
-  var data = ev.dataTransfer.getData("text");
-  var nodeCopy = document.getElementById(data).cloneNode(true);
-  var src = nodeCopy.src;
-  switch (nodeCopy.id.substring(0,4)) {
-    case "sobr":
-      sobrancelha.src = src;
-      break;
-    case "olho":
-      olho.src = src;
-      break;
-    case "nari":
-      nariz.src = src;
-      break;
-    case "boca":
-      boca.src = src;
-      break;
-    default:
-  }
-  drawCanva();
-}
-
-download_img = function(el) {
-  drawCanva();
-
-  var image = canva_craft.toDataURL("image/jpg");
-  el.href = image;
-};
-</script>
+<script src="js/material.min.js"></script>
 </body>
 </html>
