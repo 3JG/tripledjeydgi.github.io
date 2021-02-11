@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="keywords" content="ufc, papercraft, face maker">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="author" content="UFC - SMD - Projeto Integrado 2 - 2020.2">
+  <meta name="description" content="Craft Maker - Criador de Papercraft personalizado">
+  <title>Craft Maker</title>
+
+  <meta itemprop="name" content="Craft Maker">
+  <meta itemprop="description" content="Craft Maker - Criador de Papercraft personalizado - UFC - SMD - Projeto Integrado 2 - 2020.2">
+  <meta itemprop="image" content="img/favicon.png">
+
+
+  <link rel="apple-touch-icon" sizes="72x72" href="img/favicon.png">
+  <link rel="apple-touch-icon" sizes="128x128" href="img/favicon.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="img/favicon.png">
+  <link rel="apple-touch-icon" sizes="192x192" href="img/favicon.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="img/favicon.png">
+  <link rel="icon" type="image/x-icon" sizes="16x16" href="img/favicon.png">
+
+  <!-- theme-color -->
+  <meta name="theme-color" content="#cacaca50" />
+  <!-- end-theme-color -->
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+  <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+  
+  <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
+</head>
+<body onload="init()">
+
+  <canvas id="canva_craft"></canvas>
+
+<img src="rosto.svg" width="250" />
+<img src="olho01.svg" width="250" />
+<img src="boca01.svg" width="250" />
+<img src="nariz01.svg" width="250" />
+<img src="sombrancelha01.svg" width="250" />
+
+<script type="text/javascript">
+const canva_craft = document.getElementById("canva_craft");
+canva_craft.width = 800;
+canva_craft.height = 800;
+
+const context = canva_craft.getContext('2d');
+
+const cabeca = document.createElement("img");
+const sobrancelha = document.createElement("img");
+const olho = document.createElement("img");
+const nariz = document.createElement("img");
+const boca = document.createElement("img");
+
+init = function(el) {
+  cabeca.src = "rosto.svg";
+  sobrancelha.src = "sombrancelha01.svg";
+  olho.src = "olho01.svg";
+  nariz.src = "nariz01.svg";
+  boca.src = "boca01.svg";
+
+  drawCanva();
+}
+drawCanva = function(el) {
+  var imgRosto = new Image();
+  imgRosto.src =  cabeca.src;
+  imgRosto.width = 800;
+  imgRosto.height = 800;
+
+  var imgSobrancelha = new Image();
+  imgSobrancelha.src = sobrancelha.src;
+  imgSobrancelha.width = 800;
+  imgSobrancelha.height = 800;
+
+  var imgOlho = new Image();
+  imgOlho.src = olho.src;
+  imgOlho.width = 800;
+  imgOlho.height = 800;
+
+  var imgNariz = new Image();
+  imgNariz.src = nariz.src;
+  imgNariz.width = 800;
+  imgNariz.height = 800;
+
+  var imgBoca = new Image();
+  imgBoca.src = boca.src;
+  imgBoca.width = 800;
+  imgBoca.height = 800;
+
+  context.drawImage(imgRosto, 0, 0, imgRosto.width, imgRosto.height);
+  context.drawImage(imgSobrancelha, 0, 0, imgSobrancelha.width, imgSobrancelha.height);
+  context.drawImage(imgOlho, 0, 0, imgOlho.width, imgOlho.height);
+  context.drawImage(imgNariz, 0, 0, imgNariz.width, imgNariz.height);
+  context.drawImage(imgBoca, 0, 0, imgBoca.width, imgBoca.height);
+}
+</script>
+</body>
+</html>
