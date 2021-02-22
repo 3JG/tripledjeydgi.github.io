@@ -1,0 +1,577 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xml:space="preserve"
+   width="297mm"
+   height="210mm"
+   style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+   viewBox="0 0 297 210"
+   version="1.1"
+   id="svg206"
+   sodipodi:docname="molde.svg"
+   inkscape:version="1.0.2 (e86c870879, 2021-01-15)"><title
+   id="title1035">Molde</title><metadata
+   id="metadata210"><rdf:RDF><cc:Work
+       rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
+         rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title>Molde</dc:title></cc:Work></rdf:RDF></metadata><sodipodi:namedview
+   pagecolor="#ffffff"
+   bordercolor="#666666"
+   borderopacity="1"
+   objecttolerance="10"
+   gridtolerance="10"
+   guidetolerance="10"
+   inkscape:pageopacity="0"
+   inkscape:pageshadow="2"
+   inkscape:window-width="1366"
+   inkscape:window-height="705"
+   id="namedview208"
+   showgrid="false"
+   inkscape:zoom="0.6778373"
+   inkscape:cx="561.25984"
+   inkscape:cy="418.89888"
+   inkscape:window-x="-8"
+   inkscape:window-y="-8"
+   inkscape:window-maximized="1"
+   inkscape:current-layer="_132570544" />
+ <defs
+   id="defs113">
+  <style
+   type="text/css"
+   id="style111">
+   <![CDATA[
+    .str0 {stroke:aqua;stroke-width:0.2}
+    .fil0 {fill:none}
+    .fil1 {fill:black}
+   ]]>
+  </style>
+ </defs>
+ <g
+   id="Camada_x0020_1">
+  <rect
+   class="fil0"
+   width="297"
+   height="210"
+   id="rect115" />
+  <g
+   id="_132403656"
+   style="stroke:#000000;stroke-opacity:1">
+   <rect
+   id="_132246472"
+   class="fil0 str0"
+   x="231.5"
+   y="173"
+   width="13"
+   height="13"
+   style="stroke:#000000;stroke-opacity:1" />
+   <polygon
+   id="_130405240"
+   class="fil1 str0"
+   points="231.5,186 234.25,186 234.25,186.5 241.75,186.5 241.75,186 244.5,186 244.5,190.5 231.5,190.5 "
+   style="stroke:#000000;stroke-opacity:1" />
+   <polygon
+   id="_132571792"
+   class="fil1 str0"
+   points="225.5,176 231,176 231,177 231.5,177 231.5,181 231,181 231,182 225.5,182 "
+   style="stroke:#000000;stroke-opacity:1" />
+   <rect
+   id="_132571816"
+   class="fil0 str0"
+   x="244.5"
+   y="173"
+   width="13.0001"
+   height="13"
+   style="stroke:#000000;stroke-opacity:1" />
+   <rect
+   id="_132405264"
+   class="fil0 str0"
+   x="257.5"
+   y="173"
+   width="13.0001"
+   height="13"
+   style="stroke:#000000;stroke-opacity:1" />
+   <rect
+   id="_131088880"
+   class="fil0 str0"
+   x="270.5"
+   y="173"
+   width="13.0001"
+   height="13"
+   style="stroke:#000000;stroke-opacity:1" />
+   <polygon
+   id="_132568384"
+   class="fil1 str0"
+   points="283.5,186 283.5,183.25 284,183.25 284,175.75 283.5,175.75 283.5,173 288,173 288,186 "
+   style="stroke:#000000;stroke-opacity:1" />
+   <polygon
+   id="_132247480"
+   class="fil0 str0"
+   points="244.5,161 257.5,161 257.5,173 244.5,173 244.5,172.5 237,172.5 237,161 "
+   style="stroke:#000000;stroke-opacity:1" />
+   <rect
+   id="_132403248"
+   class="fil0 str0"
+   x="257.5"
+   y="161"
+   width="13.0001"
+   height="12"
+   style="stroke:#000000;stroke-opacity:1" />
+   <polygon
+   id="_132403200"
+   class="fil0 str0"
+   points="283.5,161 270.5,161 270.5,173 283.5,173 283.5,172.5 291,172.5 291,161 "
+   style="stroke:#000000;stroke-opacity:1" />
+   <polygon
+   id="_132569248"
+   class="fil1 str0"
+   points="283.5,161 280.75,161 280.75,160.5 273.25,160.5 273.25,161 270.5,161 270.5,156.5 283.5,156.5 "
+   style="stroke:#000000;stroke-opacity:1" />
+   <rect
+   id="_132570232"
+   class="fil0 str0"
+   x="244.5"
+   y="148"
+   width="13.0001"
+   height="13"
+   style="stroke:#000000;stroke-opacity:1" />
+   <rect
+   id="_132570688"
+   class="fil0 str0"
+   x="257.5"
+   y="186"
+   width="13.0001"
+   height="13"
+   style="stroke:#000000;stroke-opacity:1" />
+   <polygon
+   id="_132350856"
+   class="fil1 str0"
+   points="261,205 261,199.5 262,199.5 262,199 266,199 266,199.5 267,199.5 267,205 "
+   style="stroke:#000000;stroke-opacity:1" />
+   <polygon
+   id="_132247456"
+   class="fil1 str0"
+   points="254,142 254,147.5 253,147.5 253,148 249,148 249,147.5 248,147.5 248,142 "
+   style="stroke:#000000;stroke-opacity:1" />
+  </g>
+  <g
+   id="_132402672"
+   style="stroke:#000000;stroke-opacity:1">
+   <rect
+   id="_131088736"
+   class="fil0 str0"
+   x="22.5002"
+   y="161"
+   width="33.9997"
+   height="43.0001"
+   style="stroke:#000000;stroke-opacity:1" />
+   <rect
+   id="_130836192"
+   class="fil0 str0"
+   x="56.4999"
+   y="161"
+   width="33.9998"
+   height="33.9999"
+   style="stroke:#000000;stroke-opacity:1" />
+   <polygon
+   id="_132349920"
+   class="fil1 str0"
+   points="31,152.5 48,152.5 56.5,161 49,161 49,160.5 30,160.5 30,161 22.5,161 "
+   style="stroke:#000000;stroke-opacity:1" />
+   <polygon
+   id="_132403584"
+   class="fil1 str0"
+   points="14,186.5 14,169.5 22.5,161 22.5,168.5 22,168.5 22,187.5 22.5,187.5 22.5,195 "
+   style="stroke:#000000;stroke-opacity:1" />
+   <polygon
+   id="_132403224"
+   class="fil1 str0"
+   points="47.9999,148.5 48.0003,139.5 56,135 56,138 56.5,138 56.5,150 56,150 56,153 "
+   style="stroke:#000000;stroke-opacity:1" />
+   <rect
+   id="_132572032"
+   class="fil0 str0"
+   x="56.4999"
+   y="127"
+   width="33.9998"
+   height="33.9999"
+   style="stroke:#000000;stroke-opacity:1" />
+   <polygon
+   id="_132403296"
+   class="fil1 str0"
+   points="68.9997,118.5 78.0002,118.5 82.5,126.5 79.5,126.5 79.5,127 67.5,127 67.5,126.5 64.5,126.5 "
+   style="stroke:#000000;stroke-opacity:1" />
+   <polygon
+   id="_132247048"
+   class="fil1 str0"
+   points="99.0001,139.5 98.9997,148.5 91,153 91,150 90.5,150 90.5,138 91,138 91,135 "
+   style="stroke:#000000;stroke-opacity:1" />
+   <rect
+   id="_131089240"
+   class="fil0 str0"
+   x="90.5002"
+   y="161"
+   width="33.9997"
+   height="43.0001"
+   style="stroke:#000000;stroke-opacity:1" />
+   <rect
+   id="_130836240"
+   class="fil0 str0"
+   x="124.5"
+   y="161"
+   width="33.9998"
+   height="33.9999"
+   style="stroke:#000000;stroke-opacity:1" />
+   <polygon
+   id="_132405360"
+   class="fil1 str0"
+   points="167,173.5 167,182.5 159,187 159,184 158.5,184 158.5,172 159,172 159,169 "
+   style="stroke:#000000;stroke-opacity:1" />
+   <polygon
+   id="_132569920"
+   class="fil1 str0"
+   points="99,152.5 116,152.5 124.5,161 117,161 117,160.5 98,160.5 98,161 90.5,161 "
+   style="stroke:#000000;stroke-opacity:1" />
+   <polygon
+   id="_132403440"
+   class="fil1 str0"
+   points="133,152.5 150,152.5 158.5,161 151,161 151,160.5 132,160.5 132,161 124.5,161 "
+   style="stroke:#000000;stroke-opacity:1" />
+  </g>
+  <g
+   id="_131088904"
+   style="stroke:#000000;stroke-opacity:1">
+   <rect
+   id="_132246592"
+   class="fil0 str0"
+   x="69.9995"
+   y="69.9998"
+   width="53.0003"
+   height="36.9997"
+   style="stroke:#000000;stroke-opacity:1" />
+   <rect
+   id="_132350112"
+   class="fil0 str0"
+   x="176"
+   y="16.9996"
+   width="52.9998"
+   height="53.0004"
+   style="stroke:#000000;stroke-opacity:1" />
+   <polygon
+   id="_132350352"
+   class="fil1 str0"
+   points="85.2497,58.9999 107.75,58.9999 119,69.9999 109,69.9999 109,69 83.9998,69 83.9998,69.9999 73.9998,69.9999 "
+   style="stroke:#000000;stroke-opacity:1" />
+   <polygon
+   id="_132247168"
+   class="fil1 str0"
+   points="197,6 208,6 213.5,16 210,16 210,17 195,17 195,16 191.5,16 "
+   style="stroke:#000000;stroke-opacity:1" />
+   <rect
+   id="_132350208"
+   class="fil0 str0"
+   x="123"
+   y="69.9998"
+   width="53.0003"
+   height="36.9997"
+   style="stroke:#000000;stroke-opacity:1" />
+   <rect
+   id="_132350256"
+   class="fil0 str0"
+   x="176"
+   y="69.9998"
+   width="53.0003"
+   height="36.9997"
+   style="stroke:#000000;stroke-opacity:1" />
+   <rect
+   id="_131089192"
+   class="fil0 str0"
+   x="229"
+   y="69.9998"
+   width="53.0003"
+   height="36.9997"
+   style="stroke:#000000;stroke-opacity:1" />
+   <rect
+   id="_132246928"
+   class="fil0 str0"
+   x="176"
+   y="107"
+   width="52.9998"
+   height="53.0004"
+   style="stroke:#000000;stroke-opacity:1" />
+   <polygon
+   id="_132405408"
+   class="fil1 str0"
+   points="138.25,58.9999 160.75,58.9999 172,69.9999 162,69.9999 162,69 137,69 137,69.9999 127,69.9999 "
+   style="stroke:#000000;stroke-opacity:1" />
+   <polygon
+   id="_132246256"
+   class="fil1 str0"
+   points="107.75,118 85.2497,118 73.9998,107 83.9998,107 83.9998,108 109,108 109,107 119,107 "
+   style="stroke:#000000;stroke-opacity:1" />
+   <polygon
+   id="_130835928"
+   class="fil1 str0"
+   points="160.75,118 138.25,118 127,107 137,107 137,108 162,108 162,107 172,107 "
+   style="stroke:#000000;stroke-opacity:1" />
+   <polygon
+   id="_131088448"
+   class="fil1 str0"
+   points="266.75,118 244.25,118 233,107 243,107 243,108 268,108 268,107 278,107 "
+   style="stroke:#000000;stroke-opacity:1" />
+   <polygon
+   id="_132350280"
+   class="fil1 str0"
+   points="291,79.2498 291,97.75 282,107 282,98.9999 283,98.9999 283,77.9999 282,77.9999 282,69.9999 "
+   style="stroke:#000000;stroke-opacity:1" />
+   <polygon
+   id="_132571720"
+   class="fil1 str0"
+   points="244.25,58.9997 266.75,58.9997 278,69.9997 268,69.9997 268,68.9998 243,68.9998 243,69.9997 233,69.9997 "
+   style="stroke:#000000;stroke-opacity:1" />
+   <polygon
+   id="_132349992"
+   class="fil1 str0"
+   points="165,49.0001 165,38 175,32.5 175,36 176,36 176,51 175,51 175,54.5 "
+   style="stroke:#000000;stroke-opacity:1" />
+   <polygon
+   id="_132350472"
+   class="fil1 str0"
+   points="240,37.9999 240,49 230,54.5 230,51 229,51 229,36 230,36 230,32.5 "
+   style="stroke:#000000;stroke-opacity:1" />
+   <polygon
+   id="_130836144"
+   class="fil1 str0"
+   points="58.9999,94 58.9999,82.9999 68.9999,77.4999 68.9999,80.9999 69.9999,80.9999 69.9999,95.9999 68.9999,95.9999 68.9999,99.4999 "
+   style="stroke:#000000;stroke-opacity:1" />
+   <polygon
+   id="_132403488"
+   class="fil1 str0"
+   points="165,139 165,128 175,122.5 175,126 176,126 176,141 175,141 175,144.5 "
+   style="stroke:#000000;stroke-opacity:1" />
+   <polygon
+   id="_132402120"
+   class="fil1 str0"
+   points="240,128 240,139 230,144.5 230,141 229,141 229,126 230,126 230,122.5 "
+   style="stroke:#000000;stroke-opacity:1" />
+   <polygon
+   id="_132404976"
+   class="fil1 str0"
+   points="208,171 197,171 191.5,161 195,161 195,160 210,160 210,161 213.5,161 "
+   style="stroke:#000000;stroke-opacity:1" />
+  </g>
+  <g
+   id="_132403272"
+   style="stroke:#000000;stroke-opacity:1">
+   <rect
+   id="_132569560"
+   class="fil0 str0"
+   x="6"
+   y="49.4999"
+   width="13"
+   height="13"
+   style="stroke:#000000;stroke-opacity:1" />
+   <rect
+   id="_131088832"
+   class="fil0 str0"
+   x="6.0453"
+   y="62.4999"
+   width="13"
+   height="13"
+   style="stroke:#000000;stroke-opacity:1" />
+   <rect
+   id="_132571480"
+   class="fil0 str0"
+   x="6.0453"
+   y="75.5"
+   width="18.5"
+   height="25.5"
+   style="stroke:#000000;stroke-opacity:1" />
+   <rect
+   id="_132246520"
+   class="fil0 str0"
+   x="6.0453"
+   y="101"
+   width="13"
+   height="13"
+   style="stroke:#000000;stroke-opacity:1" />
+   <rect
+   id="_132350976"
+   class="fil0 str0"
+   x="6.0453"
+   y="114"
+   width="13"
+   height="13"
+   style="stroke:#000000;stroke-opacity:1" />
+   <rect
+   id="_132570352"
+   class="fil0 str0"
+   x="6.0453"
+   y="127"
+   width="18.5"
+   height="25.5"
+   style="stroke:#000000;stroke-opacity:1" />
+   <polygon
+   id="_132571096"
+   class="fil1 str0"
+   points="6.0453,152.5 8.7953,152.5 8.7953,153 16.2953,153 16.2953,152.5 19.0453,152.5 19.0453,157 6.0453,157 "
+   style="stroke:#000000;stroke-opacity:1" />
+   <polygon
+   id="_132350424"
+   class="fil1 str0"
+   points="15.5,43.5001 15.5,49.0001 14.5,49.0001 14.5,49.5 10.5,49.5 10.5,49.0001 9.5,49.0001 9.5,43.5001 "
+   style="stroke:#000000;stroke-opacity:1" />
+  </g>
+  <g
+   id="_132570544">
+   <rect
+   id="_132791808"
+   class="fil0 str0"
+   x="69.4999"
+   y="36"
+   width="13.0001"
+   height="13"
+   style="stroke:#000000;stroke-opacity:1" />
+   <polygon
+   id="_132792216"
+   class="fil1 str0"
+   points="82.5,49 79.75,49 79.75,49.5 72.25,49.5 72.25,49 69.5,49 69.5,53.5 82.5,53.5 "
+   style="stroke:#000000;stroke-opacity:1" />
+   <polygon
+   id="_132791424"
+   class="fil1 str0"
+   points="88.4999,39 82.9999,39 82.9999,40 82.5,40 82.5,44 82.9999,44 82.9999,45 88.4999,45 "
+   style="stroke:#000000;stroke-opacity:1" />
+   <rect
+   id="_132791328"
+   class="fil0 str0"
+   x="56.4999"
+   y="36"
+   width="13.0001"
+   height="13"
+   style="stroke:#000000;stroke-opacity:1" />
+   <rect
+   id="_132791280"
+   class="fil0 str0"
+   x="43.4999"
+   y="36"
+   width="13.0001"
+   height="13"
+   style="stroke:#000000;stroke-opacity:1" />
+   <rect
+   id="_132791160"
+   class="fil0 str0"
+   x="30.4999"
+   y="36"
+   width="13.0001"
+   height="13"
+   style="stroke:#000000;stroke-opacity:1" />
+   <polygon
+   id="_132791568"
+   class="fil1 str0"
+   points="30.5,49.0001 30.5,46.2501 30,46.2501 30,38.7501 30.5,38.7501 30.5,36.0001 26,36.0001 26,49.0001 "
+   style="stroke:#000000;stroke-opacity:1" />
+   <polygon
+   id="_132247312"
+   class="fil0 str0"
+   points="69.5,24 56.5,24 56.5,36 69.5,36 69.5,35.5001 77,35.5001 77,24 "
+   style="stroke:#000000;stroke-opacity:1" />
+   <rect
+   id="_131087872"
+   class="fil0 str0"
+   x="43.4999"
+   y="24"
+   width="13.0001"
+   height="12"
+   style="fill:none;stroke:#000000;stroke-opacity:1" />
+   <polygon
+   id="_132350184"
+   class="fil0 str0"
+   points="30.5,24 43.5,24 43.5,36 30.5,36 30.5,35.5001 23,35.5001 23,24 "
+   style="stroke:#000000;stroke-opacity:1" />
+   <polygon
+   id="_132402744"
+   class="fil1 str0"
+   points="30.4999,24 33.2499,24 33.2499,23.5 40.7499,23.5 40.7499,24 43.4999,24 43.4999,19.5 30.4999,19.5 "
+   style="stroke:#000000;stroke-opacity:1" />
+   <rect
+   id="_132403680"
+   class="fil0 str0"
+   x="56.4999"
+   y="11"
+   width="13.0001"
+   height="13"
+   style="stroke:#000000;stroke-opacity:1" />
+   <rect
+   id="_132403608"
+   class="fil0 str0"
+   x="43.4999"
+   y="49"
+   width="13.0001"
+   height="13"
+   style="stroke:#000000;stroke-opacity:1" />
+   <polygon
+   id="_132404568"
+   class="fil1 str0"
+   points="52.9999,67.9999 52.9999,62.4999 51.9999,62.4999 51.9999,62 47.9999,62 47.9999,62.4999 46.9999,62.4999 46.9999,67.9999 "
+   style="stroke:#000000;stroke-opacity:1" />
+   <polygon
+   id="_130835592"
+   class="fil1 str0"
+   points="59.9999,5.0001 59.9999,10.5001 60.9999,10.5001 60.9999,11 64.9999,11 64.9999,10.5001 65.9999,10.5001 65.9999,5.0001 "
+   style="stroke:#000000;stroke-opacity:1" />
+  </g>
+  <line
+   class="fil0 str0"
+   x1="260.5"
+   y1="199"
+   x2="260.5"
+   y2="193"
+   id="line193"
+   style="stroke:#000000;stroke-opacity:1" />
+  <line
+   class="fil0 str0"
+   x1="267.5"
+   y1="199"
+   x2="267.5"
+   y2="193"
+   id="line195"
+   style="stroke:#000000;stroke-opacity:1" />
+  <line
+   class="fil0 str0"
+   x1="264"
+   y1="199"
+   x2="264"
+   y2="193"
+   id="line197"
+   style="stroke:#000000;stroke-opacity:1" />
+  <line
+   class="fil0 str0"
+   x1="46.4998"
+   y1="62"
+   x2="46.4998"
+   y2="56"
+   id="line199"
+   style="stroke:#000000;stroke-opacity:1" />
+  <line
+   class="fil0 str0"
+   x1="53.4998"
+   y1="62"
+   x2="53.4998"
+   y2="56"
+   id="line201"
+   style="stroke:#000000;stroke-opacity:1" />
+  <line
+   class="fil0 str0"
+   x1="49.9999"
+   y1="62"
+   x2="49.9999"
+   y2="56"
+   id="line203"
+   style="stroke:#000000;stroke-opacity:1" />
+ </g>
+</svg>
