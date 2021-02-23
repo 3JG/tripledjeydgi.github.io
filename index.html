@@ -45,6 +45,13 @@
     />
 
     <style type="text/css">
+      .menu-active img {
+        border-color: blue;
+        border-style: dotted;
+        border-width: thin;
+        border-radius: 50%;
+      }
+
       .display-block {
         display: block;
       }
@@ -93,25 +100,25 @@
         <div class="col-12 col-xl-6">
           <div id="placeholder" style="padding: 2%; min-height: 500px">
             <div class="row" style="padding: 2%; text-align: center">
-              <div class="col" onclick="selectMenuElement('sombrancelha')">
+              <div class="col menu-active" onclick="selectMenuElement('sombrancelha', this)">
                 <img
                   src="img/icone/ico-sobrancelha.svg"
                   style="width: 32px; height: 32px"
                 />
               </div>
-              <div class="col" onclick="selectMenuElement('olho')">
+              <div class="col" onclick="selectMenuElement('olho', this)">
                 <img
                   src="img/icone/ico-olho.svg"
                   style="width: 32px; height: 32px"
                 />
               </div>
-              <div class="col" onclick="selectMenuElement('nariz')">
+              <div class="col" onclick="selectMenuElement('nariz', this)">
                 <img
                   src="img/icone/ico-nariz.svg"
                   style="width: 32px; height: 32px"
                 />
               </div>
-              <div class="col" onclick="selectMenuElement('boca')">
+              <div class="col" onclick="selectMenuElement('boca', this)">
                 <img
                   src="img/icone/ico-boca.svg"
                   style="width: 32px; height: 32px"
@@ -264,7 +271,12 @@
         });
       });
 
-      function selectMenuElement(classItem) {
+      function selectMenuElement(classItem, el) {
+        document.querySelectorAll(".menu-active").forEach(function(element) {
+          element.classList.remove("menu-active");
+        });
+        el.classList.add("menu-active");
+
         document.querySelectorAll(".display-block").forEach(function(element) {
           element.classList.add("display-none");
           element.classList.remove("display-block");
