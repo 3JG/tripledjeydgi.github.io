@@ -71,7 +71,9 @@
 
   <body style="background-color: lightgray" onload="init()">
     <div class="container-fluid">
-      <img class="btn-download" src="img/icone/download.svg" width="32" onclick="download_img(this);" download="myCraft.jpg"/>
+      <a class="btn-download" onclick="download_img(this);" download="myCraft.jpg">
+        <img src="img/icone/download.svg" width="32" />
+      </a>
       <div class="row" style="margin-top: 15px">
         <!---canvas-->
         <div class="col-12 col-xl-6">
