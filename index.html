@@ -258,6 +258,7 @@
         element.addEventListener('click', function() {
           imgURL = url + "img/preview/" + element.dataset.element + element.dataset.id + ".svg";
           imgURLDown = url + "img/molde/" + element.dataset.element + element.dataset.id + ".svg";
+
           elementsArray[element.dataset.element].src = imgURL;
           elementsArray[element.dataset.element + 'Down'].src = imgURLDown;
         });
