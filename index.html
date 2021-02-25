@@ -217,6 +217,8 @@
       function init() {
         elementsArray['molde'] = new Image();
         elementsArray['molde'].src = url + "img/preview/molde.svg";
+        elementsArray['backDown'] = new Image();
+        elementsArray['backDown'].src = url + "img/molde/back.svg";
         elementsArray['moldeDown'] = new Image();
         elementsArray['moldeDown'].src = url + "img/molde/molde.svg";
         elementsArray['corpoDown'] = new Image();
@@ -253,6 +255,8 @@
         craft.width = 1200;
         craft.height = 800;
         const context_craft = craft.getContext('2d');
+
+        context_craft.drawImage(elementsArray['backDown'], 0, 0, craft.width, craft.height);
 
         context_craft.drawImage(elementsArray['sombrancelhaDown'], 0, 0, craft.width, craft.height);
         context_craft.drawImage(elementsArray['olhoDown'], 0, 0, craft.width, craft.height);
