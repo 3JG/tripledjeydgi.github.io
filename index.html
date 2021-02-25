@@ -99,6 +99,7 @@
         <!--menu-de-seleção-->
         <div class="col-12 col-xl-6">
           <div id="placeholder" style="padding: 2%; min-height: 500px">
+            <!-- Cor: <input type="color"/> -->
             <div class="row" style="padding: 2%; text-align: center">
               <div class="col menu-active" onclick="selectMenuElement('sombrancelha', this)">
                 <img
@@ -206,7 +207,7 @@
       function drawCanva() {
         context.clearRect(0, 0, canva_craft.width, canva_craft.height);
 
-        context.drawImage(elementsArray['rosto'], 0, 0, canva_craft.width, canva_craft.height);
+        context.drawImage(elementsArray['molde'], 0, 0, canva_craft.width, canva_craft.height);
         context.drawImage(elementsArray['sombrancelha'], 0, 0, canva_craft.width, canva_craft.height);
         context.drawImage(elementsArray['olho'], 0, 0, canva_craft.width, canva_craft.height);
         context.drawImage(elementsArray['nariz'], 0, 0, canva_craft.width, canva_craft.height);
@@ -214,10 +215,12 @@
       }
 
       function init() {
-        elementsArray['rosto'] = new Image();
-        elementsArray['rosto'].src = url + "img/preview/molde.svg";
-        elementsArray['rostoDown'] = new Image();
-        elementsArray['rostoDown'].src = url + "img/molde/molde.svg";
+        elementsArray['molde'] = new Image();
+        elementsArray['molde'].src = url + "img/preview/molde.svg";
+        elementsArray['moldeDown'] = new Image();
+        elementsArray['moldeDown'].src = url + "img/molde/molde.svg";
+        elementsArray['corpoDown'] = new Image();
+        elementsArray['corpoDown'].src = url + "img/molde/corpo.svg";
 
         elementsArray['sombrancelha'] = new Image();
         elementsArray['sombrancelhaDown'] = new Image();
@@ -251,11 +254,13 @@
         craft.height = 800;
         const context_craft = craft.getContext('2d');
 
-        context_craft.drawImage(elementsArray['rostoDown'], 0, 0, craft.width, craft.height);
         context_craft.drawImage(elementsArray['sombrancelhaDown'], 0, 0, craft.width, craft.height);
         context_craft.drawImage(elementsArray['olhoDown'], 0, 0, craft.width, craft.height);
         context_craft.drawImage(elementsArray['narizDown'], 0, 0, craft.width, craft.height);
         context_craft.drawImage(elementsArray['bocaDown'], 0, 0, craft.width, craft.height);
+        context_craft.drawImage(elementsArray['corpoDown'], 0, 0, craft.width, craft.height);
+
+        context_craft.drawImage(elementsArray['moldeDown'], 0, 0, craft.width, craft.height);
 
         var image = craft.toDataURL("image/jpg");
         el.href = image;
