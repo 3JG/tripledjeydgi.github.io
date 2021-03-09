@@ -1,0 +1,89 @@
+body {
+    --primary: #458cb5;
+    background: url(../img/waves.svg);
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+}
+
+@media (max-width: 800px) {
+    body {
+        background-size: 50em auto;
+    }
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+
+.nav-item:hover{
+    background-color: #4a99c630;
+}
+
+.nav-item-first, .nav-item-first:hover{
+    background-color: var(--primary);
+}
+
+.nav-item .nav-link {
+    padding: .2em;
+    margin: .2em;
+    margin-left: 15%;
+    font-weight: 500;
+    color: var(--primary);
+}
+
+.logo-container {
+    text-align: center;
+}
+
+.logo {
+    margin: 3em;
+    width: 25%;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+}
+
+section h1 {
+    color: var(--primary);
+    text-align: center;
+    margin-top: 1em;
+}
+
+section p {
+    width: 80%;
+}
+
+.box-canvas {
+    background-color: white;
+    padding: 2%;
+    min-height: 300px;
+    box-shadow: 4px 4px 8px -1px #848484;
+}
+
+.menu-create {
+    padding: 2%;
+    text-align: center;
+}
+
+.menu-create .menu-item img {
+    width: 32px;
+    height: 32px;
+}
+
+.menu-create .menu-active {
+    border-color: var(--primary);
+    border-style: dotted;
+    border-width: thin;
+    border-radius: 50%;
+}
+
+.box-elements {
+    text-align: center;
+    margin-top: 5%;
+}
+
+.element-craft {
+    width: 60px;
+    height: 35px;
+}
