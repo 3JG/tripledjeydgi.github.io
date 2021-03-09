@@ -1,301 +1,70 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
+<head>
     <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
     <meta name="keywords" content="ufc, papercraft, face maker" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, maximum-scale=1"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="UFC - SMD - Projeto Integrado 2 - 2020.2" />
-    <meta
-      name="description"
-      content="Craft Maker - Criador de Papercraft personalizado"
-    />
-    <title>Craft Maker</title>
+    <meta name="description" content="Craft Maker - Criador de Papercraft personalizado" />
 
     <meta itemprop="name" content="Craft Maker" />
-    <meta
-      itemprop="description"
-      content="Craft Maker - Criador de Papercraft personalizado - UFC - SMD - Projeto Integrado 2 - 2020.2"
-    />
-    <meta itemprop="image" content="img/favicon.png" />
+    <meta itemprop="description" content="Craft Maker - Criador de Papercraft personalizado - UFC - SMD - Projeto Integrado 2 - 2020.2" />
 
-    <link rel="apple-touch-icon" sizes="72x72" href="img/favicon.png" />
-    <link rel="apple-touch-icon" sizes="128x128" href="img/favicon.png" />
-    <link rel="apple-touch-icon" sizes="152x152" href="img/favicon.png" />
-    <link rel="apple-touch-icon" sizes="192x192" href="img/favicon.png" />
-    <link rel="icon" type="image/png" sizes="192x192" href="img/favicon.png" />
-    <link rel="icon" type="image/x-icon" sizes="16x16" href="img/favicon.png" />
+    <title>Craft Maker</title>
+    <link rel="icon" href="assets/img/favicon.svg">
 
-    <!-- theme-color -->
-    <meta name="theme-color" content="#cacaca50" />
-    <!-- end-theme-color -->
+    <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/vendor/bootstrap-icons/bootstrap-icons.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar fixed-top navbar-primary">
+            <div class="container-fluid">
+                <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="true" aria-label="Toggle navigation">
+                    <i class="bi bi-list"></i>
+                </button>
+                <div class="collapse navbar-collapse bg-light" id="navbarContent">
+                    <ul class="navbar-nav">
+                        <li class="nav-item nav-item-first"><a class="nav-link"></a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html"><i class="bi bi-house-fill"></i> Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="creativity.html"><i class="bi bi-emoji-heart-eyes"></i> Criar Meu Craft</a></li>
 
-    <!-- Bootstrap CSS -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
-      crossorigin="anonymous"
-    />
+                        <li class="nav-item"><a class="nav-link" href="register.html"><i class="bi bi-journal-plus"></i> Cadastrar</a></li>
+                        <li class="nav-item"><a class="nav-link" href="login.html"><i class="bi bi-key-fill"></i> Logar</a></li>
 
-    <style type="text/css">
-      .menu-active img {
-        border-color: blue;
-        border-style: dotted;
-        border-width: thin;
-        border-radius: 50%;
-      }
-
-      .display-block {
-        display: block;
-      }
-
-      .display-none {
-        display: none;
-      }
-      
-      .element-craft {
-        width: 60px;
-        height: 35px;
-      }
-      .btn-download{
-        position: fixed;
-        float: top;
-        top: 15px;
-        left: 15px;
-        z-index: 100;
-        border-radius: 50%;
-        opacity: 0.6;
-      }
-    </style>
-  </head>
-
-  <body style="background-color: lightgray" onload="init()">
-    <div class="container-fluid">
-      <a class="btn-download" onclick="download_img(this);" download="myCraft.jpg">
-        <img src="img/icone/download.svg" width="32" />
-      </a>
-      <div class="row" style="margin-top: 15px">
-        <!---canvas-->
-        <div class="col-12 col-xl-6">
-          <div
-            style="
-              background-color: white;
-              padding: 2%;
-              min-height: 300px;
-              text-align: center;
-              box-shadow: 4px 4px 8px -1px #848484;
-            "
-          >
-            <canvas id="canva_craft" width="auto"></canvas>
-          </div>
-        </div>
-        <!--menu-de-seleção-->
-        <div class="col-12 col-xl-6">
-          <div id="placeholder" style="padding: 2%; min-height: 500px">
-            <!-- Cor: <input type="color"/> -->
-            <div class="row" style="padding: 2%; text-align: center">
-              <div class="col menu-active" onclick="selectMenuElement('sombrancelha', this)">
-                <img
-                  src="img/icone/ico-sobrancelha.svg"
-                  style="width: 32px; height: 32px"
-                />
-              </div>
-              <div class="col" onclick="selectMenuElement('olho', this)">
-                <img
-                  src="img/icone/ico-olho.svg"
-                  style="width: 32px; height: 32px"
-                />
-              </div>
-              <div class="col" onclick="selectMenuElement('nariz', this)">
-                <img
-                  src="img/icone/ico-nariz.svg"
-                  style="width: 32px; height: 32px"
-                />
-              </div>
-              <div class="col" onclick="selectMenuElement('boca', this)">
-                <img
-                  src="img/icone/ico-boca.svg"
-                  style="width: 32px; height: 32px"
-                />
-              </div>
-              <div
-                style="
-                  margin: 2% auto;
-                  width: 90%;
-                  border-bottom: 2px solid rgba(146, 146, 146, 0.5);
-                "
-              ></div>
+                        <li class="nav-item"><a class="nav-link" href="myCrafts.html"><i class="bi bi-images"></i> Meus Crafts</a></li>
+                        <li class="nav-item"><a class="nav-link"><i class="bi bi-door-open-fill"></i> Sair</a></li>
+                    </ul>
+                </div>
             </div>
-
-            <div class="row" style="text-align: center; margin-top: 5%">
-              <div class="col sombrancelha display-block">
-                <img src="img/elemento/sombrancelha01.svg" class="element-craft" data-element="sombrancelha" data-id="01"/>
-              </div>
-              <div class="col sombrancelha display-block">
-                <img src="img/elemento/sombrancelha02.svg" class="element-craft" data-element="sombrancelha" data-id="02"/>
-              </div>
-              <div class="col sombrancelha display-block">
-                <img src="img/elemento/sombrancelha03.svg" class="element-craft" data-element="sombrancelha" data-id="03"/>
-              </div>
-              <div class="col sombrancelha display-block">
-                <img src="img/elemento/sombrancelha04.svg" class="element-craft" data-element="sombrancelha" data-id="04"/>
-              </div>
-              <div class="col olho display-none">
-                <img src="img/elemento/olho01.svg" class="element-craft" data-element="olho" data-id="01"/>
-              </div>
-              <div class="col olho display-none">
-                <img src="img/elemento/olho02.svg" class="element-craft" data-element="olho" data-id="02"/>
-              </div>
-              <div class="col olho display-none">
-                <img src="img/elemento/olho03.svg" class="element-craft" data-element="olho" data-id="03"/>
-              </div>
-              <div class="col olho display-none">
-                <img src="img/elemento/olho04.svg" class="element-craft" data-element="olho" data-id="04"/>
-              </div>
-              <div class="col nariz display-none">
-                <img src="img/elemento/nariz01.svg" class="element-craft" data-element="nariz" data-id="01"/>
-              </div>
-              <div class="col nariz display-none">
-                <img src="img/elemento/nariz02.svg" class="element-craft" data-element="nariz" data-id="02"/>
-              </div>
-              <div class="col nariz display-none">
-                <img src="img/elemento/nariz03.svg" class="element-craft" data-element="nariz" data-id="03"/>
-              </div>
-              <div class="col nariz display-none">
-                <img src="img/elemento/nariz04.svg" class="element-craft" data-element="nariz" data-id="04"/>
-              </div>
-              <div class="col boca display-none">
-                <img src="img/elemento/boca01.svg" class="element-craft" data-element="boca" data-id="01"/>
-              </div>
-              <div class="col boca display-none">
-                <img src="img/elemento/boca02.svg" class="element-craft" data-element="boca" data-id="02"/>
-              </div>
-              <div class="col boca display-none">
-                <img src="img/elemento/boca03.svg" class="element-craft" data-element="boca" data-id="03"/>
-              </div>
-              <div class="col boca display-none">
-                <img src="img/elemento/boca04.svg" class="element-craft" data-element="boca" data-id="04"/>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+        </nav>
+        <section class="text-center">
+            <img class="logo" src="assets/img/craftmakr-logo.svg"/>
+        </section>
+        <section class="text-center">
+            <a class="btn btn-primary" href="creativity.html">Começar o meu Craft</a>
+        </section>
+        <section class="d-flex flex-column align-items-center">
+            <h1>Apresentação</h1>
+            <p class="text-justify">
+                Este personalizador de papercraft permite que você seja ao memo tempo criador e criatura. Tranaforme-se ou transforme quem você quiser em uma eaculturaeacultura de papel pronta para enfeitar sua eastante ou presentear que você mais ama.
+            </p>
+        </section>
+        <section class="d-flex flex-column align-items-center">
+            <h1>Equipe</h1>
+            <p class="text-center">
+                Graciano Barbosa Lima Junior
+                <br/>
+                Josué dos Santos Marques
+                <br/>
+                Joel Ferreira Melo
+                <br/>
+                João Paulo Lima
+            </p>
+        </section>
     </div>
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
-      crossorigin="anonymous"
-    ></script>
-    <script>
-      var url = window.location.href;
-      if (url.includes('index.html')) {
-        url = url.replace('index.html', '');
-      }
-      const canva_craft = document.getElementById("canva_craft");
-      const context = canva_craft.getContext('2d');
-      const elementsArray = [];
-      canva_craft.height = window.innerHeight/2;
-
-      function drawCanva() {
-        context.clearRect(0, 0, canva_craft.width, canva_craft.height);
-
-        context.drawImage(elementsArray['molde'], 0, 0, canva_craft.width, canva_craft.height);
-        context.drawImage(elementsArray['sombrancelha'], 0, 0, canva_craft.width, canva_craft.height);
-        context.drawImage(elementsArray['olho'], 0, 0, canva_craft.width, canva_craft.height);
-        context.drawImage(elementsArray['nariz'], 0, 0, canva_craft.width, canva_craft.height);
-        context.drawImage(elementsArray['boca'], 0, 0, canva_craft.width, canva_craft.height);
-      }
-
-      function init() {
-        elementsArray['molde'] = new Image();
-        elementsArray['molde'].src = url + "img/preview/molde.svg";
-        elementsArray['backDown'] = new Image();
-        elementsArray['backDown'].src = url + "img/molde/back.svg";
-        elementsArray['moldeDown'] = new Image();
-        elementsArray['moldeDown'].src = url + "img/molde/molde.svg";
-        elementsArray['corpoDown'] = new Image();
-        elementsArray['corpoDown'].src = url + "img/molde/corpo.svg";
-
-        elementsArray['sombrancelha'] = new Image();
-        elementsArray['sombrancelhaDown'] = new Image();
-        elementsArray['sombrancelha'].onload = function () {
-          drawCanva();
-        };
-
-        elementsArray['olho'] = new Image();
-        elementsArray['olhoDown'] = new Image();
-        elementsArray['olho'].onload = function () {
-          drawCanva();
-        };
-        
-        elementsArray['nariz'] = new Image();
-        elementsArray['narizDown'] = new Image();
-        elementsArray['nariz'].onload = function () {
-          drawCanva();
-        };
-        
-        elementsArray['boca'] = new Image();
-        elementsArray['bocaDown'] = new Image();
-        elementsArray['boca'].onload = function () {
-          console.log('carregou boca');
-          drawCanva();
-        };
-      }
-
-      function download_img(el) {
-        const craft = document.createElement("canvas");
-        craft.width = 1200;
-        craft.height = 800;
-        const context_craft = craft.getContext('2d');
-
-        context_craft.drawImage(elementsArray['backDown'], 0, 0, craft.width, craft.height);
-
-        context_craft.drawImage(elementsArray['sombrancelhaDown'], 0, 0, craft.width, craft.height);
-        context_craft.drawImage(elementsArray['olhoDown'], 0, 0, craft.width, craft.height);
-        context_craft.drawImage(elementsArray['narizDown'], 0, 0, craft.width, craft.height);
-        context_craft.drawImage(elementsArray['bocaDown'], 0, 0, craft.width, craft.height);
-        context_craft.drawImage(elementsArray['corpoDown'], 0, 0, craft.width, craft.height);
-
-        context_craft.drawImage(elementsArray['moldeDown'], 0, 0, craft.width, craft.height);
-
-        var image = craft.toDataURL("image/jpg");
-        el.href = image;
-      }
-
-      document.querySelectorAll('.element-craft').forEach(function(element) {
-        element.addEventListener('click', function() {
-          imgURL = url + "img/preview/" + element.dataset.element + element.dataset.id + ".svg";
-          imgURLDown = url + "img/molde/" + element.dataset.element + element.dataset.id + ".svg";
-
-          elementsArray[element.dataset.element].src = imgURL;
-          elementsArray[element.dataset.element + 'Down'].src = imgURLDown;
-        });
-      });
-
-      function selectMenuElement(classItem, el) {
-        document.querySelectorAll(".menu-active").forEach(function(element) {
-          element.classList.remove("menu-active");
-        });
-        el.classList.add("menu-active");
-
-        document.querySelectorAll(".display-block").forEach(function(element) {
-          element.classList.add("display-none");
-          element.classList.remove("display-block");
-        });
-
-        document.querySelectorAll('.' + classItem).forEach(function(element) {
-          element.classList.add("display-block");
-          element.classList.remove("display-none");
-        });
-      }
-    </script>
-  </body>
+    <script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+</body>
 </html>
