@@ -39,17 +39,23 @@ db = [
 
 const contentElements = document.getElementById("content-elements");
 db.forEach((element) => {
-  const html =
-    '<div class="col ' +
-    element.tipo +
-    ' d-block item-element-create"><svg viewBox="0 0 200 155" class="element-craft" data-element="' +
-    element.tipo +
-    '" data-id="' +
-    element.id +
-    '">' +
-    element.data +
-    "</svg></div>";
-  contentElements.innerHTML = contentElements.innerHTML + html;
+  const div = document.createElement('div');
+  div.classList.add("col");
+  div.classList.add("d-block");
+  div.classList.add("item-element-create");
+  div.classList.add(element.tipo);
+
+  const svg = document.createElement('svg');
+  svg.classList.add("element-craft");
+  svg.dataset.element = element.tipo;
+  svg.dataset.id = element.id;
+  svg.setAttribute("viewBox", "0 0 200 155");
+  svg.innerHTML = element.data;
+
+  div.appendChild(svg);
+  contentElements.appendChild(div);
+  
+  contentElements.innerHTML = contentElements.innerHTML;
 });
 
 const canva_craft = document.getElementById("canva-craft");
@@ -57,7 +63,8 @@ const context = canva_craft.getContext("2d");
 const elementsArray = [];
 canva_craft.height = window.innerHeight / 2.5;
 
-//https://levelup.gitconnected.com/draw-an-svg-to-canvas-and-download-it-as-image-in-javascript-f7f7713cf81f
+// https://levelup.gitconnected.com/draw-an-svg-to-canvas-and-download-it-as-image-in-javascript-f7f7713cf81f
+// ico download  //  check  //  chevron-left  //  chevron-right
 
 function init() {}
 
