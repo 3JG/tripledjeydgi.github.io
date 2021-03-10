@@ -42,53 +42,29 @@
         <div class="row">
             <section class="col-md-6 col-sm-12">
                 <div class="mt-5 box-canvas">
+                    <canvas id="canva-craft" width="auto"></canvas>
                 </div>
             </section>
             <section class="col-md-6 col-sm-12">
                 <div class="row">
                     <section class="col-12">
                         <div class="row menu-create">
-                            <div class="col menu-active menu-item">
-                                <img src="assets/img/favicon.svg"/>
+                            <div class="col menu-item menu-active" onclick="selectMenuElement('sombrancelha', this)">
+                                <img src="assets/img/ico/ico-sobrancelha.svg" />
                             </div>
-                            <div class="col menu-item">
-                                <img src="assets/img/favicon.svg"/>
+                            <div class="col menu-item" onclick="selectMenuElement('olho', this)">
+                                <img src="assets/img/ico/ico-olho.svg" />
                             </div>
-                            <div class="col menu-item">
-                                <img src="assets/img/favicon.svg"/>
+                            <div class="col menu-item" onclick="selectMenuElement('nariz', this)">
+                                <img src="assets/img/ico/ico-nariz.svg" />
                             </div>
-                            <div class="col menu-item">
-                                <img src="assets/img/favicon.svg"/>
+                            <div class="col menu-item" onclick="selectMenuElement('boca', this)">
+                                <img src="assets/img/ico/ico-boca.svg" />
                             </div>
                         </div>
                     </section>
                     <section class="col-12">
-                        <div class="row box-elements">
-                            <div class="col">
-                                <img src="assets/img/craftmakr-logo.svg" class="element-craft" data-element="sombrancelha" data-id="01" />
-                            </div>
-                            <div class="col">
-                                <img src="assets/img/craftmakr-logo.svg" class="element-craft" data-element="sombrancelha" data-id="01" />
-                            </div>
-                            <div class="col">
-                                <img src="assets/img/craftmakr-logo.svg" class="element-craft" data-element="sombrancelha" data-id="01" />
-                            </div>
-                            <div class="col">
-                                <img src="assets/img/craftmakr-logo.svg" class="element-craft" data-element="sombrancelha" data-id="01" />
-                            </div>
-                            <div class="col">
-                                <img src="assets/img/craftmakr-logo.svg" class="element-craft" data-element="sombrancelha" data-id="01" />
-                            </div>
-                            <div class="col">
-                                <img src="assets/img/craftmakr-logo.svg" class="element-craft" data-element="sombrancelha" data-id="01" />
-                            </div>
-                            <div class="col">
-                                <img src="assets/img/craftmakr-logo.svg" class="element-craft" data-element="sombrancelha" data-id="01" />
-                            </div>
-                            <div class="col">
-                                <img src="assets/img/craftmakr-logo.svg" class="element-craft" data-element="sombrancelha" data-id="01" />
-                            </div>
-                        </div>
+                        <div class="row box-elements" id="content-elements"></div>
                     </section>
                 </div>
             </section>
@@ -96,5 +72,6 @@
     </div>
 
     <script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/script.js"></script>
 </body>
 </html>
