@@ -54,11 +54,18 @@ section p {
     width: 80%;
 }
 
-.box-canvas {
+.section-canvas button {
+    font-size: 1.5em;
+}
+
+.box-canvas, .box-canvas-print {
     background-color: white;
     padding: 2%;
-    min-height: 300px;
     box-shadow: 4px 4px 8px -1px #848484;
+}
+
+.box-canvas {
+    min-height: 300px;
 }
 
 .menu-create {
