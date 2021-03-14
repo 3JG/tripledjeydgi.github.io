@@ -52,14 +52,18 @@
         </nav>
         <div class="row">
             <section class="col-md-6 col-sm-12">
+                <button class="btn donwload-button"><i class="bi bi-download"></i></button>
                 <div class="box-canvas">
-                    <canvas id="canva-craft" width="auto"></canvas>
+                    <svg id="svg-craft"></svg>
                 </div>
             </section>
             <section class="col-md-6 col-sm-12">
                 <div class="row">
                     <section class="col-12">
                         <div class="row menu-create">
+                            <div class="col menu-item" onclick="selectMenuElement('cabelo', this)">
+                                <img src="assets/img/ico/ico-cabelo.svg" />
+                            </div>
                             <div class="col menu-item menu-active" onclick="selectMenuElement('sombrancelha', this)">
                                 <img src="assets/img/ico/ico-sobrancelha.svg" />
                             </div>

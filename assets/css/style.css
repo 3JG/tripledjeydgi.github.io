@@ -84,6 +84,37 @@ section p {
 }
 
 .element-craft {
-    width: 60px;
-    height: 35px;
+    width: 50px;
+    height: 50px;
+}
+
+.cabelo-class-1 {
+    fill:#333333;
+}
+
+.sombrancelha-class-1 {
+    fill:#333333;
+}
+
+.olho-class-1{
+    fill:#333333;
+}
+
+.olho-class-2{
+    fill:#fff;
+}
+
+.nariz-class-1,.nariz-class-2{
+    fill:#333333;
+}
+.nariz-class-1 {
+    fill-rule:evenodd;
+}
+
+.boca-class-1 {
+    fill:#333333;
+}
+
+.boca-class-2 {
+    fill:none;
 }
