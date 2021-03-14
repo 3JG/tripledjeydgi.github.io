@@ -161,6 +161,19 @@ db = {
     },
     print: {
       blockIn:
+        '<defs>' +
+        '<style>' +
+        '.cabelo-class-1 {fill:#333333;}' +
+        '.sombrancelha-class-1 {fill:#333333;}' +
+        '.olho-class-1{fill:#333333;}' +
+        '.olho-class-2{fill:#fff;}' +
+        '.nariz-class-1,.nariz-class-2{fill:#333333;}' +
+        '.nariz-class-1 {fill-rule:evenodd;}' +
+        '.boca-class-1 {fill:#333333;}' +
+        '.boca-class-2 {fill:none;}' +
+        '</style>' +
+        '</defs>' +
+        
         '<rect style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:0.132314;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" id="rect897" width="294.22476" height="208.40579" x="1.6560602" y="1.6560602"></rect>' +
         // CORPO
         '<g transform="matrix(0.03527778,0,0,-0.03527778,-415.0861,207.96972)" fill="#000000" stroke="none" id="g2294">' +
@@ -257,9 +270,8 @@ db = {
   },
 };
 
-console.log(window.sessionStorage);
-
 const elementsArray = [];
+
 elementsArray.cabelo = window.sessionStorage.getItem('cabelo');
 elementsArray.sombrancelha = window.sessionStorage.getItem('sombrancelha');
 elementsArray.olho = window.sessionStorage.getItem('olho');
@@ -269,7 +281,7 @@ elementsArray.boca = window.sessionStorage.getItem('boca');
 const contentElements = document.getElementById("content-elements");
 
 const craft = document.getElementById("svg-craft");
-craft.setAttribute("viewBox", "0 0 300 200");
+craft.setAttribute("viewBox", "0 0 300 220");
 
 let html = db.block.print.blockIn;
 if (elementsArray.cabelo != 'false') {
@@ -304,9 +316,9 @@ if (elementsArray.boca != 'false') {
 }
 craft.innerHTML = html;
 
-
 document.querySelector(".print-button").addEventListener("click", function () {
   alert('Iremos abrir uma nova aba para a impressão :)');
+
   var conteudo = document.getElementById('box-canvas-print').innerHTML;
   var telaImpressao = window.open('about:blank');
 
