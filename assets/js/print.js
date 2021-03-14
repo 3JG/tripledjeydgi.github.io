@@ -316,13 +316,25 @@ if (elementsArray.boca != 'false') {
 }
 craft.innerHTML = html;
 
-document.querySelector(".print-button").addEventListener("click", function () {
-  alert('Iremos abrir uma nova aba para a impressão :)');
+function download_img(el) {
+  const canva = document.createElement("canvas");
+  canva.width = 1200;
+  canva.height = 800;
+  const context_canva = canva.getContext("2d");
 
-  var conteudo = document.getElementById('box-canvas-print').innerHTML;
-  var telaImpressao = window.open('about:blank');
+  const svg_data = '<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800">' + craft.innerHTML + '</svg>';
+  const img = new Image();
+  img.src = "data:image/svg+xml," + encodeURIComponent(svg_data);
 
-  telaImpressao.document.write(conteudo);
-  telaImpressao.window.print();
-  telaImpressao.window.close();
-});
+  context_canva.drawImage(
+    img,
+    0,
+    0,
+    canva.width,
+    canva.height
+  );
+
+  var image = canva.toDataURL("image/jpg");
+  el.href = image;
+}
+
