@@ -306,6 +306,7 @@ craft.innerHTML = html;
 
 
 document.querySelector(".print-button").addEventListener("click", function () {
+  alert('Iremos abrir uma nova aba para a impressão :)');
   var conteudo = document.getElementById('box-canvas-print').innerHTML;
   var telaImpressao = window.open('about:blank');
 
