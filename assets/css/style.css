@@ -40,6 +40,11 @@ body {
     width: 25%;
 }
 
+.sub-logo {
+    margin: 1em;
+    width: 10%;
+}
+
 .btn-primary {
     background-color: var(--primary);
 }
@@ -124,4 +129,9 @@ section p {
 
 .boca-class-2 {
     fill:none;
+}
+
+.myCraft-item img {
+    width: 8em;
+    height: 8em;
 }
