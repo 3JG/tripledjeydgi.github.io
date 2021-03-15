@@ -73,14 +73,26 @@ function saveDataRegister() {
   const password = document.querySelector("input#password").value;
 
   db.collection("craftUsers")
-    .add({
-      nome,
-      email,
-      password,
+    .where("email", "==", email)
+    .get()
+    .then((querySnapshot) => {
+      if (querySnapshot.size == 0) {
+        db.collection("craftUsers")
+          .add({
+            nome,
+            email,
+            password,
+          })
+          .then(() => {
+            alert("Usuário cadastrado com sucesso!");
+            location.href = "login.html";
+          });
+      } else {
+        alert("Email já cadastrado!");
+      }
     })
-    .then(() => {
-      alert("Usuário cadastrado com sucesso!");
-      location.href = "login.html";
+    .catch((error) => {
+      alert("Erro no login: ", error);
     });
 }
 
