@@ -80,7 +80,7 @@ function saveDataRegister() {
     })
     .then(() => {
       alert("Usuário cadastrado com sucesso!");
-      location.href = "index.html";
+      location.href = "login.html";
     });
 }
 
