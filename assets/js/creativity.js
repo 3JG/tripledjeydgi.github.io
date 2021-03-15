@@ -130,3 +130,7 @@ document.querySelector(".x-button").addEventListener("click", function () {
 
   draw();
 });
+
+if (!craft_user_logger) {
+  alert('Se quiser Salvar a sua obra de arte efetue o login :)');
+}
