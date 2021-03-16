@@ -36,8 +36,9 @@ body {
 }
 
 .logo {
-    margin: 3em;
-    width: 25%;
+    margin: 2em;
+    width: 80%;
+    max-width: 180px;
 }
 
 .sub-logo {
@@ -52,11 +53,18 @@ body {
 section h1 {
     color: var(--primary);
     text-align: center;
-    margin-top: 1em;
 }
 
 section p {
     width: 80%;
+}
+
+.craft-img {
+    min-width: 100px;
+    width: 100%;
+    max-width: 300px;
+    margin: .5em;
+    margin-top: 1.5em;
 }
 
 .section-canvas button {
