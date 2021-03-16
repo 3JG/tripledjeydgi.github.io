@@ -83,7 +83,11 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" onclick="window.sessionStorage.removeItem('craftArtsId')" href="creativity.html">
+                <a
+                  class="nav-link"
+                  onclick="window.sessionStorage.removeItem('craftArtsId')"
+                  href="creativity.html"
+                >
                   <i class="bi bi-emoji-heart-eyes"></i> Criar Meu Craft
                 </a>
               </li>
@@ -119,35 +123,57 @@
           </div>
         </div>
       </nav>
-      <section class="text-center">
+      <section class="text-center col-md-12 col-sm-12">
         <img class="logo" src="assets/img/craftmakr-logo.svg" />
       </section>
-      <section class="text-center">
-        <a class="btn btn-primary" onclick="window.sessionStorage.removeItem('craftArtsId')" href="creativity.html">
-          Começar o meu Craft
-        </a>
-      </section>
-      <section class="d-flex flex-column align-items-center">
-        <h1>Apresentação</h1>
+      <section
+        class="d-flex flex-column align-items-center col-md-12 col-sm-12"
+      >
         <p class="text-justify">
-          Este personalizador de papercraft permite que você seja ao mesmo tempo
-          criador e criatura. Transforme-se ou transforme quem você quiser em
-          uma escultura de papel pronta para enfeitar sua estante ou presentear
-          quem você mais ama.
+          Olá! Somos o CraftMaker.<br />
+          Um personalizador de papercraft permite que você seja ao mesmo tempo
+          criador e criatura.
+        </p>
+        <p class="text-justify">
+          Transforme-se ou transforme quem você quiser em uma escultura de papel
+          pronta para enfeitar sua estante ou presentear quem você mais ama.
         </p>
       </section>
-      <section class="d-flex flex-column align-items-center">
-        <h1>Equipe</h1>
-        <p class="text-center">
-          Graciano Barbosa Lima Junior
-          <br />
-          Josué dos Santos Marques
-          <br />
-          Joel Ferreira Melo
-          <br />
-          João Paulo Lima
-        </p>
-      </section>
+      <div class="row">
+        <section
+          class="d-flex flex-column align-items-center col-md-5 col-sm-12"
+        >
+          <h1>Como Funciona?</h1>
+          <p class="text-justify">
+            Clicando em CRIAR MEU CRAFT. Abrirá a página de personalização, onde
+            você escolherá as características da sua criação. Após finalizar a
+            sua obra de arte, poderá fazer o download do molde.
+          </p>
+          <p class="text-justify">
+            Imprima-o em um papel resistente e se divirta com a montagem. E
+            poderá ter uma criaturinha como essa em suas mãos!
+          </p>
+        </section>
+        <section class="text-center col-md-2 col-sm-12">
+          <a
+            class="btn btn-primary"
+            onclick="window.sessionStorage.removeItem('craftArtsId')"
+            href="creativity.html"
+          >
+            CRIAR MEU CRAFT
+          </a>
+          <img class="craft-img" src="assets/img/craft.png" />
+        </section>
+        <section
+          class="d-flex flex-column align-items-center col-md-5 col-sm-12"
+        >
+          <h1>Salve as suas obras</h1>
+          <p class="text-justify">
+            Realizando um simples cadastro, poderá salvar suas criações, para
+            compartilha-lo com seus amigos!
+          </p>
+        </section>
+      </div>
     </div>
 
     <script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
