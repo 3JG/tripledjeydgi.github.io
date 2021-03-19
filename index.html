@@ -132,7 +132,7 @@
         <img class="logo" src="assets/img/craftmakr-logo.svg" />
       </section>
       <section
-        class="d-flex flex-column align-items-center col-md-12 col-sm-12"
+        class="d-flex flex-column align-items-center col-md-12 col-sm-12 mb-3"
       >
         <p class="text-justify">
           Olá! Somos o CraftMaker.<br />
@@ -143,6 +143,13 @@
           Transforme-se ou transforme quem você quiser em uma escultura de papel
           pronta para enfeitar sua estante ou presentear quem você mais ama.
         </p>
+        <a
+          class="btn btn-primary d-sm-none d-md-none"
+          onclick="window.sessionStorage.removeItem('craftArtsId')"
+          href="creativity.html"
+        >
+          CRIAR MEU CRAFT
+        </a>
       </section>
       <div class="row">
         <section
@@ -161,7 +168,7 @@
         </section>
         <section class="text-center col-md-2 col-sm-12">
           <a
-            class="btn btn-primary"
+            class="btn btn-primary d-none d-sm-block d-md-block"
             onclick="window.sessionStorage.removeItem('craftArtsId')"
             href="creativity.html"
           >
