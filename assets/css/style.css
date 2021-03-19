@@ -58,6 +58,15 @@ section h1 {
 section p {
     width: 80%;
 }
+@keyframes example {
+    0% {background-color: #458cb505;}
+    100% {background-color: #458cb5;}
+}
+section a.btn {
+    animation-name: example;
+    animation-duration: 1s;
+    box-shadow: 7px 7px #458cb550, -7px -7px #458cb550;
+}
 
 .craft-img {
     min-width: 100px;
