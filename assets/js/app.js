@@ -17,6 +17,10 @@ if (craft_user_logger) {
   document.querySelectorAll(".item-not-log").forEach(function (element) {
     element.remove();
   });
+  if(document.querySelector("#indexLogin")) {
+    document.querySelector("#indexLogin").innerHTML = window.sessionStorage.getItem("craft_user_name");
+    document.querySelector("#indexLogin").href = 'myCrafts.html';
+  }
 } else {
   document.querySelectorAll(".item-log").forEach(function (element) {
     element.remove();
