@@ -29,6 +29,10 @@ for (var key in dataCraftArray.element) {
   svg.dataset.id = element.id;
   svg.setAttribute("viewBox", "35 40 200 250");
 
+  if ('class' in element) {
+    svg.classList.add(element.class);
+  }
+
   const html =
     dataCraftArray.block.item.blockIn +
     element.data +
@@ -81,8 +85,12 @@ draw();
 
 document.querySelectorAll(".element-craft").forEach(function (element) {
   element.addEventListener("click", function () {
-    elementsArray[element.dataset.element] = parseInt(element.dataset.id);
-    draw();
+    if ( this.classList.contains('login-required') ) {
+      alert('Realize o login para poder utilizar este elemento');
+    } else {
+      elementsArray[element.dataset.element] = parseInt(element.dataset.id);
+      draw();
+    }
   });
 });
 
@@ -131,6 +139,8 @@ document.querySelector(".x-button").addEventListener("click", function () {
   draw();
 });
 
-if (!craft_user_logger) {
-  alert('Se quiser Salvar a sua obra de arte efetue o login :)');
+if (craft_user_logger) {
+  document.querySelectorAll(".login-required").forEach((element) => {
+    element.classList.remove("login-required");
+  });
 }

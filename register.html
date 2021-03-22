@@ -124,21 +124,55 @@
       </section>
       <section class="d-flex flex-column align-items-center">
         <h1>Entre para o grupo</h1>
-        <p class="text-justify">
-            <div class="mb-3">
-                <label for="email" class="form-label">Nome</label>
-                <input type="text" class="form-control" id="nome" />
+        <div class="col-lg-6 text-justify">
+          <div class="input-group mb-3 input-group-lg">
+            <div class="input-group-prepend input-group-lg">
+              <span class="input-group-text" id="basic-addon1">
+                <i class="bi bi-person-fill"></i>
+              </span>
             </div>
-            <div class="mb-3">
-                <label for="email" class="form-label">Email</label>
-                <input type="email" class="form-control" id="email" />
+            <input
+              id="nome"
+              type="text"
+              class="form-control"
+              placeholder="Nome"
+              aria-label="Nome"
+              aria-describedby="basic-addon1"
+            />
+          </div><div class="input-group mb-3 input-group-lg">
+            <div class="input-group-prepend input-group-lg">
+              <span class="input-group-text" id="basic-addon1">@</span>
             </div>
-            <div class="mb-3">
-                <label for="password" class="form-label">Senha</label>
-                <input type="password" class="form-control" id="password" />
+            <input
+              id="email"
+              type="email"
+              class="form-control"
+              placeholder="Email"
+              aria-label="Email"
+              aria-describedby="basic-addon1"
+            />
+          </div>
+          <div class="input-group mb-3 input-group-lg">
+            <div class="input-group-prepend input-group-lg">
+              <span class="input-group-text" id="basic-addon1">
+                <i class="bi bi-key-fill"></i>
+              </span>
             </div>
-            <button class="btn btn-primary" onclick="saveDataRegister()">Salvar</button>
-        </p>
+            <input
+              id="password"
+              type="password"
+              class="form-control"
+              placeholder="Senha"
+              aria-label="Senha"
+              aria-describedby="basic-addon1"
+            />
+          </div>
+          <div class="d-grid gap-2">
+            <button class="btn btn-primary" onclick="saveDataRegister()">
+              Cadastrar
+            </button>
+          </div>
+        </div>
       </section>
     </div>
 

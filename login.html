@@ -1,31 +1,55 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
+  <head>
     <meta charset="utf-8" />
     <meta name="keywords" content="ufc, papercraft, face maker" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="author" content="UFC - SMD - Projeto Integrado 2 - 2020.2" />
-    <meta name="description" content="Craft Maker - Criador de Papercraft personalizado" />
+    <meta
+      name="description"
+      content="Craft Maker - Criador de Papercraft personalizado"
+    />
 
     <meta itemprop="name" content="Craft Maker" />
-    <meta itemprop="description" content="Craft Maker - Criador de Papercraft personalizado - UFC - SMD - Projeto Integrado 2 - 2020.2" />
+    <meta
+      itemprop="description"
+      content="Craft Maker - Criador de Papercraft personalizado - UFC - SMD - Projeto Integrado 2 - 2020.2"
+    />
     <meta itemprop="image" content="assets/img/craftmakr-logo.svg" />
-    
+
     <link rel="apple-touch-icon" sizes="72x72" href="assets/img/favicon.svg" />
-    <link rel="apple-touch-icon" sizes="128x128" href="assets/img/craftmakr-logo.svg" />
-    <link rel="apple-touch-icon" sizes="152x152" href="assets/img/craftmakr-logo.svg" />
-    <link rel="apple-touch-icon" sizes="192x192" href="assets/img/craftmakr-logo.svg" />
+    <link
+      rel="apple-touch-icon"
+      sizes="128x128"
+      href="assets/img/craftmakr-logo.svg"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="assets/img/craftmakr-logo.svg"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="192x192"
+      href="assets/img/craftmakr-logo.svg"
+    />
 
     <meta name="theme-color" content="#febc2f" />
-    
-    <title>Craft Maker</title>
-    <link rel="icon" href="assets/img/favicon.svg">
 
-    <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/vendor/bootstrap-icons/bootstrap-icons.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-</head>
-<body>
+    <title>Craft Maker</title>
+    <link rel="icon" href="assets/img/favicon.svg" />
+
+    <link
+      rel="stylesheet"
+      href="assets/vendor/bootstrap/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="assets/vendor/bootstrap-icons/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
     <div class="container">
       <nav class="navbar navbar-primary">
         <div class="container-fluid">
@@ -59,7 +83,11 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" onclick="window.sessionStorage.removeItem('craftArtsId')" href="creativity.html">
+                <a
+                  class="nav-link"
+                  onclick="window.sessionStorage.removeItem('craftArtsId')"
+                  href="creativity.html"
+                >
                   <i class="bi bi-emoji-heart-eyes"></i> Criar Meu Craft
                 </a>
               </li>
@@ -95,30 +123,70 @@
           </div>
         </div>
       </nav>
-        <section class="text-center">
-          <img class="sub-logo" src="assets/img/craftmakr-logo.svg" />
-        </section>
-        <section class="d-flex flex-column align-items-center">
-          <h1>Bem vindo de volta</h1>
-          <p class="text-justify">
-              <div class="mb-3">
-                  <label for="email" class="form-label">Email</label>
-                  <input type="email" class="form-control" id="email" />
-              </div>
-              <div class="mb-3">
-                  <label for="password" class="form-label">Senha</label>
-                  <input type="password" class="form-control" id="password" />
-              </div>
-              <button class="btn btn-primary" onclick="logDataUser()">Entrar</button>
-          </p>
-        </section>
+      <section class="text-center">
+        <img class="sub-logo" src="assets/img/craftmakr-logo.svg" />
+      </section>
+      <section class="d-flex flex-column align-items-center">
+        <h1>Bem vindo de volta</h1>
+        <div class="col-lg-6 text-justify">
+          <div class="input-group mb-3 input-group-lg">
+            <div class="input-group-prepend input-group-lg">
+              <span class="input-group-text" id="basic-addon1">@</span>
+            </div>
+            <input
+              id="email"
+              type="email"
+              class="form-control"
+              placeholder="Email"
+              aria-label="Email"
+              aria-describedby="basic-addon1"
+            />
+          </div>
+          <div class="input-group mb-3 input-group-lg">
+            <div class="input-group-prepend input-group-lg">
+              <span class="input-group-text" id="basic-addon1">
+                <i class="bi bi-key-fill"></i>
+              </span>
+            </div>
+            <input
+              id="password"
+              type="password"
+              class="form-control"
+              placeholder="Senha"
+              aria-label="Senha"
+              aria-describedby="basic-addon1"
+            />
+          </div>
+          <div class="d-grid gap-2">
+            <button class="btn btn-primary" onclick="logDataUser()">
+              Entrar
+            </button>
+          </div>
+        </div>
+      </section>
+      <section
+        class="d-flex flex-column align-items-center col-md-6 col-sm-12 mt-3"
+      >
+        <div>
+          <div class="card-body">
+            <h5 class="card-title">É novo por aqui?</h5>
+            <p class="card-text">
+              Cadastre-se para salvar os seus craft's e poder adquirir pacotes
+              de elementos especiais!
+            </p>
+            <div class="d-grid gap-2">
+              <a href="register.html" class="btn btn-primary">Cadastrar</a>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
 
     <script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
 
     <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-firestore.js"></script>
-    
+
     <script src="assets/js/app.js"></script>
-</body>
+  </body>
 </html>

@@ -6,6 +6,11 @@ db.collection("craftArts")
   .where("idUser", "==", idUser)
   .get()
   .then((querySnapshot) => {
+    if ( querySnapshot.empty ) {
+      document.getElementById("myCraft").innerHTML = '<a class="nav-link" onclick="window.sessionStorage.removeItem(\'craftArtsId\')" href="creativity.html">' +
+      'Criar Meu Primeiro Craft' +
+      '</a>';
+    }
     querySnapshot.forEach((doc) => {
       const dataDoc = doc.data();
 
@@ -43,8 +48,7 @@ db.collection("craftArts")
         html +
         "</svg>";
       const img_svg = document.createElement("img");
-      img_svg.classList.add("mb-2");
-      img_svg.classList.add("me-2");
+      img_svg.classList.add("card-img-top");
       img_svg.src = "data:image/svg+xml;utf8," + encodeURIComponent(data);
 
       const buttonEdit = document.createElement("button");
@@ -78,15 +82,22 @@ db.collection("craftArts")
         deleteCraft(doc.id);
       });
 
+      const divBody = document.createElement("div");
+      divBody.classList.add("card-body");
+      
       const div = document.createElement("div");
       div.classList.add("myCraft-item");
-      div.classList.add("border-bottom");
-      div.classList.add("border-3");
+      div.classList.add("me-2");
+      div.classList.add("mb-2");
+      div.classList.add("card");
+      div.classList.add("col-md-3");
 
       div.appendChild(img_svg);
-      div.appendChild(buttonEdit);
-      div.appendChild(buttonDelete);
-
+      
+      divBody.appendChild(buttonEdit);
+      divBody.appendChild(buttonDelete);
+      
+      div.appendChild(divBody);
       document.getElementById("myCraft").appendChild(div);
     });
   })
