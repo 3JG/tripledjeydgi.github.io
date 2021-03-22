@@ -10,6 +10,7 @@ if (craftArtsId || pageEdit) {
   elementsArray.olho = window.sessionStorage.getItem('olho') || 'false';
   elementsArray.nariz = window.sessionStorage.getItem('nariz') || 'false';
   elementsArray.boca = window.sessionStorage.getItem('boca') || 'false';
+  elementsArray.camisa = window.sessionStorage.getItem('camisa') || 'false';
 
   window.sessionStorage.removeItem("pageEdit");
 }
@@ -116,6 +117,7 @@ function selectMenuElement(classItem, el) {
 }
 
 document.querySelector(".check-button").addEventListener("click", function () {
+  window.sessionStorage.setItem("camisa", elementsArray.camisa || false);
   window.sessionStorage.setItem("cabelo", elementsArray.cabelo || false);
   window.sessionStorage.setItem(
     "sombrancelha",
@@ -130,6 +132,7 @@ document.querySelector(".check-button").addEventListener("click", function () {
 
 document.querySelector(".x-button").addEventListener("click", function () {
   elementsArray = [];
+  window.sessionStorage.removeItem("camisa");
   window.sessionStorage.removeItem("cabelo");
   window.sessionStorage.removeItem("sombrancelha");
   window.sessionStorage.removeItem("olho");

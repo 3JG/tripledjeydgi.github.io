@@ -1,5 +1,6 @@
 const elementsArray = [];
 
+elementsArray.camisa = window.sessionStorage.getItem('camisa');
 elementsArray.cabelo = window.sessionStorage.getItem('cabelo');
 elementsArray.sombrancelha = window.sessionStorage.getItem('sombrancelha');
 elementsArray.olho = window.sessionStorage.getItem('olho');
@@ -7,6 +8,10 @@ elementsArray.nariz = window.sessionStorage.getItem('nariz');
 elementsArray.boca = window.sessionStorage.getItem('boca');
 
 let html = dataCraftArray.block.print.blockIn;
+if (elementsArray.camisa != 'false') {
+  html +=
+    dataCraftArray.element[elementsArray.camisa].dataPrint;
+}
 if (elementsArray.cabelo != 'false') {
   html +=
     dataCraftArray.block.print.cabelo +

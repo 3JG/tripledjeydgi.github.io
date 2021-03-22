@@ -10,6 +10,22 @@ body {
         background-size: 50em auto;
     }
 }
+@media (min-width: 600px) {
+    ::-webkit-scrollbar {
+        width: 2px;
+        height: 2px;
+    }
+     
+    ::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+        border-radius: 10px;
+    }
+     
+    ::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+    }
+}
 
 .navbar-toggler:focus {
   box-shadow: none;
@@ -101,6 +117,10 @@ section a.btn {
     text-align: center;
 }
 
+.menu-create .menu-item {
+    margin: 3%;
+}
+
 .menu-create .menu-item img {
     width: 32px;
     height: 32px;
@@ -111,6 +131,7 @@ section a.btn {
     border-style: dotted;
     border-width: thin;
     border-radius: 50%;
+    background: #33333350;
 }
 
 .box-elements {
@@ -122,6 +143,16 @@ section a.btn {
     width: 50px;
     height: 50px;
 }
+
+ul.horizontal-slide {
+    overflow: auto;
+    white-space: nowrap;
+}
+
+ul.horizontal-slide li {
+    display: inline-block;
+    text-align: center;
+}     
 
 .element-craft.login-required {
     background-color: #cacaca80;
