@@ -36,18 +36,24 @@ body {
 }
 
 .logo {
-    margin: 2em;
+    margin: 0.5em;
     width: 80%;
     max-width: 180px;
 }
 
 .sub-logo {
-    margin: 1em;
+    margin: 0.5em;
     width: 10%;
+    max-width: 180px;
+    min-width: 100px;
 }
 
 .btn-primary {
     background-color: var(--primary);
+}
+
+.card-title {
+    color: var(--primary);
 }
 
 section h1 {
@@ -117,6 +123,14 @@ section a.btn {
     height: 50px;
 }
 
+.element-craft.login-required {
+    background-color: #cacaca80;
+    background-image: url(../img/ico/star.png);
+    background-repeat: no-repeat;
+    background-size: 50% auto;
+    background-position: center;
+}
+
 .cabelo-class-1 {
     fill:#333333;
 }
@@ -149,6 +163,6 @@ section a.btn {
 }
 
 .myCraft-item img {
-    width: 8em;
-    height: 8em;
+    max-width: 18rem;
+    margin: auto;
 }

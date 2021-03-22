@@ -87,9 +87,11 @@ function saveDataRegister() {
             email,
             password,
           })
-          .then(() => {
-            alert("Usuário cadastrado com sucesso!");
-            location.href = "login.html";
+          .then((doc) => {
+            window.sessionStorage.setItem("craft_user_logger", doc.id);
+            window.sessionStorage.setItem("craft_user_name", nome);
+            alert("Seja Bem vindo!");
+            location.href = "index.html";
           });
       } else {
         alert("Email já cadastrado!");
