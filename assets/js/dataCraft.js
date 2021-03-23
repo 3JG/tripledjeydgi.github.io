@@ -265,6 +265,7 @@ const dataCraftArray = {
     41: {
       id: 41,
       tipo: "camisa",
+      class: "login-required",
       data:
       '<rect id="_136190048" class="fil2" transform="matrix(0.00127114,0.99999919,-0.99999908,0.00135794,0,0)" width="156.86641" height="622.22717" x="147.23096" y="-755.42426" style="clip-rule:evenodd;display:inline;fill:#ff0000;fill-rule:evenodd;stroke-width:47.045;image-rendering:optimizeQuality;shape-rendering:geometricPrecision;text-rendering:geometricPrecision" ></rect>' +
 '<rect id="_136138200" class="fil1" transform="matrix(0.00127114,0.99999919,-0.99999908,0.00135794,0,0)" width="156.86641" height="622.22717" x="617.84509" y="-755.43353" style="clip-rule:evenodd;display:inline;fill:#000000;fill-rule:evenodd;stroke-width:47.045;image-rendering:optimizeQuality;shape-rendering:geometricPrecision;text-rendering:geometricPrecision" ></rect>' +

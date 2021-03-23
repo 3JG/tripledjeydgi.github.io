@@ -31,6 +31,7 @@ function salveCraft() {
   const idUser = window.sessionStorage.getItem("craft_user_logger") || false;
 
   const id = window.sessionStorage.getItem("craftArtsId") || false;
+  const camisa = window.sessionStorage.getItem("camisa");
   const cabelo = window.sessionStorage.getItem("cabelo");
   const sombrancelha = window.sessionStorage.getItem("sombrancelha");
   const olho = window.sessionStorage.getItem("olho");
@@ -43,6 +44,7 @@ function salveCraft() {
         .doc(id)
         .update({
           idUser,
+          camisa,
           cabelo,
           sombrancelha,
           olho,
@@ -51,11 +53,13 @@ function salveCraft() {
         })
         .then(() => {
           alert("Craft Editado com sucesso!");
+          location.href = "myCrafts.html";
         });
     } else {
       db.collection("craftArts")
         .add({
           idUser,
+          camisa,
           cabelo,
           sombrancelha,
           olho,
@@ -64,6 +68,7 @@ function salveCraft() {
         })
         .then(() => {
           alert("Craft Salvo com sucesso!");
+          location.href = "myCrafts.html";
         });
     }
   } else {
@@ -76,51 +81,69 @@ function saveDataRegister() {
   const email = document.querySelector("input#email").value;
   const password = document.querySelector("input#password").value;
 
-  db.collection("craftUsers")
-    .where("email", "==", email)
-    .get()
-    .then((querySnapshot) => {
-      if (querySnapshot.size == 0) {
-        db.collection("craftUsers")
-          .add({
-            nome,
-            email,
-            password,
-          })
-          .then((doc) => {
-            window.sessionStorage.setItem("craft_user_logger", doc.id);
-            window.sessionStorage.setItem("craft_user_name", nome);
-            alert("Seja Bem vindo!");
-            location.href = "index.html";
-          });
-      } else {
-        alert("Email já cadastrado!");
-      }
-    })
-    .catch((error) => {
-      alert("Erro no login: ", error);
-    });
+  const redirect_login = window.sessionStorage.getItem("redirect_login") || "myCrafts.html";
+
+  if (nome.length < 1) {
+    alert('Preencha o Nome do seu usuário!');
+  } else {
+    if (email.length < 5) {
+      alert('Preencha o seu Email!');
+    } else {
+      db.collection("craftUsers")
+        .where("email", "==", email)
+        .get()
+        .then((querySnapshot) => {
+          if (querySnapshot.size == 0) {
+            db.collection("craftUsers")
+              .add({
+                nome,
+                email,
+                password,
+              })
+              .then((doc) => {
+                window.sessionStorage.setItem("craft_user_logger", doc.id);
+                window.sessionStorage.setItem("craft_user_name", nome);
+                alert("Seja Bem vindo!");
+                window.sessionStorage.removeItem("redirect_login");
+                location.href = redirect_login;
+              });
+          } else {
+            alert("Email já cadastrado!");
+          }
+        })
+        .catch((error) => {
+          alert("Erro no login: ", error);
+        });
+    }
+  }
 }
 
 function logDataUser() {
   const email = document.querySelector("input#email").value;
   const password = document.querySelector("input#password").value;
 
-  db.collection("craftUsers")
-    .where("email", "==", email)
-    .where("password", "==", password)
-    .get()
-    .then((querySnapshot) => {
-      querySnapshot.forEach((doc) => {
-        window.sessionStorage.setItem("craft_user_logger", doc.id);
-        window.sessionStorage.setItem("craft_user_name", doc.data().nome);
-        alert("Seja Bem vindo!");
-        location.href = "index.html";
+  const redirect_login = window.sessionStorage.getItem("redirect_login") || "index.html";
+
+  if (email.length < 5) {
+    alert('Preencha o seu Email!');
+  } else {  
+    db.collection("craftUsers")
+      .where("email", "==", email)
+      .where("password", "==", password)
+      .get()
+      .then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+          window.sessionStorage.setItem("craft_user_logger", doc.id);
+          window.sessionStorage.setItem("craft_user_name", doc.data().nome);
+          alert("Seja Bem vindo!");
+          window.sessionStorage.removeItem("redirect_login");
+          location.href = redirect_login;
+        });
+      })
+      .catch((error) => {
+        Alert("Erro no login: ", error);
       });
-    })
-    .catch((error) => {
-      Alert("Erro no login: ", error);
-    });
+  }
 }
 
 function getNameCraft() {
