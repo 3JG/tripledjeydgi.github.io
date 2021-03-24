@@ -112,6 +112,7 @@ function saveDataRegister() {
           }
         })
         .catch((error) => {
+          console.log(error);
           alert("Erro no login: ", error);
         });
     }
@@ -141,7 +142,8 @@ function logDataUser() {
         });
       })
       .catch((error) => {
-        Alert("Erro no login: ", error);
+        console.log(error);
+        alert("Erro no login: ", error);
       });
   }
 }
