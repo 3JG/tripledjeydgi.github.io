@@ -18,10 +18,10 @@ db.collection("craftArts")
       if ("cabelo" in dataDoc && dataDoc.cabelo != "false") {
         html += dataCraftArray.element[dataDoc.cabelo].dataPreview;
       }
-      if ("sombrancelha" in dataDoc && dataDoc.sombrancelha != "false") {
+      if ("sobrancelha" in dataDoc && dataDoc.sobrancelha != "false") {
         html +=
-          dataCraftArray.block.preview.sombrancelha +
-          dataCraftArray.element[dataDoc.sombrancelha].data +
+          dataCraftArray.block.preview.sobrancelha +
+          dataCraftArray.element[dataDoc.sobrancelha].data +
           dataCraftArray.block.preview.blockOut;
       }
       if ("olho" in dataDoc && dataDoc.olho != "false") {
@@ -62,8 +62,8 @@ db.collection("craftArts")
         window.sessionStorage.setItem("craftArtsId", doc.id);
         window.sessionStorage.setItem("cabelo", dataDoc.cabelo || false);
         window.sessionStorage.setItem(
-          "sombrancelha",
-          dataDoc.sombrancelha || false
+          "sobrancelha",
+          dataDoc.sobrancelha || false
         );
         window.sessionStorage.setItem("olho", dataDoc.olho || false);
         window.sessionStorage.setItem("nariz", dataDoc.nariz || false);

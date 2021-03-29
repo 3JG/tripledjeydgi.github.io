@@ -1,16 +1,16 @@
 const elementsArray = [];
 
-elementsArray.camisa = window.sessionStorage.getItem('camisa') || false;
+elementsArray.corpo = window.sessionStorage.getItem('corpo') || false;
 elementsArray.cabelo = window.sessionStorage.getItem('cabelo');
-elementsArray.sombrancelha = window.sessionStorage.getItem('sombrancelha');
+elementsArray.sobrancelha = window.sessionStorage.getItem('sobrancelha');
 elementsArray.olho = window.sessionStorage.getItem('olho');
 elementsArray.nariz = window.sessionStorage.getItem('nariz');
 elementsArray.boca = window.sessionStorage.getItem('boca');
 
 let html = dataCraftArray.block.print.blockIn;
-if (elementsArray.camisa != false) {
+if (elementsArray.corpo != false) {
   html +=
-    dataCraftArray.element[elementsArray.camisa].dataPrint;
+    dataCraftArray.element[elementsArray.corpo].dataPrint;
 }
 if (elementsArray.cabelo != 'false') {
   html +=
@@ -18,10 +18,10 @@ if (elementsArray.cabelo != 'false') {
     dataCraftArray.element[elementsArray.cabelo].dataPrint +
     dataCraftArray.block.print.blockOut;
 }
-if (elementsArray.sombrancelha != 'false') {
+if (elementsArray.sobrancelha != 'false') {
   html +=
-    dataCraftArray.block.print.sombrancelha +
-    dataCraftArray.element[elementsArray.sombrancelha].data +
+    dataCraftArray.block.print.sobrancelha +
+    dataCraftArray.element[elementsArray.sobrancelha].data +
     dataCraftArray.block.print.blockOut;
 }
 if (elementsArray.olho != 'false') {

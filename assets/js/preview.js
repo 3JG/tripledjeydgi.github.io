@@ -1,7 +1,7 @@
 const elementsArray = [];
 
 elementsArray.cabelo = window.sessionStorage.getItem("cabelo");
-elementsArray.sombrancelha = window.sessionStorage.getItem("sombrancelha");
+elementsArray.sobrancelha = window.sessionStorage.getItem("sobrancelha");
 elementsArray.olho = window.sessionStorage.getItem("olho");
 elementsArray.nariz = window.sessionStorage.getItem("nariz");
 elementsArray.boca = window.sessionStorage.getItem("boca");
@@ -10,10 +10,10 @@ let html = dataCraftArray.block.preview.blockIn;
 if (elementsArray.cabelo != "false") {
   html += dataCraftArray.element[elementsArray.cabelo].dataPreview;
 }
-if (elementsArray.sombrancelha != "false") {
+if (elementsArray.sobrancelha != "false") {
   html +=
-    dataCraftArray.block.preview.sombrancelha +
-    dataCraftArray.element[elementsArray.sombrancelha].data +
+    dataCraftArray.block.preview.sobrancelha +
+    dataCraftArray.element[elementsArray.sobrancelha].data +
     dataCraftArray.block.preview.blockOut;
 }
 if (elementsArray.olho != "false") {
@@ -45,8 +45,8 @@ img_svg.src = "data:image/svg+xml;utf8," + encodeURIComponent(data);
 function editCraft() {
   window.sessionStorage.setItem("cabelo", elementsArray.cabelo || false);
   window.sessionStorage.setItem(
-    "sombrancelha",
-    elementsArray.sombrancelha || false
+    "sobrancelha",
+    elementsArray.sobrancelha || false
   );
   window.sessionStorage.setItem("olho", elementsArray.olho || false);
   window.sessionStorage.setItem("nariz", elementsArray.nariz || false);
