@@ -68,32 +68,40 @@ function draw() {
     html += '.cabelo-class-1 { fill:' +
       dataCraftArray.element[elementsArray.corcabelo].dataCor + ';}';
   }else{
-    html += '.cabelo-class-1 {fill:000;}';
+    html += '.cabelo-class-1 {fill:#000;}';
   }
   if ('corsobrancelha' in elementsArray && elementsArray.corsobrancelha != 'false') {
     html += '.sobrancelha-class-1 { fill:' +
       dataCraftArray.element[elementsArray.corsobrancelha].dataCor + ';}';
   }else{
-    html += '.sobrancelha-class-1 {fill:000;}';
+    html += '.sobrancelha-class-1 {fill:#000;}';
   }
   if ('corolho' in elementsArray && elementsArray.corolho != 'false') {
     html += '.olho-class-3 { fill:' +
       dataCraftArray.element[elementsArray.corolho].dataCor + ';}';
   }else{
-    html += '.olho-class-3 {fill:000;}';
+    html += '.olho-class-3 {fill:#000;}';
   }
   html += 
     ".olho-class-1{fill:#000;}" +
     ".olho-class-2{fill:#fff;}" +
-    
+
+    '.nariz-class-1,.nariz-class-2{fill:#000;}' +
+    '.boca-class-1 {fill:#000;}' +
+    '.boca-class-2 {fill:none;}' +
+
     '</style></defs>' + dataCraftArray.block.preview.blockIn;
   
-  if ('pele' in elementsArray && elementsArray.pele != 'false') {
-    html += dataCraftArray.element[elementsArray.pele].dataPreview;
+  html += dataCraftArray.element[43].dataPreview;
+  
+  if ('corpo' in elementsArray && elementsArray.corpo != 'false') {
+    html += dataCraftArray.element[elementsArray.corpo].dataPreview;
   }
+
   if ('cabelo' in elementsArray && elementsArray.cabelo != 'false') {
     html += dataCraftArray.element[elementsArray.cabelo].dataPreview;
   }
+
   if ('sobrancelha' in elementsArray && elementsArray.sobrancelha != 'false') {
     html +=
       dataCraftArray.block.preview.sobrancelha +

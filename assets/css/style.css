@@ -109,6 +109,7 @@ section a.btn {
 
 .box-canvas {
     min-height: 300px;
+    position: relative;
 }
 
 .menu-create {
@@ -136,6 +137,21 @@ section a.btn {
 .menu-cor img{
     width: 15%;
     height: 15%;
+    position: absolute;
+    bottom: 8px;
+    left: 16px;
+}
+
+.check-button {
+    position: absolute;
+    top: 8px;
+    left: 16px;
+}
+
+.x-button {
+    position: absolute;
+    top: 8px;
+    right: 16px;
 }
 
 .box-elements {
@@ -181,21 +197,6 @@ ul.horizontal-slide li {
 
 .olho-class-2{
     fill:#fff;
-}
-
-.nariz-class-1,.nariz-class-2{
-    fill:#333333;
-}
-.nariz-class-1 {
-    fill-rule:evenodd;
-}
-
-.boca-class-1 {
-    fill:#333333;
-}
-
-.boca-class-2 {
-    fill:none;
 }
 
 .myCraft-item img {
