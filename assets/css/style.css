@@ -133,6 +133,11 @@ section a.btn {
     background: #33333350;
 }
 
+.menu-cor img{
+    width: 15%;
+    height: 15%;
+}
+
 .box-elements {
     text-align: center;
     margin-top: 5%;
@@ -166,7 +171,7 @@ ul.horizontal-slide li {
     fill:#333333;
 }
 
-.sombrancelha-class-1 {
+.sobrancelha-class-1 {
     fill:#333333;
 }
 

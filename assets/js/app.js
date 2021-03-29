@@ -31,9 +31,9 @@ function salveCraft() {
   const idUser = window.sessionStorage.getItem("craft_user_logger") || false;
 
   const id = window.sessionStorage.getItem("craftArtsId") || false;
-  const camisa = window.sessionStorage.getItem("camisa");
+  const corpo = window.sessionStorage.getItem("corpo");
   const cabelo = window.sessionStorage.getItem("cabelo");
-  const sombrancelha = window.sessionStorage.getItem("sombrancelha");
+  const sobrancelha = window.sessionStorage.getItem("sobrancelha");
   const olho = window.sessionStorage.getItem("olho");
   const nariz = window.sessionStorage.getItem("nariz");
   const boca = window.sessionStorage.getItem("boca");
@@ -44,9 +44,9 @@ function salveCraft() {
         .doc(id)
         .update({
           idUser,
-          camisa,
+          corpo,
           cabelo,
-          sombrancelha,
+          sobrancelha,
           olho,
           nariz,
           boca,
@@ -59,9 +59,9 @@ function salveCraft() {
       db.collection("craftArts")
         .add({
           idUser,
-          camisa,
+          corpo,
           cabelo,
-          sombrancelha,
+          sobrancelha,
           olho,
           nariz,
           boca,
