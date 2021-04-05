@@ -1,12 +1,17 @@
 body {
     --primary: #458cb5;
-    background: url(../img/waves.svg);
+}
+
+body {
+    background: url(../img/waves2.svg);
     background-repeat: no-repeat;
     background-size: 100% auto;
 }
 
 @media (max-width: 800px) {
     body {
+        background: url(../img/waves.svg);
+        background-repeat: no-repeat;
         background-size: 50em auto;
     }
 }
@@ -80,13 +85,9 @@ section h1 {
 section p {
     width: 80%;
 }
-@keyframes example {
-    0% {background-color: #458cb505;}
-    100% {background-color: #458cb5;}
-}
+
 section a.btn {
-    animation-name: example;
-    animation-duration: 1s;
+    background-color: #458cb5;
     box-shadow: 3px 3px #458cb550, -3px -3px #458cb550;
 }
 
@@ -183,23 +184,11 @@ ul.horizontal-slide li {
     opacity: 0.5;
 }
 
-.cabelo-class-1 {
-    fill:#333333;
-}
-
-.sobrancelha-class-1 {
-    fill:#333333;
-}
-
-.olho-class-1{
-    fill:#333333;
-}
-
-.olho-class-2{
-    fill:#fff;
-}
-
 .myCraft-item img {
     max-width: 18rem;
+    margin: auto;
+}
+
+.svg-craft {
     margin: auto;
 }
