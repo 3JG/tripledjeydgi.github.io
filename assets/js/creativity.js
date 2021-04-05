@@ -7,6 +7,11 @@ const pageEdit = window.sessionStorage.getItem('pageEdit') || false;
 let elementCor = null;
 
 if (craftArtsId || pageEdit) {
+  elementsArray.corpele = window.sessionStorage.getItem('corpele') || 'false';
+  elementsArray.corcabelo = window.sessionStorage.getItem('corcabelo') || 'false';
+  elementsArray.corsobrancelha = window.sessionStorage.getItem('corsobrancelha') || 'false';
+  elementsArray.corolho = window.sessionStorage.getItem('corolho') || 'false';
+
   elementsArray.cabelo = window.sessionStorage.getItem('cabelo') || 'false';
   elementsArray.sobrancelha = window.sessionStorage.getItem('sobrancelha') || 'false';
   elementsArray.olho = window.sessionStorage.getItem('olho') || 'false';
@@ -64,24 +69,28 @@ function draw() {
   }else{
     html += '.pele-class {fill:white;}';
   }
+
   if ('corcabelo' in elementsArray && elementsArray.corcabelo != 'false') {
     html += '.cabelo-class-1 { fill:' +
       dataCraftArray.element[elementsArray.corcabelo].dataCor + ';}';
   }else{
     html += '.cabelo-class-1 {fill:#000;}';
   }
+
   if ('corsobrancelha' in elementsArray && elementsArray.corsobrancelha != 'false') {
     html += '.sobrancelha-class-1 { fill:' +
       dataCraftArray.element[elementsArray.corsobrancelha].dataCor + ';}';
   }else{
     html += '.sobrancelha-class-1 {fill:#000;}';
   }
+
   if ('corolho' in elementsArray && elementsArray.corolho != 'false') {
     html += '.olho-class-3 { fill:' +
       dataCraftArray.element[elementsArray.corolho].dataCor + ';}';
   }else{
     html += '.olho-class-3 {fill:#000;}';
   }
+
   html += 
     ".olho-class-1{fill:#000;}" +
     ".olho-class-2{fill:#fff;}" +
@@ -108,18 +117,21 @@ function draw() {
       dataCraftArray.element[elementsArray.sobrancelha].data +
       dataCraftArray.block.preview.blockOut;
   }
+
   if ('olho' in elementsArray && elementsArray.olho != 'false') {
     html +=
       dataCraftArray.block.preview.olho +
       dataCraftArray.element[elementsArray.olho].data +
       dataCraftArray.block.preview.blockOut;
   }
+
   if ('nariz' in elementsArray && elementsArray.nariz != 'false') {
     html +=
       dataCraftArray.block.preview.nariz +
       dataCraftArray.element[elementsArray.nariz].data +
       dataCraftArray.block.preview.blockOut;
   }
+  
   if ('boca' in elementsArray && elementsArray.boca != 'false') {
     html +=
       dataCraftArray.block.preview.boca +
@@ -178,12 +190,14 @@ function selectMenuElement(classItem, el) {
 }
 
 document.querySelector(".check-button").addEventListener("click", function () {
+  window.sessionStorage.setItem("corpele", elementsArray.corpele || false);
+  window.sessionStorage.setItem("corcabelo", elementsArray.corcabelo || false);
+  window.sessionStorage.setItem("corsobrancelha", elementsArray.corsobrancelha || false);
+  window.sessionStorage.setItem("corolho", elementsArray.corolho || false);
+  
   window.sessionStorage.setItem("corpo", elementsArray.corpo || false);
   window.sessionStorage.setItem("cabelo", elementsArray.cabelo || false);
-  window.sessionStorage.setItem(
-    "sobrancelha",
-    elementsArray.sobrancelha || false
-  );
+  window.sessionStorage.setItem("sobrancelha", elementsArray.sobrancelha || false);
   window.sessionStorage.setItem("olho", elementsArray.olho || false);
   window.sessionStorage.setItem("nariz", elementsArray.nariz || false);
   window.sessionStorage.setItem("boca", elementsArray.boca || false);
@@ -193,6 +207,12 @@ document.querySelector(".check-button").addEventListener("click", function () {
 
 document.querySelector(".x-button").addEventListener("click", function () {
   elementsArray = [];
+
+  window.sessionStorage.removeItem("corpele");
+  window.sessionStorage.removeItem("corcabelo");
+  window.sessionStorage.removeItem("corsobrancelha");
+  window.sessionStorage.removeItem("corolho");
+
   window.sessionStorage.removeItem("corpo");
   window.sessionStorage.removeItem("cabelo");
   window.sessionStorage.removeItem("sobrancelha");

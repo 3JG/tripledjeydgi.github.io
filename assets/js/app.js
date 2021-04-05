@@ -38,6 +38,11 @@ function salveCraft() {
   const nariz = window.sessionStorage.getItem("nariz");
   const boca = window.sessionStorage.getItem("boca");
 
+  const corpele = window.sessionStorage.getItem("corpele");
+  const corcabelo = window.sessionStorage.getItem("corcabelo");
+  const corsobrancelha = window.sessionStorage.getItem("corsobrancelha");
+  const corolho = window.sessionStorage.getItem("corolho");
+
   if (idUser) {
     if (id) {
       db.collection("craftArts")
@@ -50,6 +55,10 @@ function salveCraft() {
           olho,
           nariz,
           boca,
+          corpele,
+          corcabelo,
+          corsobrancelha,
+          corolho,
         })
         .then(() => {
           alert("Craft Editado com sucesso!");
@@ -65,6 +74,10 @@ function salveCraft() {
           olho,
           nariz,
           boca,
+          corpele,
+          corcabelo,
+          corsobrancelha,
+          corolho,
         })
         .then(() => {
           alert("Craft Salvo com sucesso!");

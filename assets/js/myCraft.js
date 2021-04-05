@@ -14,7 +14,50 @@ db.collection("craftArts")
     querySnapshot.forEach((doc) => {
       const dataDoc = doc.data();
 
-      let html = dataCraftArray.block.preview.blockIn;
+      let html = '<defs><style>';
+      if ('corpele' in dataDoc && dataDoc.corpele != 'false') {
+        html += '.pele-class { fill:' +
+          dataCraftArray.element[dataDoc.corpele].dataCor + ';}';
+      }else{
+        html += '.pele-class {fill:white;}';
+      }
+
+      if ('corcabelo' in dataDoc && dataDoc.corcabelo != 'false') {
+        html += '.cabelo-class-1 { fill:' +
+          dataCraftArray.element[dataDoc.corcabelo].dataCor + ';}';
+      }else{
+        html += '.cabelo-class-1 {fill:#000;}';
+      }
+
+      if ('corsobrancelha' in dataDoc && dataDoc.corsobrancelha != 'false') {
+        html += '.sobrancelha-class-1 { fill:' +
+          dataCraftArray.element[dataDoc.corsobrancelha].dataCor + ';}';
+      }else{
+        html += '.sobrancelha-class-1 {fill:#000;}';
+      }
+
+      if ('corolho' in dataDoc && dataDoc.corolho != 'false') {
+        html += '.olho-class-3 { fill:' +
+          dataCraftArray.element[dataDoc.corolho].dataCor + ';}';
+      }else{
+        html += '.olho-class-3 {fill:#000;}';
+      }
+
+      html += 
+        ".olho-class-1{fill:#000;}" +
+        ".olho-class-2{fill:#fff;}" +
+
+        '.nariz-class-1,.nariz-class-2{fill:#000;}' +
+        '.boca-class-1 {fill:#000;}' +
+        '.boca-class-2 {fill:none;}' +
+
+        '</style></defs>' + dataCraftArray.block.preview.blockIn;
+      
+      html += dataCraftArray.element[43].dataPreview;
+      
+      if ('corpo' in dataDoc && dataDoc.corpo != 'false') {
+        html += dataCraftArray.element[dataDoc.corpo].dataPreview;
+      }
       if ("cabelo" in dataDoc && dataDoc.cabelo != "false") {
         html += dataCraftArray.element[dataDoc.cabelo].dataPreview;
       }
@@ -42,11 +85,13 @@ db.collection("craftArts")
           dataCraftArray.element[dataDoc.boca].data +
           dataCraftArray.block.preview.blockOut;
       }
+      html += dataCraftArray.block.preview.blockOut;
 
       var data =
-        '<svg xmlns="http://www.w3.org/2000/svg" id="svg-craft" viewBox="0 0 203.2 152.4">' +
+        '<svg xmlns="http://www.w3.org/2000/svg" class="svg-craft" viewBox="0 0 203.2 152.4">' +
         html +
         "</svg>";
+      
       const img_svg = document.createElement("img");
       img_svg.classList.add("card-img-top");
       img_svg.src = "data:image/svg+xml;utf8," + encodeURIComponent(data);
@@ -60,11 +105,14 @@ db.collection("craftArts")
       buttonEdit.innerHTML = '<i class="bi bi-eye"></i>';
       buttonEdit.addEventListener("click", function () {
         window.sessionStorage.setItem("craftArtsId", doc.id);
+        window.sessionStorage.setItem("corpele", dataDoc.corpele || false);
+        window.sessionStorage.setItem("corcabelo", dataDoc.corcabelo || false);
+        window.sessionStorage.setItem("corsobrancelha", dataDoc.corsobrancelha || false);
+        window.sessionStorage.setItem("corolho", dataDoc.corolho || false);
+      
+        window.sessionStorage.setItem("corpo", dataDoc.corpo || false);
         window.sessionStorage.setItem("cabelo", dataDoc.cabelo || false);
-        window.sessionStorage.setItem(
-          "sobrancelha",
-          dataDoc.sobrancelha || false
-        );
+        window.sessionStorage.setItem("sobrancelha", dataDoc.sobrancelha || false);
         window.sessionStorage.setItem("olho", dataDoc.olho || false);
         window.sessionStorage.setItem("nariz", dataDoc.nariz || false);
         window.sessionStorage.setItem("boca", dataDoc.boca || false);
