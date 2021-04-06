@@ -12,8 +12,6 @@ elementsArray.olho = window.sessionStorage.getItem("olho");
 elementsArray.nariz = window.sessionStorage.getItem("nariz");
 elementsArray.boca = window.sessionStorage.getItem("boca");
 
-console.log(elementsArray);
-
 let html = '<defs><style>';
 if ('corpele' in elementsArray && elementsArray.corpele != 'false') {
   html += '.pele-class { fill:' +
