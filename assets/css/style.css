@@ -194,7 +194,7 @@ section a.btn {
 @media (max-width: 450px) {
     .check-button {
         position: fixed;
-        top: 85vh;
+        top: 80vh;
         background-color: #ffffff90;
     }
     .check-button span {
@@ -204,7 +204,7 @@ section a.btn {
     
     .x-button {
         position: fixed;
-        top: 85vh;
+        top: 80vh;
         background-color: #ffffff90;
     }
     .x-button span {
