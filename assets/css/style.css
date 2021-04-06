@@ -155,11 +155,40 @@ section a.btn {
     top: 8px;
     left: 16px;
 }
+.check-button span {
+    display: none;
+}
 
 .x-button {
     position: absolute;
     top: 8px;
     right: 16px;
+}
+
+.x-button span {
+    display: none;
+}
+
+@media (max-width: 400px) {
+    .check-button {
+        position: fixed;
+        top: 85vh;
+        background-color: #ffffff90;
+    }
+    .check-button span {
+        display: block;
+        font-size: .7em;
+    }
+    
+    .x-button {
+        position: fixed;
+        top: 85vh;
+        background-color: #ffffff90;
+    }
+    .x-button span {
+        display: block;
+        font-size: .7em;
+    }
 }
 
 .box-elements {

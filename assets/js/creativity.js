@@ -39,10 +39,6 @@ for (var key in dataCraftArray.element) {
 
   if ('class' in element) {
     svg.classList.add(element.class);
-    if (element.class == 'login-required') {
-      svg.alt = 'Realize o login para poder utilizar este elemento';
-      svg.title = 'Realize o login para poder utilizar este elemento';
-    }
   }
   if ('cor' in element) {
     svg.dataset.cor = element.cor;
