@@ -5,6 +5,7 @@
     <meta name="keywords" content="papercraft, ufc, face maker" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="author" content="UFC - SMD - 2020.2" />
+    <meta name="image" content="assets/img/ico-craft.png" />
     <meta
       name="description"
       content="Craft Maker - Criador de Papercraft personalizado"
@@ -36,20 +37,23 @@
     <div class="container">
       <nav class="navbar navbar-primary">
         <div class="container-fluid">
+          <div class="ms-auto">
           <button
-            class="navbar-toggler ms-auto"
+            class="navbar-toggler "
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarContent"
             aria-controls="navbarContent"
+            title="Menu"
           >
             <i class="bi bi-list"></i>
           </button>
+          </div>
           <div
-            class="collapse fixed-top navbar-collapse bg-light"
+            class="collapse fixed-top navbar-collapse"
             id="navbarContent"
           >
-            <ul class="navbar-nav">
+            <ul class="navbar-nav bg-light">
               <li
                 class="nav-item nav-item-first"
                 data-bs-toggle="collapse"
@@ -66,7 +70,11 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" onclick="window.sessionStorage.removeItem('craftArtsId')" href="creativity.html">
+                <a
+                  class="nav-link"
+                  onclick="window.sessionStorage.removeItem('craftArtsId')"
+                  href="creativity.html"
+                >
                   <i class="bi bi-emoji-heart-eyes"></i> Criar Meu Craft
                 </a>
               </li>
@@ -94,7 +102,8 @@
               </li>
             </ul>
             <div
-              style="height: 100vh; width: 100%"
+              style="height: 100vh; width: 100%;"
+              class="navbar-nav-back"
               data-bs-toggle="collapse"
               data-bs-target="#navbarContent"
               aria-controls="navbarContent"
@@ -104,21 +113,29 @@
       </nav>
       <div class="row">
         <section class="col-md-6 col-sm-12">
-          <img id="svg-craft" />
+          <img id="svg-craft" alt="Seu Craft"/>
         </section>
         <section class="col-md-6 col-sm-12">
           <div class="row">
+            <section class="col-12 item-not-log alert alert-light text-center">
+              Cadastre-se para poder Salvar o seu Craft <span style='font-size:2em;'>&#9786; &#9825;</span>
+            </section>
             <a
-              class="btn btn-primary btn-large mb-2"
+              class="btn btn-primary btn-large mb-2 item-log"
               onclick="salveCraft()"
-              download="myCraft"
             >
               <i class="bi bi-cloud-check"></i> Salvar
             </a>
             <a
+              class="btn btn-primary btn-large mb-2 item-not-log"
+              onclick='window.sessionStorage.setItem("redirect_login", "preview.html");'
+              href="login.html"
+            >
+              <i class="bi bi-key-fill"></i> Realize o Login ou Cadastro, Aqui
+            </a>
+            <a
               class="btn btn-primary btn-large mb-2"
               onclick="editCraft()"
-              download="myCraft"
             >
               <i class="bi bi-pencil-square"></i> Editar
             </a>
@@ -126,14 +143,13 @@
               class="btn btn-primary btn-large mb-2"
               href="print.html"
             >
-              <i class="bi bi-printer"></i> Imprimir
+              <i class="bi bi-printer"></i> Ver Molde para Impressão
             </a>
             <a
-              class="btn btn-primary btn-large mb-2"
-              onclick="download_img(this);"
-              download="myCraft"
+              class="btn btn-primary btn-large mb-2 item-log mt-5"
+              href="myCrafts.html"
             >
-              <i class="bi bi-download"></i> Download
+              Meus Crafts
             </a>
           </div>
         </section>
