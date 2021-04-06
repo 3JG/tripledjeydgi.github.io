@@ -5,6 +5,7 @@
     <meta name="keywords" content="papercraft, ufc, face maker" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="author" content="UFC - SMD - 2020.2" />
+    <meta name="image" content="assets/img/ico-craft.png" />
     <meta
       name="description"
       content="Craft Maker - Criador de Papercraft personalizado"
@@ -36,20 +37,23 @@
     <div class="container">
       <nav class="navbar navbar-primary">
         <div class="container-fluid">
+          <div class="ms-auto">
           <button
-            class="navbar-toggler ms-auto"
+            class="navbar-toggler "
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarContent"
             aria-controls="navbarContent"
+            title="Menu"
           >
             <i class="bi bi-list"></i>
           </button>
+          </div>
           <div
-            class="collapse fixed-top navbar-collapse bg-light"
+            class="collapse fixed-top navbar-collapse"
             id="navbarContent"
           >
-            <ul class="navbar-nav">
+            <ul class="navbar-nav bg-light">
               <li
                 class="nav-item nav-item-first"
                 data-bs-toggle="collapse"
@@ -66,7 +70,11 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" onclick="window.sessionStorage.removeItem('craftArtsId')" href="creativity.html">
+                <a
+                  class="nav-link"
+                  onclick="window.sessionStorage.removeItem('craftArtsId')"
+                  href="creativity.html"
+                >
                   <i class="bi bi-emoji-heart-eyes"></i> Criar Meu Craft
                 </a>
               </li>
@@ -94,7 +102,8 @@
               </li>
             </ul>
             <div
-              style="height: 100vh; width: 100%"
+              style="height: 100vh; width: 100%;"
+              class="navbar-nav-back"
               data-bs-toggle="collapse"
               data-bs-target="#navbarContent"
               aria-controls="navbarContent"
@@ -106,13 +115,13 @@
         <section class="col-md-6 col-sm-12 section-canvas">
           <div class="box-canvas">
             <svg id="svg-craft"></svg>
-            <span class="menu-cor d-none" onclick="selectMenuElement('cor', this)">
-              <img src="assets/img/ico/ico-cor.svg" />
+            <span class="menu-cor d-none" onclick="selectMenuElement('cor', this)" title="Selecione a Cor do Elemento">
+              <img src="assets/img/ico/ico-cor.svg" alt="Selecione a Cor do Elemento"/>
             </span>
-            <button class="btn check-button">
+            <button class="btn check-button" title="Finalizar Craft">
               <i class="bi bi-check2-square"></i>
             </button>
-            <button class="btn x-button">
+            <button class="btn x-button" title="Limpar Tela">
               <i class="bi bi-x-square"></i>
             </button>
           </div>
