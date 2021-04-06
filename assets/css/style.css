@@ -169,7 +169,29 @@ section a.btn {
     display: none;
 }
 
-@media (max-width: 400px) {
+@media (orientation: portrait) {
+    .check-button {
+        position: fixed;
+        top: 85vh;
+        background-color: #ffffff90;
+    }
+    .check-button span {
+        display: block;
+        font-size: .7em;
+    }
+    
+    .x-button {
+        position: fixed;
+        top: 85vh;
+        background-color: #ffffff90;
+    }
+    .x-button span {
+        display: block;
+        font-size: .7em;
+    }
+}
+
+@media (max-width: 450px) {
     .check-button {
         position: fixed;
         top: 85vh;
