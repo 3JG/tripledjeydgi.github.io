@@ -150,5 +150,6 @@ db.collection("craftArts")
     });
   })
   .catch((error) => {
-    Alert("Erro no login: ", error);
+    console.log("Erro no login: ", error);
+    alertCraft("Erro");
   });

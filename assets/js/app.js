@@ -61,8 +61,7 @@ function salveCraft() {
           corolho,
         })
         .then(() => {
-          alert("Craft Editado com sucesso!");
-          location.href = "myCrafts.html";
+          alertCraftRedirect("Craft Editado com sucesso!", "myCrafts.html");
         });
     } else {
       db.collection("craftArts")
@@ -80,12 +79,11 @@ function salveCraft() {
           corolho,
         })
         .then(() => {
-          alert("Craft Salvo com sucesso!");
-          location.href = "myCrafts.html";
+          alertCraftRedirect("Craft Salvo com sucesso!", "myCrafts.html");
         });
     }
   } else {
-    alert("Efetue o login");
+    alertCraft("Efetue o login");
   }
 }
 
@@ -97,10 +95,10 @@ function saveDataRegister() {
   const redirect_login = window.sessionStorage.getItem("redirect_login") || "myCrafts.html";
 
   if (nome.length < 1) {
-    alert('Preencha o Nome do seu usuário!');
+    alertCraft('Preencha o Nome do seu usuário!');
   } else {
     if (email.length < 5) {
-      alert('Preencha o seu Email!');
+      alertCraft('Preencha o seu Email!');
     } else {
       db.collection("craftUsers")
         .where("email", "==", email)
@@ -116,17 +114,16 @@ function saveDataRegister() {
               .then((doc) => {
                 window.sessionStorage.setItem("craft_user_logger", doc.id);
                 window.sessionStorage.setItem("craft_user_name", nome);
-                alert("Seja Bem vindo!");
                 window.sessionStorage.removeItem("redirect_login");
-                location.href = redirect_login;
+                alertCraftRedirect("Seja Bem vindo!", redirect_login);
               });
           } else {
-            alert("Email já cadastrado!");
+            alertCraft("Email já cadastrado!");
           }
         })
         .catch((error) => {
           console.log(error);
-          alert("Erro no login: ", error);
+          alertCraft("Erro no login: ", error);
         });
     }
   }
@@ -139,24 +136,27 @@ function logDataUser() {
   const redirect_login = window.sessionStorage.getItem("redirect_login") || "index.html";
 
   if (email.length < 5) {
-    alert('Preencha o seu Email!');
+    alertCraft('Preencha o seu Email!');
   } else {  
     db.collection("craftUsers")
       .where("email", "==", email)
       .where("password", "==", password)
       .get()
       .then((querySnapshot) => {
-        querySnapshot.forEach((doc) => {
-          window.sessionStorage.setItem("craft_user_logger", doc.id);
-          window.sessionStorage.setItem("craft_user_name", doc.data().nome);
-          alert("Seja Bem vindo!");
-          window.sessionStorage.removeItem("redirect_login");
-          location.href = redirect_login;
-        });
+        if (querySnapshot.size > 0) {
+          querySnapshot.forEach((doc) => {
+            window.sessionStorage.setItem("craft_user_logger", doc.id);
+            window.sessionStorage.setItem("craft_user_name", doc.data().nome);
+            window.sessionStorage.removeItem("redirect_login");
+            location.href = redirect_login;
+          });
+        } else {
+          alertCraft("Senha inválida ou E-mail não cadastrado.");
+        }
       })
       .catch((error) => {
         console.log(error);
-        alert("Erro no login: ", error);
+        alertCraft("Erro no login, atualize a página e tente novamente.");
       });
   }
 }
@@ -172,8 +172,7 @@ function logout() {
   window.sessionStorage.removeItem("craft_user_logger");
   window.sessionStorage.removeItem("craft_user_name");
 
-  alert("Tchau até a próxima");
-  location.href = "index.html";
+  alertCraftRedirect("Tchau até a próxima", "index.html");
 }
 
 function deleteCraft(id) {
@@ -181,10 +180,41 @@ function deleteCraft(id) {
     .doc(id)
     .delete()
     .then(() => {
-      alert("Craft apagado com sucesso!");
-      location.href = "myCrafts.html";
+      alertCraftRedirect("Craft apagado com sucesso!", "myCrafts.html");
     })
     .catch((error) => {
-      alert("Erro ao deletar: ", error);
+      alertCraft("Erro ao deletar: ", error);
     });
+}
+
+function alertCraft( message ) {
+  const modal = document.getElementById('CraftModal');
+  modal.classList.remove("block-modal");
+  if (modal) {
+    modal.addEventListener('show.bs.modal', function (event) {
+      const title = modal.querySelector('.modal-body');
+      title.innerHTML = message;
+    });
+
+    var myModal = new bootstrap.Modal(document.getElementById('CraftModal'));
+    myModal.show();
+  }
+}
+
+function alertCraftRedirect( message, redirect ) {
+  const modal = document.getElementById('CraftModal');
+  if (modal) {
+    modal.addEventListener('show.bs.modal', function (event) {
+      const title = modal.querySelector('.modal-body');
+      title.innerHTML = message;
+
+      const button = modal.querySelector('#ok');
+      button.addEventListener('click', function (event) {
+        location.href = redirect;
+      });
+    });
+
+    var myModal = new bootstrap.Modal(document.getElementById('CraftModal'));
+    myModal.show();
+  }
 }

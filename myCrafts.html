@@ -21,17 +21,25 @@
     <meta name="theme-color" content="#febc2f" />
     
     <title>Craft Maker: Crafts</title>
-    <link rel="icon" href="assets/img/favicon.svg">
-
-    <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/vendor/bootstrap-icons/bootstrap-icons.css">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" href="assets/img/favicon.svg" />
+    <link rel="icon" type="image/x-icon" sizes="16x16" href="assets/img/favicon.svg">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/img/ico-craft.png">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100;300;500;700;800&display=swap" rel="stylesheet">
+    <link
+      rel="stylesheet"
+      href="assets/vendor/bootstrap/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="assets/vendor/bootstrap-icons/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
     <div class="container">
       <nav class="navbar navbar-primary">
         <div class="container-fluid">
-          <div class="ms-auto">
+          <div>
           <button
             class="navbar-toggler "
             type="button"
@@ -54,7 +62,7 @@
                 data-bs-target="#navbarContent"
                 aria-controls="navbarContent"
               >
-                <a class="nav-link text-light float-end">
+                <a class="nav-link text-light">
                   <i class="bi bi-x me-5 fs-4"></i>
                 </a>
               </li>
@@ -90,7 +98,7 @@
                 </a>
               </li>
               <li class="nav-item item-log">
-                <a class="nav-link" href="index.html" onclick="logout()">
+                <a class="nav-link" onclick="logout()">
                   <i class="bi bi-door-open-fill"></i> Sair
                 </a>
               </li>
@@ -109,6 +117,19 @@
             <h1>Crafts de <span id="name-user"></span></h1>
             <div id="myCraft" class="row d-flex justify-content-center"></div>
         </section>
+    </div>
+
+    <div class="modal fade block-modal" id="CraftModal" tabindex="-1" aria-labelledby="CraftModalLabel" data-backdrop="static">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-body" id="CraftModalLabel">Mensagem Craft</h5>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" id="ok" data-bs-dismiss="modal">Ok</button>
+          </div>
+        </div>
+      </div>
     </div>
 
     <script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
