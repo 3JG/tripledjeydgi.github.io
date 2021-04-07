@@ -147,7 +147,7 @@ draw();
 document.querySelectorAll(".element-craft").forEach(function (element) {
   element.addEventListener("click", function () {
     if ( this.classList.contains('login-required') ) {
-      alert('Realize o login para poder utilizar este elemento');
+      alertCraft('Realize o login para poder utilizar este elemento');
     } else {
       elementsArray[element.dataset.element] = parseInt(element.dataset.id);
 

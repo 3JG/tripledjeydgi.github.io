@@ -1,5 +1,8 @@
-body {
-    --primary: #458cb5;
+/* GERAL */
+* {
+    --primary: #E29C06;
+    --secondy: #458cb5;
+    font-family: 'Lexend', sans-serif;
 }
 
 body {
@@ -16,12 +19,7 @@ body {
     }
 }
 
-@media (max-width: 500px) {
-    .navbar-nav-back {
-        background-color: #f8f9fa;
-    }
-}
-
+/* BARRA DE ROLAGEM */
 @media (min-width: 600px) {
     ::-webkit-scrollbar {
         width: 8px;
@@ -39,6 +37,13 @@ body {
     }
 }
 
+/* MENU */
+@media (max-width: 500px) {
+    .navbar-nav-back {
+        background-color: #f8f9fa;
+    }
+}
+
 .navbar-toggler:focus {
   box-shadow: none;
 }
@@ -48,7 +53,7 @@ body {
 }
 
 .nav-item-first, .nav-item-first:hover{
-    background-color: var(--primary);
+    background-color: var(--secondy);
 }
 
 .nav-item .nav-link {
@@ -56,9 +61,10 @@ body {
     margin: .2em;
     margin-left: 15%;
     font-weight: 500;
-    color: var(--primary);
+    color: var(--secondy);
 }
 
+/* LOGO GRANDE */
 .logo-container {
     text-align: center;
 }
@@ -69,6 +75,7 @@ body {
     max-width: 150px;
 }
 
+/* LOGO PEQUENA */
 .sub-logo {
     margin: 0.5em;
     width: 10%;
@@ -76,9 +83,14 @@ body {
     min-width: 100px;
 }
 
-.btn-primary {
-    background-color: var(--primary);
+/* MODAL */
+.block-modal{
+    pointer-events: none;
 }
+
+.modal-dialog{
+    pointer-events: all;
+ }
 
 .card-title {
     color: var(--primary);
@@ -86,6 +98,7 @@ body {
 
 section h1 {
     color: var(--primary);
+    text-shadow: .5px .5px #fff;
     text-align: center;
 }
 
@@ -93,7 +106,7 @@ section p {
     width: 80%;
 }
 
-section a.btn {
+.btn-primary {
     background-color: #458cb5;
     box-shadow: 3px 3px #458cb550, -3px -3px #458cb550;
 }
@@ -116,7 +129,7 @@ section a.btn {
 }
 
 .box-canvas {
-    min-height: 300px;
+    min-height: 30vh;
     position: relative;
 }
 

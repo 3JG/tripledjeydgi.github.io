@@ -22,7 +22,9 @@
 
     <title>Craft Maker</title>
     <link rel="icon" href="assets/img/favicon.svg" />
-
+    <link rel="icon" type="image/x-icon" sizes="16x16" href="assets/img/favicon.svg">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/img/ico-craft.png">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100;300;500;700;800&display=swap" rel="stylesheet">
     <link
       rel="stylesheet"
       href="assets/vendor/bootstrap/css/bootstrap.min.css"
@@ -37,12 +39,9 @@
     <div class="container">
       <nav class="navbar navbar-primary">
         <div class="container-fluid">
-          <div class="ms-auto">
-          <a class="text-decoration-none text-reset" href="login.html" id="indexLogin">
-            LOGIN
-          </a>
+          <div>
           <button
-            class="navbar-toggler "
+            class="navbar-toggler"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarContent"
@@ -51,6 +50,9 @@
           >
             <i class="bi bi-list"></i>
           </button>
+          <a class="text-decoration-none text-reset" href="login.html" id="indexLogin">
+            LOGIN
+          </a>
           </div>
           <div
             class="collapse fixed-top navbar-collapse"
@@ -63,7 +65,7 @@
                 data-bs-target="#navbarContent"
                 aria-controls="navbarContent"
               >
-                <a class="nav-link text-light float-end">
+                <a class="nav-link text-light">
                   <i class="bi bi-x me-5 fs-4"></i>
                 </a>
               </li>
@@ -99,7 +101,7 @@
                 </a>
               </li>
               <li class="nav-item item-log">
-                <a class="nav-link" href="index.html" onclick="logout()">
+                <a class="nav-link" onclick="logout()">
                   <i class="bi bi-door-open-fill"></i> Sair
                 </a>
               </li>
@@ -121,16 +123,16 @@
         class="d-flex flex-column align-items-center col-md-12 col-sm-12 mb-3"
       >
         <p class="text-justify">
-          Olá! Somos o CraftMaker.<br />
-          Um personalizador de papercraft permite que você seja ao mesmo tempo
-          criador e criatura.
+          Olá! Somos o <strong>CraftMaker</strong>.<br />
+          Um personalizador de papercraft que permite que você seja ao mesmo tempo
+          <strong>criador</strong> e <strong>criatura</strong>.
         </p>
         <p class="text-justify">
           Transforme-se ou transforme quem você quiser em uma escultura de papel
-          pronta para enfeitar sua estante ou presentear quem você mais ama.
+          pronta para <strong>enfeitar</strong> sua estante ou <strong>presentear</strong> quem você mais ama.
         </p>
         <a
-          class="btn btn-primary d-sm-none d-md-none"
+          class="btn btn-primary d-sm-none d-md-none mt-2 mb-2"
           onclick="window.sessionStorage.removeItem('craftArtsId')"
           href="creativity.html"
           title="Hora de Criar sua Obra de Arte!"
@@ -144,18 +146,18 @@
         >
           <h5 class="card-title">Como Funciona?</h5>
           <p class="card-text">
-            Clicando em CRIAR MEU CRAFT. Abrirá a página de personalização, onde
+            Clicando em <strong>CRIAR MEU CRAFT</strong>. Abrirá a página de personalização, onde
             você escolherá as características da sua criação. Após finalizar a
-            sua obra de arte, poderá fazer o download do molde.
+            sua obra de arte, poderá fazer o <strong>download</strong> do molde.
           </p>
           <p class="card-text">
-            Imprima-o em um papel resistente e se divirta com a montagem. E
+            <strong>Imprima-o</strong> em um papel resistente e se divirta com a montagem. E
             poderá ter uma criaturinha como essa em suas mãos!
           </p>
         </section>
-        <section class="text-center col-md-4 col-sm-12">
+        <section class="text-center col-md-4 col-sm-12 mt-2">
           <a
-            class="btn btn-primary d-none d-sm-block d-md-block"
+            class="btn btn-primary d-none d-sm-block d-md-block mt-2 mb-2"
             onclick="window.sessionStorage.removeItem('craftArtsId')"
             href="creativity.html"
             title="Hora de Criar sua Obra de Arte!"
@@ -169,19 +171,32 @@
         >
           <h5 class="card-title">Salve as suas obras</h5>
           <p class="card-text">
-            Realizando um simples cadastro, poderá salvar suas criações, para
-            compartilha-las com seus amigos!
+            Realizando um simples <strong>cadastro</strong>, poderá salvar suas criações, para
+            <strong>compartilha-las</strong> com seus amigos!
           </p>
         </section>
       </div>
       <div class="row">
         <section
-          class="d-flex flex-column align-items-center col-12 mt-5 text-center fw-lighter"
+          class="d-flex flex-column align-items-center col-12 mt-5 text-center"
         >
         © 2021 - Projeto de alunos do curso SMD - UFC
         <br/>
         Graciano Barbosa Lima Junior - Josué Dos Santos Marques - Joel Ferreira Melo - João Paulo Lima
         </section>
+      </div>
+    </div>
+
+    <div class="modal fade block-modal" id="CraftModal" tabindex="-1" aria-labelledby="CraftModalLabel" data-backdrop="static">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-body" id="CraftModalLabel">Mensagem Craft</h5>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" id="ok" data-bs-dismiss="modal">Ok</button>
+          </div>
+        </div>
       </div>
     </div>
 
