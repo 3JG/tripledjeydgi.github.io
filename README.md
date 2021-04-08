@@ -1,8 +1,5 @@
 # CraftMaker
-Projeto Integrado 2
+UFC - SDM 2020.2
 
-UFC - SDM
-- GRACIANO BARBOSA LIMA JUNIOR
-- JOSUÉ DOS SANTOS MARQUES
-- JOEL FERREIRA MELO
-- JOÃO PAULO LIMA
+## Proposta de Valor
+O Craft Maker é uma aplicação que permite ao usuário criar sua própria caricatura, podendo imprimi-la como uma escultura papercraft. Perfeito como um antiestresse, é uma opção que mescla um entretenimento digital com um manual.

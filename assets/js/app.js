@@ -196,6 +196,11 @@ function alertCraft( message ) {
       title.innerHTML = message;
     });
 
+    modal.addEventListener('click', function (event) {
+      const button = modal.querySelector('#ok');
+      button.click();
+    });
+
     var myModal = new bootstrap.Modal(document.getElementById('CraftModal'));
     myModal.show();
   }
