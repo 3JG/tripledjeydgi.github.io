@@ -92,10 +92,12 @@ body {
     pointer-events: all;
  }
 
+/* CARD */
 .card-title {
     color: var(--primary);
 }
 
+/* ELEMENTOS DE TEXTO */
 section h1 {
     color: var(--primary);
     text-shadow: .5px .5px #fff;
@@ -111,6 +113,7 @@ section p {
     box-shadow: 3px 3px #458cb550, -3px -3px #458cb550;
 }
 
+/* CRAFT IMPRESO */
 .craft-img {
     min-width: 100px;
     width: 80%;
@@ -118,10 +121,7 @@ section p {
     margin-top: 1.5em;
 }
 
-.section-canvas button {
-    font-size: 1.5em;
-}
-
+/* AREA CRAFT */
 .box-canvas, .box-canvas-print {
     background-color: white;
     padding: 2%;
@@ -131,6 +131,81 @@ section p {
 .box-canvas {
     min-height: 30vh;
     position: relative;
+}
+
+.check-button {
+    position: absolute;
+    bottom: -80px;
+    left: 16px;
+    font-size: 1.3em;
+    background-color: #0d6efda6;
+}
+
+.check-button span {
+    font-size: .7em;
+}
+
+.x-button {
+    position: absolute;
+    bottom: -80px;
+    right: 16px;
+    font-size: 1.3em;
+    background-color: #0d6efda6;
+}
+
+.x-button span {
+    font-size: .7em;
+}
+
+/* BOTÕES DE AÇÃO NA TELA CELULAR */
+@media (orientation: portrait) {
+    .check-button {
+        position: fixed;
+        max-width: 30vw;
+        height: 40px;
+        top: 90vh;
+        background-color: #0d6efda6;
+        font-size: 1em;
+    }
+    
+    .x-button {
+        position: fixed;
+        max-width: 30vw;
+        height: 40px;
+        top: 90vh;
+        background-color: #0d6efda6;
+        font-size: 1em;
+    }
+}
+
+/* BOTÕES DE AÇÃO NA TELA ESTREITA */
+@media (max-width: 767px) {
+    .check-button {
+        position: fixed;
+        max-width: 40vw;
+        height: 40px;
+        top: 90vh;
+        background-color: #0d6efda6;
+        font-size: 1em;
+    }
+    
+    .x-button {
+        position: fixed;
+        max-width: 40vw;
+        height: 40px;
+        top: 90vh;
+        background-color: #0d6efda6;
+        font-size: 1em;
+    }
+}
+
+/* SELEÇÃO DE COR */
+.menu-cor img{
+    width: 15%;
+    height: 15%;
+    position: absolute;
+    bottom: 8px;
+    left: 16px;
 }
 
 .menu-create {
@@ -155,76 +230,7 @@ section p {
     background: #33333350;
 }
 
-.menu-cor img{
-    width: 15%;
-    height: 15%;
-    position: absolute;
-    bottom: 8px;
-    left: 16px;
-}
 
-.check-button {
-    position: absolute;
-    top: 8px;
-    left: 16px;
-}
-.check-button span {
-    display: none;
-}
-
-.x-button {
-    position: absolute;
-    top: 8px;
-    right: 16px;
-}
-
-.x-button span {
-    display: none;
-}
-
-@media (orientation: portrait) {
-    .check-button {
-        position: fixed;
-        top: 85vh;
-        background-color: #ffffff90;
-    }
-    .check-button span {
-        display: block;
-        font-size: .7em;
-    }
-    
-    .x-button {
-        position: fixed;
-        top: 85vh;
-        background-color: #ffffff90;
-    }
-    .x-button span {
-        display: block;
-        font-size: .7em;
-    }
-}
-
-@media (max-width: 450px) {
-    .check-button {
-        position: fixed;
-        top: 80vh;
-        background-color: #ffffff90;
-    }
-    .check-button span {
-        display: block;
-        font-size: .7em;
-    }
-    
-    .x-button {
-        position: fixed;
-        top: 80vh;
-        background-color: #ffffff90;
-    }
-    .x-button span {
-        display: block;
-        font-size: .7em;
-    }
-}
 
 .box-elements {
     text-align: center;

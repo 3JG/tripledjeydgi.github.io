@@ -13,28 +13,28 @@ elementsArray.nariz = window.sessionStorage.getItem("nariz");
 elementsArray.boca = window.sessionStorage.getItem("boca");
 
 let html = '<defs><style>';
-if ('corpele' in elementsArray && elementsArray.corpele != 'false') {
+if ('corpele' in elementsArray && elementsArray.corpele != "false" && elementsArray.corpele != null) {
   html += '.pele-class { fill:' +
     dataCraftArray.element[elementsArray.corpele].dataCor + ';}';
 }else{
   html += '.pele-class {fill:white;}';
 }
 
-if ('corcabelo' in elementsArray && elementsArray.corcabelo != 'false') {
+if ('corcabelo' in elementsArray && elementsArray.corcabelo != "false" && elementsArray.corcabelo != null) {
   html += '.cabelo-class-1 { fill:' +
     dataCraftArray.element[elementsArray.corcabelo].dataCor + ';}';
 }else{
   html += '.cabelo-class-1 {fill:#000;}';
 }
 
-if ('corsobrancelha' in elementsArray && elementsArray.corsobrancelha != 'false') {
+if ('corsobrancelha' in elementsArray && elementsArray.corsobrancelha != "false" && elementsArray.corsobrancelha != null) {
   html += '.sobrancelha-class-1 { fill:' +
     dataCraftArray.element[elementsArray.corsobrancelha].dataCor + ';}';
 }else{
   html += '.sobrancelha-class-1 {fill:#000;}';
 }
 
-if ('corolho' in elementsArray && elementsArray.corolho != 'false') {
+if ('corolho' in elementsArray && elementsArray.corolho != "false" && elementsArray.corolho != null) {
   html += '.olho-class-3 { fill:' +
     dataCraftArray.element[elementsArray.corolho].dataCor + ';}';
 }else{
@@ -53,37 +53,42 @@ html +=
 
 html += dataCraftArray.element[43].dataPreview;
 
-if (elementsArray.corpo != 'false') {
+if ('corpo' in elementsArray && elementsArray.corpo != "false" && elementsArray.corpo != null) {
   html += dataCraftArray.element[elementsArray.corpo].dataPreview;
 }
 
-if (elementsArray.cabelo != "false") {
+if ('cabelo' in elementsArray && elementsArray.cabelo != "false" && elementsArray.cabelo != null) {
   html += dataCraftArray.element[elementsArray.cabelo].dataPreview;
 }
-if (elementsArray.sobrancelha != "false") {
+
+if ('sobrancelha' in elementsArray && elementsArray.sobrancelha != "false" && elementsArray.sobrancelha != null) {
   html +=
     dataCraftArray.block.preview.sobrancelha +
     dataCraftArray.element[elementsArray.sobrancelha].data +
     dataCraftArray.block.preview.blockOut;
 }
-if (elementsArray.olho != "false") {
+
+if ('olho' in elementsArray && elementsArray.olho != "false" && elementsArray.olho != null) {
   html +=
     dataCraftArray.block.preview.olho +
     dataCraftArray.element[elementsArray.olho].data +
     dataCraftArray.block.preview.blockOut;
 }
-if (elementsArray.nariz != "false") {
+
+if ('nariz' in elementsArray && elementsArray.nariz != "false" && elementsArray.nariz != null) {
   html +=
     dataCraftArray.block.preview.nariz +
     dataCraftArray.element[elementsArray.nariz].data +
     dataCraftArray.block.preview.blockOut;
 }
-if (elementsArray.boca != "false") {
+
+if ('boca' in elementsArray && elementsArray.boca != "false" && elementsArray.boca != null) {
   html +=
     dataCraftArray.block.preview.boca +
     dataCraftArray.element[elementsArray.boca].data +
     dataCraftArray.block.preview.blockOut;
 }
+
 html += dataCraftArray.block.preview.blockOut;
 
 var data =
