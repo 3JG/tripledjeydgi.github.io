@@ -161,20 +161,20 @@ section p {
 @media (orientation: portrait) {
     .check-button {
         position: fixed;
-        max-width: 30vw;
+        max-width: 45vw;
         height: 40px;
         top: 85vh;
         background-color: #0d6efda6;
-        font-size: 1em;
+        font-size: 1.2em;
     }
     
     .x-button {
         position: fixed;
-        max-width: 30vw;
+        max-width: 45vw;
         height: 40px;
         top: 85vh;
         background-color: #0d6efda6;
-        font-size: 1em;
+        font-size: 1.2em;
     }
 }
 
@@ -182,20 +182,20 @@ section p {
 @media (max-width: 767px) {
     .check-button {
         position: fixed;
-        max-width: 40vw;
+        max-width: 45vw;
         height: 40px;
         top: 85vh;
         background-color: #0d6efda6;
-        font-size: 1em;
+        font-size: 1.2em;
     }
     
     .x-button {
         position: fixed;
-        max-width: 40vw;
+        max-width: 45vw;
         height: 40px;
         top: 85vh;
         background-color: #0d6efda6;
-        font-size: 1em;
+        font-size: 1.2em;
     }
 }
 
