@@ -165,6 +165,8 @@ document.querySelectorAll(".element-craft").forEach(function (element) {
 
 function selectMenuElement(classItem, el) {
   if (classItem != "cor") {
+    document.querySelector(".menu-cor").classList.add('d-none');
+    
     document.querySelectorAll(".menu-active").forEach(function (element) {
       element.classList.remove("menu-active");
     });
