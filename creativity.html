@@ -116,10 +116,22 @@
       <div class="row">
         <section class="col-md-6 col-sm-12 section-canvas">
           <div class="box-canvas">
-            <svg id="svg-craft"></svg>
-            <span class="menu-cor d-none" onclick="selectMenuElement('cor', this)" title="Selecione a Cor do Elemento">
-              <img src="assets/img/ico/ico-cor.svg" alt="Selecione a Cor do Elemento"/>
+            <span class="menu-cor d-none" title="Selecione a Cor do Elemento">
+              Selecione a cor > <span class="menu-cor-span"></span>
+              <input class="input-cor" type="color" id="cores" name="ArcoIris" list="arcoIris">
+              <datalist id="arcoIris">
+                <option value="#000000"></option>
+                <option value="#ffffff"></option>
+                <option value="#ffdab9"></option>
+                <option value="#ecc19d"></option>
+                <option value="#aa6a2c"></option>
+                <option value="#624223"></option>
+                <option value="#FFA500"></option>
+                <option value="#40E0D0"></option>
+                <option value="#32CD32"></option>
+              </datalist>
             </span>
+            <svg id="svg-craft"></svg>
             <button class="btn check-button" title="Finalizar Craft">
               <i class="bi bi-check2-square"></i> <span>Finalizar Craft</span>
             </button>
@@ -155,7 +167,18 @@
                 </li>
               </ul>
             </section>
-            <section class="col-12 mb-5">
+            <section class="col-12 mb-5 text-center align-middle">
+              <span class="input-cor-pele-span">Selecione a cor da pele: </span>
+              <input class="input-cor-pele" type="color" id="arcoIrisPele-input" name="arcoIrisPele" list="arcoIrisPele" value="#ffffff">
+              <datalist id="arcoIrisPele">
+                <option value="#ffffff"></option>
+                <option value="#000000"></option>
+                <option value="#ffdab9"></option>
+                <option value="#ecc19d"></option>
+                <option value="#aa6a2c"></option>
+                <option value="#624223"></option>
+                <option value="#FDF063"></option>
+              </datalist>
               <div class="row box-elements" id="content-elements"></div>
             </section>
           </div>

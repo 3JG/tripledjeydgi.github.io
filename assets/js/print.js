@@ -14,29 +14,33 @@ elementsArray.boca = window.sessionStorage.getItem('boca');
 
 let html = '<defs><style>';
 if ('corpele' in elementsArray && elementsArray.corpele != 'false' && elementsArray.corpele != null) {
-  html += '.pele-class { fill:' +
-    dataCraftArray.element[elementsArray.corpele].dataCor + ';}';
+  if (elementsArray.corpele.includes('#')){
+    html += '.pele-class { fill:' + elementsArray.corpele + ';}';
+  }
 }else{
   html += '.pele-class {fill:white;}';
 }
 
 if ('corcabelo' in elementsArray && elementsArray.corcabelo != 'false' && elementsArray.corcabelo != null) {
-  html += '.cabelo-class-1 { fill:' +
-    dataCraftArray.element[elementsArray.corcabelo].dataCor + ';}';
+  if (elementsArray.corcabelo.includes('#')){
+    html += '.cabelo-class-1 { fill:' + elementsArray.corcabelo + ';}';
+  }
 }else{
   html += '.cabelo-class-1 {fill:#000;}';
 }
 
 if ('corsobrancelha' in elementsArray && elementsArray.corsobrancelha != 'false' && elementsArray.corsobrancelha != null) {
-  html += '.sobrancelha-class-1 { fill:' +
-    dataCraftArray.element[elementsArray.corsobrancelha].dataCor + ';}';
+  if (elementsArray.corsobrancelha.includes('#')){
+    html += '.sobrancelha-class-1 { fill:' + elementsArray.corsobrancelha + ';}';
+  }
 }else{
   html += '.sobrancelha-class-1 {fill:#000;}';
 }
 
 if ('corolho' in elementsArray && elementsArray.corolho != 'false' && elementsArray.corolho != null) {
-  html += '.olho-class-3 { fill:' +
-    dataCraftArray.element[elementsArray.corolho].dataCor + ';}';
+  if (elementsArray.corolho.includes('#')){
+    html += '.olho-class-3 { fill:' + elementsArray.corolho + ';}';
+  }
 }else{
   html += '.olho-class-3 {fill:#000;}';
 }
