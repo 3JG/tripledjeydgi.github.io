@@ -35,7 +35,7 @@ for (var key in dataCraftArray.element) {
   svg.classList.add("element-craft");
   svg.dataset.element = element.tipo;
   svg.dataset.id = element.id;
-  svg.setAttribute("viewBox", "35 40 200 250");
+  svg.setAttribute("viewBox", "35 0 200 250");
 
   if ('class' in element) {
     svg.classList.add(element.class);
@@ -64,29 +64,33 @@ craft.setAttribute("viewBox", "0 0 203.2 152.4");
 function draw() {
   let html = '<defs><style>';
   if ('corpele' in elementsArray && elementsArray.corpele != 'false') {
-    html += '.pele-class { fill:' +
-      dataCraftArray.element[elementsArray.corpele].dataCor + ';}';
+    if (elementsArray.corpele.includes('#')){
+      html += '.pele-class { fill:' + elementsArray.corpele + ';}';
+    }
   }else{
     html += '.pele-class {fill:white;}';
   }
 
   if ('corcabelo' in elementsArray && elementsArray.corcabelo != 'false') {
-    html += '.cabelo-class-1 { fill:' +
-      dataCraftArray.element[elementsArray.corcabelo].dataCor + ';}';
+    if (elementsArray.corcabelo.includes('#')){
+      html += '.cabelo-class-1 { fill:' + elementsArray.corcabelo + ';}';
+    }
   }else{
     html += '.cabelo-class-1 {fill:#000;}';
   }
 
   if ('corsobrancelha' in elementsArray && elementsArray.corsobrancelha != 'false') {
-    html += '.sobrancelha-class-1 { fill:' +
-      dataCraftArray.element[elementsArray.corsobrancelha].dataCor + ';}';
+    if (elementsArray.corsobrancelha.includes('#')){
+      html += '.sobrancelha-class-1 { fill:' + elementsArray.corsobrancelha + ';}';
+    }
   }else{
     html += '.sobrancelha-class-1 {fill:#000;}';
   }
 
   if ('corolho' in elementsArray && elementsArray.corolho != 'false') {
-    html += '.olho-class-3 { fill:' +
-      dataCraftArray.element[elementsArray.corolho].dataCor + ';}';
+    if (elementsArray.corolho.includes('#')){
+      html += '.olho-class-3 { fill:' + elementsArray.corolho + ';}';
+    }
   }else{
     html += '.olho-class-3 {fill:#000;}';
   }
@@ -154,6 +158,9 @@ document.querySelectorAll(".element-craft").forEach(function (element) {
       if('cor' in element.dataset) {
         document.querySelector(".menu-cor").classList.remove('d-none');
         elementCor = element.dataset.element;
+        document.querySelector(".menu-cor-span").innerHTML = elementCor;
+        document.querySelector(".input-cor").dataset.element = elementCor;
+        document.querySelector(".input-cor").value = '';
       }else {
         document.querySelector(".menu-cor").classList.add('d-none');
         elementCor = null;
@@ -164,15 +171,20 @@ document.querySelectorAll(".element-craft").forEach(function (element) {
 });
 
 function selectMenuElement(classItem, el) {
-  if (classItem != "cor") {
-    document.querySelector(".menu-cor").classList.add('d-none');
+  document.querySelector(".input-cor-pele-span").classList.add('d-none');
+  document.querySelector(".input-cor-pele").classList.add('d-none');
+  
+  document.querySelector(".menu-cor").classList.add('d-none');
     
-    document.querySelectorAll(".menu-active").forEach(function (element) {
-      element.classList.remove("menu-active");
-    });
-    el.classList.add("menu-active");
-  } else {
-    classItem += elementCor;
+  document.querySelectorAll(".menu-active").forEach(function (element) {
+    element.classList.remove("menu-active");
+  });
+  el.classList.add("menu-active");
+  
+  if (classItem == 'corpele'){
+    document.querySelector(".input-cor-pele-span").classList.remove('d-none');
+    document.querySelector(".input-cor-pele").classList.remove('d-none');
+    document.querySelector(".input-cor-pele").dataset.element = "pele";
   }
 
   document
@@ -188,8 +200,16 @@ function selectMenuElement(classItem, el) {
       element.classList.add("d-block");
       element.classList.remove("d-none");
     });
-  console.log(".item-element-create." + classItem);
 }
+
+document.querySelector(".input-cor").addEventListener("change", function () {
+  elementsArray["cor" + this.dataset.element] = this.value;
+  draw();
+});
+document.querySelector(".input-cor-pele").addEventListener("change", function () {
+  elementsArray["corpele"] = this.value;
+  draw();
+});
 
 document.querySelector(".check-button").addEventListener("click", function () {
   window.sessionStorage.setItem("corpele", elementsArray.corpele || false);

@@ -16,29 +16,33 @@ db.collection("craftArts")
 
       let html = '<defs><style>';
       if ('corpele' in dataDoc && dataDoc.corpele != 'false') {
-        html += '.pele-class { fill:' +
-          dataCraftArray.element[dataDoc.corpele].dataCor + ';}';
+        if (dataDoc.corpele.includes('#')){
+          html += '.pele-class { fill:' + dataDoc.corpele + ';}';
+        }
       }else{
         html += '.pele-class {fill:white;}';
       }
 
       if ('corcabelo' in dataDoc && dataDoc.corcabelo != 'false') {
-        html += '.cabelo-class-1 { fill:' +
-          dataCraftArray.element[dataDoc.corcabelo].dataCor + ';}';
+        if (dataDoc.corcabelo.includes('#')){
+          html += '.cabelo-class-1 { fill:' + dataDoc.corcabelo + ';}';
+        }
       }else{
         html += '.cabelo-class-1 {fill:#000;}';
       }
 
       if ('corsobrancelha' in dataDoc && dataDoc.corsobrancelha != 'false') {
-        html += '.sobrancelha-class-1 { fill:' +
-          dataCraftArray.element[dataDoc.corsobrancelha].dataCor + ';}';
+        if (dataDoc.corsobrancelha.includes('#')){
+          html += '.sobrancelha-class-1 { fill:' + dataDoc.corsobrancelha + ';}';
+        }
       }else{
         html += '.sobrancelha-class-1 {fill:#000;}';
       }
 
       if ('corolho' in dataDoc && dataDoc.corolho != 'false') {
-        html += '.olho-class-3 { fill:' +
-          dataCraftArray.element[dataDoc.corolho].dataCor + ';}';
+        if (dataDoc.corolho.includes('#')){
+          html += '.olho-class-3 { fill:' + dataDoc.corolho + ';}';
+        }
       }else{
         html += '.olho-class-3 {fill:#000;}';
       }
