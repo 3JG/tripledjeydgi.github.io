@@ -1,5 +1,7 @@
 const elementsArray = [];
 
+elementsArray.craftArtsId = window.sessionStorage.getItem("craftArtsId");
+
 elementsArray.corpele = window.sessionStorage.getItem("corpele");
 elementsArray.corcabelo = window.sessionStorage.getItem("corcabelo");
 elementsArray.corsobrancelha = window.sessionStorage.getItem("corsobrancelha");
@@ -11,6 +13,8 @@ elementsArray.sobrancelha = window.sessionStorage.getItem("sobrancelha");
 elementsArray.olho = window.sessionStorage.getItem("olho");
 elementsArray.nariz = window.sessionStorage.getItem("nariz");
 elementsArray.boca = window.sessionStorage.getItem("boca");
+
+document.getElementById("name").value = elementsArray.craftArtsId;
 
 let html = '<defs><style>';
 if ('corpele' in elementsArray && elementsArray.corpele != "false" && elementsArray.corpele != null) {
