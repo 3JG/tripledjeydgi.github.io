@@ -81,25 +81,9 @@
                 </a>
               </li>
 
-              <li class="nav-item item-not-log">
-                <a class="nav-link" href="register.html">
-                  <i class="bi bi-journal-plus"></i> Cadastrar
-                </a>
-              </li>
-              <li class="nav-item item-not-log">
-                <a class="nav-link" href="login.html">
-                  <i class="bi bi-key-fill"></i> Logar
-                </a>
-              </li>
-
-              <li class="nav-item item-log">
+              <li class="nav-item">
                 <a class="nav-link" href="myCrafts.html">
-                  <i class="bi bi-images"></i> Meus Crafts
-                </a>
-              </li>
-              <li class="nav-item item-log">
-                <a class="nav-link" onclick="logout()">
-                  <i class="bi bi-door-open-fill"></i> Sair
+                  <i class="bi bi-images"></i> Crafts Salvos
                 </a>
               </li>
             </ul>
@@ -119,21 +103,24 @@
         </section>
         <section class="col-md-6 col-sm-12">
           <div class="row">
-            <section class="col-12 item-not-log alert alert-light text-center">
-              Cadastre-se para poder Salvar o seu Craft <span style='font-size:2em;'>&#9786; &#9825;</span>
-            </section>
+            <div class="input-group mb-3 input-group-lg">
+              <div class="input-group-prepend input-group-lg">
+                <span class="input-group-text" id="basic-addon1">@</span>
+              </div>
+              <input
+                id="name"
+                type="text"
+                class="form-control"
+                placeholder="Nome"
+                aria-label="Nome"
+                aria-describedby="basic-addon1"
+              />
+            </div>
             <a
-              class="btn btn-primary btn-large mb-2 item-log"
+              class="btn btn-primary btn-large mb-2"
               onclick="salveCraft()"
             >
               <i class="bi bi-cloud-check"></i> Salvar
-            </a>
-            <a
-              class="btn btn-primary btn-large mb-2 item-not-log"
-              onclick='window.sessionStorage.setItem("redirect_login", "preview.html");'
-              href="login.html"
-            >
-              <i class="bi bi-key-fill"></i> Realize o Login ou Cadastro, Aqui
             </a>
             <a
               class="btn btn-primary btn-large mb-2"
@@ -148,10 +135,10 @@
               <i class="bi bi-printer"></i> Ver Molde para Impressão
             </a>
             <a
-              class="btn btn-primary btn-large mb-2 item-log mt-3"
+              class="btn btn-primary btn-large mb-2 mt-3"
               href="myCrafts.html"
             >
-              Meus Crafts
+              Ir para a listagem sem salvar
             </a>
           </div>
         </section>

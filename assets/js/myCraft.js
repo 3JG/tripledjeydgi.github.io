@@ -1,47 +1,63 @@
-document.querySelector("span#name-user").innerHTML = getNameCraft();
-
 const idUser = window.sessionStorage.getItem("craft_user_logger");
 
-db.collection("craftArts")
-  .where("idUser", "==", idUser)
-  .get()
-  .then((querySnapshot) => {
-    if ( querySnapshot.empty ) {
-      document.getElementById("myCraft").innerHTML = '<a class="nav-link" onclick="window.sessionStorage.removeItem(\'craftArtsId\')" href="creativity.html">' +
-      'Criar Meu Primeiro Craft' +
-      '</a>';
-    }
-    querySnapshot.forEach((doc) => {
-      const dataDoc = doc.data();
 
+// Defina o número da página e itens por página
+const page = 1; // página que você deseja acessar
+const itemsPerPage = 50; // número de itens por página
+
+// URL da sua rota do Google Apps Script
+const url = `https://script.google.com/macros/s/AKfycbwBOP0dGFn5D-Z5mO_SKXNo0h4kkmtIoAHoONK4Sf5gB9D4QfmFOrVfbyq2NHYVBoKABw/exec?page=${page}&itemsPerPage=${itemsPerPage}`;
+
+// Realiza a requisição GET
+fetch(url)
+  .then(response => response.json())  // Converte a resposta para JSON
+  .then(querySnapshot => {
+    querySnapshot.data.shift();
+
+    querySnapshot.data.forEach(dataDoc => {
+      id = dataDoc[0];
+
+      if (id != "") {
+      user = dataDoc[1]
+      corpele = dataDoc[2]
+      boca = dataDoc[3]
+      cabelo = dataDoc[4]
+      corcabelo = dataDoc[5]
+      olho = dataDoc[6]
+      corolho = dataDoc[7]
+      sobrancelha = dataDoc[8]
+      corsobrancelha = dataDoc[9]
+      nariz = dataDoc[10]
+      corpo = dataDoc[11]
+      
       let html = '<defs><style>';
-      if ('corpele' in dataDoc && dataDoc.corpele != 'false') {
-        if (dataDoc.corpele.includes('#')){
-          html += '.pele-class { fill:' + dataDoc.corpele + ';}';
+      if (corpele != '') {
+        if (corpele.includes('#')){
+          html += '.pele-class { fill:' + corpele + ';}';
         }
       }else{
         html += '.pele-class {fill:white;}';
       }
 
-      if ('corcabelo' in dataDoc && dataDoc.corcabelo != 'false') {
-        if (dataDoc.corcabelo.includes('#')){
-          html += '.cabelo-class-1 { fill:' + dataDoc.corcabelo + ';}';
+      if (corcabelo != '') {
+        if (corcabelo.includes('#')){
+          html += '.cabelo-class-1 { fill:' + corcabelo + ';}';
         }
       }else{
         html += '.cabelo-class-1 {fill:#000;}';
       }
 
-      if ('corsobrancelha' in dataDoc && dataDoc.corsobrancelha != 'false') {
-        if (dataDoc.corsobrancelha.includes('#')){
-          html += '.sobrancelha-class-1 { fill:' + dataDoc.corsobrancelha + ';}';
+      if (corsobrancelha != '') {
+        if (corsobrancelha.includes('#')){
+          html += '.sobrancelha-class-1 { fill:' + corsobrancelha + ';}';
         }
       }else{
         html += '.sobrancelha-class-1 {fill:#000;}';
       }
 
-      if ('corolho' in dataDoc && dataDoc.corolho != 'false') {
-        if (dataDoc.corolho.includes('#')){
-          html += '.olho-class-3 { fill:' + dataDoc.corolho + ';}';
+      if (corolho != '') {
+        if (corolho.includes('#')){
+          html += '.olho-class-3 { fill:' + corolho + ';}';
         }
       }else{
         html += '.olho-class-3 {fill:#000;}';
@@ -59,34 +75,34 @@ db.collection("craftArts")
       
       html += dataCraftArray.element[43].dataPreview;
       
-      if ('corpo' in dataDoc && dataDoc.corpo != 'false') {
-        html += dataCraftArray.element[dataDoc.corpo].dataPreview;
+      if (corpo in dataCraftArray.element) {
+        html += dataCraftArray.element[corpo].dataPreview;
       }
-      if ("cabelo" in dataDoc && dataDoc.cabelo != "false") {
-        html += dataCraftArray.element[dataDoc.cabelo].dataPreview;
+      if (cabelo in dataCraftArray.element) {
+        html += dataCraftArray.element[cabelo].dataPreview;
       }
-      if ("sobrancelha" in dataDoc && dataDoc.sobrancelha != "false") {
+      if (sobrancelha in dataCraftArray.element) {
         html +=
           dataCraftArray.block.preview.sobrancelha +
-          dataCraftArray.element[dataDoc.sobrancelha].data +
+          dataCraftArray.element[sobrancelha].data +
           dataCraftArray.block.preview.blockOut;
       }
-      if ("olho" in dataDoc && dataDoc.olho != "false") {
+      if (olho in dataCraftArray.element) {
         html +=
           dataCraftArray.block.preview.olho +
-          dataCraftArray.element[dataDoc.olho].data +
+          dataCraftArray.element[olho].data +
           dataCraftArray.block.preview.blockOut;
       }
-      if ("nariz" in dataDoc && dataDoc.nariz != "false") {
+      if (nariz in dataCraftArray.element) {
         html +=
           dataCraftArray.block.preview.nariz +
-          dataCraftArray.element[dataDoc.nariz].data +
+          dataCraftArray.element[nariz].data +
           dataCraftArray.block.preview.blockOut;
       }
-      if ("boca" in dataDoc && dataDoc.boca != "false") {
+      if (boca in dataCraftArray.element) {
         html +=
           dataCraftArray.block.preview.boca +
-          dataCraftArray.element[dataDoc.boca].data +
+          dataCraftArray.element[boca].data +
           dataCraftArray.block.preview.blockOut;
       }
       html += dataCraftArray.block.preview.blockOut;
@@ -107,36 +123,54 @@ db.collection("craftArts")
       buttonEdit.classList.add("btn-primary");
       buttonEdit.classList.add("rounded-circle");
       buttonEdit.innerHTML = '<i class="bi bi-eye"></i>';
+
+      buttonEdit.setAttribute("data-target-id", id);
+      buttonEdit.setAttribute("data-target-corpele", corpele || false);
+      buttonEdit.setAttribute("data-target-corcabelo", corcabelo || false);
+      buttonEdit.setAttribute("data-target-corsobrancelha", corsobrancelha || false);
+      buttonEdit.setAttribute("data-target-corolho", corolho || false);
+      buttonEdit.setAttribute("data-target-corpo", corpo || false);
+      buttonEdit.setAttribute("data-target-cabelo", cabelo || false);
+      buttonEdit.setAttribute("data-target-sobrancelha", sobrancelha || false);
+      buttonEdit.setAttribute("data-target-olho", olho || false);
+      buttonEdit.setAttribute("data-target-nariz", nariz || false);
+      buttonEdit.setAttribute("data-target-boca", boca || false);
+
       buttonEdit.addEventListener("click", function () {
-        window.sessionStorage.setItem("craftArtsId", doc.id);
-        window.sessionStorage.setItem("corpele", dataDoc.corpele || false);
-        window.sessionStorage.setItem("corcabelo", dataDoc.corcabelo || false);
-        window.sessionStorage.setItem("corsobrancelha", dataDoc.corsobrancelha || false);
-        window.sessionStorage.setItem("corolho", dataDoc.corolho || false);
+        const id = buttonEdit.dataset.targetId;
+        const corpele = buttonEdit.dataset.targetCorpele;
+        const corcabelo = buttonEdit.dataset.targetCorcabelo;
+        const corsobrancelha = buttonEdit.dataset.targetCorsobrancelha;
+        const corolho = buttonEdit.dataset.targetCorolho;
+        const corpo = buttonEdit.dataset.targetCorpo;
+        const cabelo = buttonEdit.dataset.targetCabelo;
+        const sobrancelha = buttonEdit.dataset.targetSobrancelha;
+        const olho = buttonEdit.dataset.targetOlho;
+        const nariz = buttonEdit.dataset.targetNariz;
+        const boca = buttonEdit.dataset.targetBoca;
+        
+        window.sessionStorage.setItem("craftArtsId", id);
+        window.sessionStorage.setItem("corpele", corpele || false);
+        window.sessionStorage.setItem("corcabelo", corcabelo || false);
+        window.sessionStorage.setItem("corsobrancelha", corsobrancelha || false);
+        window.sessionStorage.setItem("corolho", corolho || false);
       
-        window.sessionStorage.setItem("corpo", dataDoc.corpo || false);
-        window.sessionStorage.setItem("cabelo", dataDoc.cabelo || false);
-        window.sessionStorage.setItem("sobrancelha", dataDoc.sobrancelha || false);
-        window.sessionStorage.setItem("olho", dataDoc.olho || false);
-        window.sessionStorage.setItem("nariz", dataDoc.nariz || false);
-        window.sessionStorage.setItem("boca", dataDoc.boca || false);
+        window.sessionStorage.setItem("corpo", corpo || false);
+        window.sessionStorage.setItem("cabelo", cabelo || false);
+        window.sessionStorage.setItem("sobrancelha", sobrancelha || false);
+        window.sessionStorage.setItem("olho", olho || false);
+        window.sessionStorage.setItem("nariz", nariz || false);
+        window.sessionStorage.setItem("boca", boca || false);
 
-        location.href = "preview.html";
-      });
-
-      const buttonDelete = document.createElement("button");
-      buttonDelete.classList.add("myCraft-item-btn-delete");
-      buttonDelete.classList.add("btn");
-      buttonDelete.classList.add("btn-danger");
-      buttonDelete.classList.add("rounded-circle");
-      buttonDelete.innerHTML = '<i class="bi bi-trash-fill"></i>';
-      buttonDelete.addEventListener("click", function () {
-        deleteCraft(doc.id);
+        location.href = "print.html";
       });
 
       const divBody = document.createElement("div");
       divBody.classList.add("card-body");
       
+      const divName = document.createElement("div");
+      divName.innerHTML = id
+
       const div = document.createElement("div");
       div.classList.add("myCraft-item");
       div.classList.add("me-2");
@@ -144,16 +178,23 @@ db.collection("craftArts")
       div.classList.add("card");
       div.classList.add("col-md-3");
 
+      div.appendChild(divName);
       div.appendChild(img_svg);
       
       divBody.appendChild(buttonEdit);
-      divBody.appendChild(buttonDelete);
       
       div.appendChild(divBody);
       document.getElementById("myCraft").appendChild(div);
+    }
     });
+
+    const loadSpan = document.getElementById("load");
+    if (loadSpan) {
+      loadSpan.remove();  // Remove o elemento com o id "load" do DOM
+    }
   })
-  .catch((error) => {
-    console.log("Erro no login: ", error);
-    alertCraft("Erro");
+  .catch(error => {
+    // Em caso de erro
+    console.error("Erro ao fazer a requisição:", error);
   });
+

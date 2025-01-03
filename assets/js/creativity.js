@@ -150,23 +150,19 @@ draw();
 
 document.querySelectorAll(".element-craft").forEach(function (element) {
   element.addEventListener("click", function () {
-    if ( this.classList.contains('login-required') ) {
-      alertCraft('Realize o login para poder utilizar este elemento');
-    } else {
-      elementsArray[element.dataset.element] = parseInt(element.dataset.id);
+    elementsArray[element.dataset.element] = parseInt(element.dataset.id);
 
-      if('cor' in element.dataset) {
-        document.querySelector(".menu-cor").classList.remove('d-none');
-        elementCor = element.dataset.element;
-        document.querySelector(".menu-cor-span").innerHTML = elementCor;
-        document.querySelector(".input-cor").dataset.element = elementCor;
-        document.querySelector(".input-cor").value = '';
-      }else {
-        document.querySelector(".menu-cor").classList.add('d-none');
-        elementCor = null;
-      }
-      draw();
+    if('cor' in element.dataset) {
+      document.querySelector(".menu-cor").classList.remove('d-none');
+      elementCor = element.dataset.element;
+      document.querySelector(".menu-cor-span").innerHTML = elementCor;
+      document.querySelector(".input-cor").dataset.element = elementCor;
+      document.querySelector(".input-cor").value = '';
+    }else {
+      document.querySelector(".menu-cor").classList.add('d-none');
+      elementCor = null;
     }
+    draw();
   });
 });
 
@@ -244,9 +240,3 @@ document.querySelector(".x-button").addEventListener("click", function () {
 
   draw();
 });
-
-if (craft_user_logger) {
-  document.querySelectorAll(".login-required").forEach((element) => {
-    element.classList.remove("login-required");
-  });
-}

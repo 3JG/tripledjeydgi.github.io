@@ -50,8 +50,11 @@
           >
             <i class="bi bi-list"></i>
           </button>
-          <a class="text-decoration-none text-reset" href="login.html" id="indexLogin">
-            LOGIN
+          <a
+            class="text-decoration-none text-reset"
+            onclick="window.sessionStorage.removeItem('craftArtsId')"
+            href="creativity.html">
+            CRIAR MEU CRAFT
           </a>
           </div>
           <div
@@ -83,26 +86,10 @@
                   <i class="bi bi-emoji-heart-eyes"></i> Criar Meu Craft
                 </a>
               </li>
-
-              <li class="nav-item item-not-log">
-                <a class="nav-link" href="register.html">
-                  <i class="bi bi-journal-plus"></i> Cadastrar
-                </a>
-              </li>
-              <li class="nav-item item-not-log">
-                <a class="nav-link" href="login.html">
-                  <i class="bi bi-key-fill"></i> Logar
-                </a>
-              </li>
-
-              <li class="nav-item item-log">
+              
+              <li class="nav-item">
                 <a class="nav-link" href="myCrafts.html">
-                  <i class="bi bi-images"></i> Meus Crafts
-                </a>
-              </li>
-              <li class="nav-item item-log">
-                <a class="nav-link" onclick="logout()">
-                  <i class="bi bi-door-open-fill"></i> Sair
+                  <i class="bi bi-images"></i> Crafts Salvos
                 </a>
               </li>
             </ul>
@@ -142,7 +129,7 @@
       </section>
       <div class="row">
         <section
-          class="d-flex flex-column align-items-center col-md-4 col-sm-12"
+          class="d-flex flex-column align-items-center col-md-8 col-sm-12"
         >
           <h5 class="card-title">Como Funciona?</h5>
           <p class="card-text">
@@ -166,21 +153,12 @@
           </a>
           <img class="craft-img" src="assets/img/craft.png" alt="Lindos Craft's montados"/>
         </section>
-        <section
-          class="d-flex flex-column align-items-center col-md-4 col-sm-12"
-        >
-          <h5 class="card-title">Salve as suas obras</h5>
-          <p class="card-text">
-            Realizando um simples <strong>cadastro</strong>, poderá salvar suas criações, para
-            <strong>compartilha-las</strong> com seus amigos!
-          </p>
-        </section>
       </div>
       <div class="row">
         <section
           class="d-flex flex-column align-items-center col-12 mt-5 text-center"
         >
-        © 2021 - Projeto de alunos do curso SMD 2020.2 - UFC
+        ©2025 Josué Santos
         </section>
       </div>
     </div>
